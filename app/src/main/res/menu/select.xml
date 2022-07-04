@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab1"
+        android:icon="@drawable/icons8_home_64"
+        android:title="홈" />
+    <item
+        android:id="@+id/tab2"
+        android:icon="@drawable/stora"
+        android:title="스토어" />
+    <item
+        android:id="@+id/tab3"
+        android:icon="@drawable/icons8____50"
+        android:title="분석" />
+    <item
+        android:id="@+id/tab4"
+        android:icon="@drawable/icons8___52"
+        android:title="마이페이지" />
+</menu>
