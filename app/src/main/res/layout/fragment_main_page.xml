@@ -9,18 +9,19 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="333dp"
-        android:layout_height="34dp"
+        android:layout_width="329dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/search"
         android:padding="5dip"
         android:queryHint="아이템과 스토어를 검색해보세요."
         app:iconifiedByDefault="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
+        app:layout_constraintVertical_bias="0.0"
         app:queryHint="아이템과 스토어를 검색해보세요.">
 
     </SearchView>
@@ -30,21 +31,30 @@
         android:layout_width="29dp"
         android:layout_height="28dp"
         android:layout_marginStart="13dp"
+        android:layout_marginEnd="25dp"
         android:src="@drawable/icons8_24"
         app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchView"
         app:layout_constraintTop_toTopOf="@+id/searchView"
         app:layout_constraintVertical_bias="0.666" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07960199" />
 
     <View
         android:id="@+id/view"
         android:layout_width="410dp"
         android:layout_height="11dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/figure"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <TextView
         android:id="@+id/textView"
