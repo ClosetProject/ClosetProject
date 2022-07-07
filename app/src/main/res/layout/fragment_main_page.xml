@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".mainPage">
 
-    <SearchView
+    <TextView
         android:id="@+id/searchView"
         android:layout_width="329dp"
         android:layout_height="30dp"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:queryHint="아이템과 스토어를 검색해보세요.">
 
-    </SearchView>
+    </TextView>
 
     <ImageView
         android:id="@+id/imageView"
@@ -203,7 +203,7 @@
                     android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/p_my_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20,000원"
@@ -212,7 +212,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/p_my_img"
                 android:layout_width="match_parent"
                 android:layout_height="88dp"
                 android:src="@drawable/viling" />
