@@ -183,7 +183,7 @@
         app:layout_constraintTop_toBottomOf="@+id/line35" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/prodect"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

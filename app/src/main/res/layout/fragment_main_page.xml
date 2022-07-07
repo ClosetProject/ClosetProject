@@ -80,7 +80,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
+        app:layout_constraintTop_toBottomOf="@+id/finish_lin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -145,7 +145,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/view1"
+        android:id="@+id/finish_lin"
         android:layout_width="410dp"
         android:layout_height="11dp"
         android:background="@drawable/figure"
