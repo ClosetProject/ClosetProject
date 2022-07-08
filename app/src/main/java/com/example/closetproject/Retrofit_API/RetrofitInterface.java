@@ -11,6 +11,10 @@ import retrofit2.http.Query;
 
 public interface RetrofitInterface {
 
+
+    // query : select문(조회)
+    // manipulation : insert(데이터삽입), update(기존 데이터 변경), delete
+
     // login
     @POST("query")
     Call<MemberDTO> getMember(@Body ParamsVO parameter);
@@ -18,5 +22,6 @@ public interface RetrofitInterface {
     // joinMember
     @POST("manipulation")
     Call<String> joinMember(@Body ParamsVO parameter);
+
 
 }

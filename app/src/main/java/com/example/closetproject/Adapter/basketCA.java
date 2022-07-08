@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.example.closetproject.R;
+import com.example.closetproject.DTO.basketVO;
 
 import java.util.ArrayList;
 

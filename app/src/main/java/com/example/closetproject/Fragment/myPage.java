@@ -1,16 +1,17 @@
-package com.example.closetproject;
+package com.example.closetproject.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.ListView;
+
+import com.example.closetproject.Adapter.myPageCA;
+import com.example.closetproject.DTO.myPageVO;
+import com.example.closetproject.R;
 
 import java.util.ArrayList;
 

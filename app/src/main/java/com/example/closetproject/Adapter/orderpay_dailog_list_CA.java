@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.closetproject.R;
+import com.example.closetproject.DTO.orderpay_dailog_list_VO;
 
 import java.util.ArrayList;
 

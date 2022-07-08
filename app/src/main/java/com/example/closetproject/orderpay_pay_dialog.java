@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.closetproject.Adapter.orderpay_dailog_list_CA;
+import com.example.closetproject.DTO.orderpay_dailog_list_VO;
+
 import java.util.ArrayList;
 
 public class orderpay_pay_dialog extends AppCompatActivity {

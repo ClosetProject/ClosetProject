@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.DTO;
 
 public class myPageVO {
 

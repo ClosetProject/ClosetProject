@@ -37,16 +37,20 @@ public class JoinActivity extends AppCompatActivity {
         edit_joinpw = findViewById(R.id.edit_joinpw);
         edit_joinname = findViewById(R.id.edit_joinname);
         btn_join = findViewById(R.id.btn_join);
+
+        // join 버튼 클릭 시
         btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                // email, pw, 이름을 가져온다.
                 String join_email = edit_joinemail.getText().toString();
                 String join_pw = edit_joinpw.getText().toString();
                 String join_name = edit_joinname.getText().toString();
 
                 // (추가)공백 불가, 중복 이메일 체킹 기능 추가
 
+                // insert된 이메일, pw, 이름, 관리자 타입을 추가
                 String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
                 String[] params = {join_email, join_pw, join_name, "N"};
 

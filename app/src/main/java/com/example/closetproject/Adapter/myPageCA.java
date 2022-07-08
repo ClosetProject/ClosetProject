@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,11 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
+
+import com.example.closetproject.R;
+import com.example.closetproject.DTO.myPageVO;
 
 import java.util.ArrayList;
 

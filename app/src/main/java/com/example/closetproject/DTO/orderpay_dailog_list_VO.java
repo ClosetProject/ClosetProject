@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.DTO;
 
 public class orderpay_dailog_list_VO {
 

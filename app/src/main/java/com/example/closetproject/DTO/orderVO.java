@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.DTO;
 
 import android.widget.ImageView;
 

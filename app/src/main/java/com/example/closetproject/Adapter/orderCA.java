@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.closetproject.R;
+import com.example.closetproject.DTO.orderVO;
 
 import java.util.ArrayList;
 
