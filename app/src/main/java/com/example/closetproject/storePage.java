@@ -35,11 +35,11 @@ public class storePage extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_store_page, container, false);
 
-        s_img = view.findViewById(R.id.s_img);
-        s_basket = view.findViewById(R.id.s_basket);
-        s_store_name = view.findViewById(R.id.s_store_name);
-        tv_num = view.findViewById(R.id.tv_num);
-        s_concept = view.findViewById(R.id.s_concept);
+//        s_img = view.findViewById(R.id.s_img);
+//        s_basket = view.findViewById(R.id.s_basket);
+//        s_store_name = view.findViewById(R.id.s_store_name);
+//        tv_num = view.findViewById(R.id.tv_num);
+//        s_concept = view.findViewById(R.id.s_concept);
 
         int img = s_img.getImageAlpha();
         String store_name = s_store_name.getText().toString();

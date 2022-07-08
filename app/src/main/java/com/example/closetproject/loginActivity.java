@@ -2,13 +2,23 @@ package com.example.closetproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.closetproject.DTO.MemberDTO;
+import com.example.closetproject.Retrofit_API.ParamsVO;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class loginActivity extends AppCompatActivity {
 
@@ -36,7 +46,42 @@ public class loginActivity extends AppCompatActivity {
                 String login_pw = edit_loginpw.getText().toString();
 
                 String sql = "select m_email, m_pw from tbl_member";
-                String[]
+                String[] header = {"m_email", "m_pw"};
+                String[] params = {login_email, login_pw};
+
+
+                ParamsVO paramsVO = new ParamsVO(sql, header, params);
+                RetrofitClient retrofitClient = RetrofitClient.getInstance();
+
+//                if (params == null){
+//                    Toast.makeText(loginActivity.this,"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(loginActivity.this,"로그인에 성공하였습니다.",Toast.LENGTH_SHORT).show();
+//                }
+
+                if (retrofitClient != null){
+                    retrofitAPI = RetrofitClient.getRetrofitAPI();
+                    retrofitAPI.getMember(paramsVO).enqueue(new Callback<MemberDTO>() {
+                        @Override
+                        public void onResponse(Call<MemberDTO> call, Response<MemberDTO> response) {
+                            if(response.isSuccessful()){
+                                // (추가)진단페이지로 넘어가도록 추후 수정
+                                Intent intent = new Intent(loginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                Toast.makeText(loginActivity.this,"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
+                                Log.d("res","실패");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<MemberDTO> call, Throwable t) {
+                            Log.d("res", t.getMessage());
+                        }
+
+                    });
+                }
             }
         });
 
