@@ -2,28 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.closetproject">
+    <!-- 권한 부여 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:usesCleartextTraffic="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClosetProject"
+        android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
-            android:name=".orderHistory"
+            android:name=".orderpay_pay_dialog"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".JoinActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".basketPage"
+            android:name=".orderPayPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +31,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".orderHistory"
+            android:exported="true" />
+        <activity
+            android:name=".JoinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basketPage"
+            android:exported="true"></activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
-    <!-- 권한 부여 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
