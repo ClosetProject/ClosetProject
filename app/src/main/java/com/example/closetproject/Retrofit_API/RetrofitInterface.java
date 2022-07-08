@@ -11,8 +11,12 @@ import retrofit2.http.Query;
 
 public interface RetrofitInterface {
 
+    // login
     @POST("query")
     Call<MemberDTO> getMember(@Body ParamsVO parameter);
 
+    // joinMember
+    @POST("manipulation")
+    Call<String> joinMember(@Body ParamsVO parameter);
 
 }

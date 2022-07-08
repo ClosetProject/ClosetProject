@@ -2,6 +2,7 @@ package com.example.closetproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,29 +45,34 @@ public class JoinActivity extends AppCompatActivity {
                 String join_pw = edit_joinpw.getText().toString();
                 String join_name = edit_joinname.getText().toString();
 
-                String sql = "select * from tbl_member where m_email = :1 and m_pw = :2";
-                String[] header = {"m_email", "m_pw", "m_name", "m_date", "m_type"};
-                String[] params = {"admin@naver.com", "admin"};
+                // (추가)공백 불가, 중복 이메일 체킹 기능 추가
 
-                ParamsVO paramsVO = new ParamsVO(sql, header, params);
+                String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
+                String[] params = {join_email, join_pw, join_name, "N"};
 
+                ParamsVO paramsVO = new ParamsVO(sql, params);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
-
                 if(retrofitClient != null){
                     retrofitAPI = RetrofitClient.getRetrofitAPI();
-                    retrofitAPI.getMember(paramsVO).enqueue(new Callback<MemberDTO>() {
+                    retrofitAPI.joinMember(paramsVO).enqueue(new Callback<String>() {
                         @Override
-                        public void onResponse(Call<MemberDTO> call, Response<MemberDTO> response) {
-                            Log.d("res", response.body().getM_type());
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if(response.isSuccessful()){
+                                // (추가)진단페이지로 넘어가도록 추후 수정
+                                Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                Log.d("res","실패");
+                            }
                         }
 
                         @Override
-                        public void onFailure(Call<MemberDTO> call, Throwable t) {
-                            Log.d("res", "failure");
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Log.d("res", t.getMessage());
                         }
                     });
                 }
-
             }
         });
     }

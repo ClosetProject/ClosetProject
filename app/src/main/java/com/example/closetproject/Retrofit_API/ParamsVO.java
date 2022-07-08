@@ -11,10 +11,15 @@ public class ParamsVO {
 
     @SerializedName("header")
     @Expose
-    private String[] header;
+    private String[] header = null;
 
     @SerializedName("params")
-    private String[] params;
+    private String[] params = null;
+
+    public ParamsVO(String sql, String[] params) {
+        this.sql = sql;
+        this.params = params;
+    }
 
     public ParamsVO(String sql, String[] header, String[] params) {
         this.sql = sql;
