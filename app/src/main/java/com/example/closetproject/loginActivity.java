@@ -38,6 +38,13 @@ public class loginActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         join = findViewById(R.id.join);
 
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,8 +52,8 @@ public class loginActivity extends AppCompatActivity {
                 String login_email = edit_loginemail.getText().toString();
                 String login_pw = edit_loginpw.getText().toString();
 
-                String sql = "select m_email, m_pw from tbl_member";
-                String[] header = {"m_email", "m_pw"};
+                String sql = "select * from tbl_member where m_email = :1 and m_pw = :2";
+                String[] header = {"m_email", "m_pw","m_name","m_date","m_type"};
                 String[] params = {login_email, login_pw};
 
 
