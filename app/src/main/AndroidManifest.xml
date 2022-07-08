@@ -17,14 +17,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
+            android:name=".loginActivity"
+            android:exported="false" />
+        <activity
             android:name=".AnalysisActivity"
             android:exported="false" />
         <activity
             android:name=".orderpay_pay_dialog"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".orderPayPage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".orderHistory"
             android:exported="true" />
