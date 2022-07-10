@@ -24,10 +24,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.closetproject.Retrofit_API.RetrofitClient;
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AnalysisActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> resultLauncher;
@@ -36,6 +46,8 @@ public class AnalysisActivity extends AppCompatActivity {
 
     private String imageFilePath;
     private Uri photoUri;
+    private String m_email = "aaa@naver.com";
+    private RetrofitInterface retrofitAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +66,36 @@ public class AnalysisActivity extends AppCompatActivity {
                         // Intent 콜백 시, 동작할 함수
                         if(result.getResultCode() == RESULT_OK){
                             imgViewAnaly.setImageURI(photoUri);
-                            
+
                             // 업로드할 이미지 / 소유자
-                            // File file =
+                            Log.d("filePath", photoUri.toString());
+                            File file = new File(photoUri.toString());
+                            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+                            MultipartBody.Part body = MultipartBody.Part.createFormData("file", m_email, requestFile);
+
+                            RetrofitClient retrofitClient = RetrofitClient.getInstance();
+                            if(retrofitClient != null){
+                                retrofitAPI = RetrofitClient.getRetrofitAPI();
+                                retrofitAPI.imageUpload(body).enqueue(new Callback<String>() {
+                                    @Override
+                                    public void onResponse(Call<String> call, Response<String> response) {
+                                        if(response.isSuccessful()){
+                                            // (추가)진단페이지로 넘어가도록 추후 수정
+                                            Intent intent = new Intent(AnalysisActivity.this, MainActivity.class);
+                                            intent.putExtra("m_email", m_email);
+                                            startActivity(intent);
+                                            finish();
+                                        }else{
+                                            Log.d("res","실패");
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<String> call, Throwable t) {
+                                        Log.d("res", t.getMessage());
+                                    }
+                                });
+                            }
                         }
                     }
                 });
@@ -73,9 +112,12 @@ public class AnalysisActivity extends AppCompatActivity {
      * 사진 기능 실행 및 이미지 로컬 저장소에 저장
      * */
     private File createImageFile() throws IOException{
+
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "PERSONAL_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        // 파일 생성 전 경로 파일 생성
+
         File image = File.createTempFile(
                 imageFileName, /* prefix */
                 ".jpg",   /* suffix */

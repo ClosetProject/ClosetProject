@@ -3,10 +3,14 @@ package com.example.closetproject.Retrofit_API;
 import com.example.closetproject.DTO.MemberDTO;
 import com.google.gson.JsonObject;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RetrofitInterface {
@@ -23,5 +27,9 @@ public interface RetrofitInterface {
     @POST("manipulation")
     Call<String> joinMember(@Body ParamsVO parameter);
 
+    // Analysis Image Upload
+    @Multipart
+    @POST("fileUpload")
+    Call<String> imageUpload(@Part MultipartBody.Part file);
 
 }
