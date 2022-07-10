@@ -28,7 +28,7 @@ public class myPage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_my_page, container, false);
+        View view = this.getLayoutInflater().inflate((R.layout.fragment_my_page), null);
 
         my_grid = view.findViewById(R.id.my_grid);
         data = new ArrayList<myPageVO>();
@@ -38,7 +38,7 @@ public class myPage extends Fragment {
             data.add(new myPageVO(s_name[i], p_name[i], img[i], "20,000원"));
         }
 
-        adapter = new myPageCA(getActivity().getApplicationContext(), R.layout.fragment_my_list,data);
+        adapter = new myPageCA(getActivity(), R.layout.fragment_my_list,data);
 
         my_grid.setAdapter(adapter);
 
