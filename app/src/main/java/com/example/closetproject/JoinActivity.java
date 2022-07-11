@@ -9,13 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.closetproject.DTO.MemberDTO;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,15 +40,15 @@ public class JoinActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // email, pw, 이름을 가져온다.
-                String join_email = edit_joinemail.getText().toString();
-                String join_pw = edit_joinpw.getText().toString();
-                String join_name = edit_joinname.getText().toString();
+                String m_email = edit_joinemail.getText().toString();
+                String m_pw = edit_joinpw.getText().toString();
+                String m_name = edit_joinname.getText().toString();
 
                 // (추가)공백 불가, 중복 이메일 체킹 기능 추가
 
                 // insert된 이메일, pw, 이름, 관리자 타입을 추가
                 String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
-                String[] params = {join_email, join_pw, join_name, "N"};
+                String[] params = {m_email, m_pw, m_name, "N"};
 
                 ParamsVO paramsVO = new ParamsVO(sql, params);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
@@ -64,6 +60,7 @@ public class JoinActivity extends AppCompatActivity {
                             if(response.isSuccessful()){
                                 // (추가)진단페이지로 넘어가도록 추후 수정
                                 Intent intent = new Intent(JoinActivity.this, MainActivity.class);
+                                intent.putExtra("m_email", m_email);
                                 startActivity(intent);
                                 finish();
                             }else{
