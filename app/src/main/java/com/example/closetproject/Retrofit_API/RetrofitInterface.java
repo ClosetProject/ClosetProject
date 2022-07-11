@@ -1,7 +1,10 @@
 package com.example.closetproject.Retrofit_API;
 
 import com.example.closetproject.DTO.MemberDTO;
+import com.example.closetproject.DTO.StoreDTO;
 import com.google.gson.JsonObject;
+
+import java.util.ArrayList;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -32,4 +35,7 @@ public interface RetrofitInterface {
     @POST("fileUpload")
     Call<String> imageUpload(@Part("m_email") RequestBody m_email , @Part MultipartBody.Part file);
 
+    // storeList
+    @POST("query")
+    Call<ArrayList<StoreDTO>> storeList(@Body ParamsVO parameter);
 }
