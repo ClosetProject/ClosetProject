@@ -46,7 +46,7 @@ public class AnalysisActivity extends AppCompatActivity {
 
     private String imageFilePath;
     private Uri photoUri;
-    private String m_email = "aaa@naver.com";
+    private String m_email = "ddd@naver.com";
     private RetrofitInterface retrofitAPI;
 
     @Override
@@ -67,32 +67,34 @@ public class AnalysisActivity extends AppCompatActivity {
                         if(result.getResultCode() == RESULT_OK){
                             imgViewAnaly.setImageURI(photoUri);
 
-                            // 업로드할 이미지 / 소유자
-                            Log.d("filePath", photoUri.toString());
-                            File file = new File(photoUri.toString());
-                            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-                            MultipartBody.Part body = MultipartBody.Part.createFormData("file", m_email, requestFile);
+                            // 서버에 이미지 저장
+                            String[] temp = m_email.split("@|\\.");
+                            String file_name = temp[0] + "_" + temp[1];
+
+                            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), new File(imageFilePath));
+                            MultipartBody.Part imgBody = MultipartBody.Part.createFormData("file", file_name + ".jpg", requestFile);
+                            RequestBody emailText = RequestBody.create(MediaType.parse("text/plain"), m_email);
+
+                            Log.d("emailText",emailText.toString());
 
                             RetrofitClient retrofitClient = RetrofitClient.getInstance();
                             if(retrofitClient != null){
                                 retrofitAPI = RetrofitClient.getRetrofitAPI();
-                                retrofitAPI.imageUpload(body).enqueue(new Callback<String>() {
+                                retrofitAPI.imageUpload(emailText, imgBody).enqueue(new Callback<String>() {
                                     @Override
                                     public void onResponse(Call<String> call, Response<String> response) {
                                         if(response.isSuccessful()){
                                             // (추가)진단페이지로 넘어가도록 추후 수정
-                                            Intent intent = new Intent(AnalysisActivity.this, MainActivity.class);
-                                            intent.putExtra("m_email", m_email);
-                                            startActivity(intent);
-                                            finish();
+                                            Toast.makeText(AnalysisActivity.this, "업로드에 성공하였습니다", Toast.LENGTH_SHORT);
+
                                         }else{
-                                            Log.d("res","실패");
+                                            Log.d("Res Failure","실패");
                                         }
                                     }
 
                                     @Override
                                     public void onFailure(Call<String> call, Throwable t) {
-                                        Log.d("res", t.getMessage());
+                                        Log.d("failure message", t.getMessage());
                                     }
                                 });
                             }
@@ -116,8 +118,6 @@ public class AnalysisActivity extends AppCompatActivity {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "PERSONAL_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        // 파일 생성 전 경로 파일 생성
-
         File image = File.createTempFile(
                 imageFileName, /* prefix */
                 ".jpg",   /* suffix */
@@ -133,6 +133,7 @@ public class AnalysisActivity extends AppCompatActivity {
             File photoFile = null;
             try {
                 photoFile = createImageFile();
+
             } catch (IOException ex) {
                 // Error occurred while creating the File
                 Log.d("fail to savePhoto", ex.getMessage());

@@ -30,6 +30,6 @@ public interface RetrofitInterface {
     // Analysis Image Upload
     @Multipart
     @POST("fileUpload")
-    Call<String> imageUpload(@Part MultipartBody.Part file);
+    Call<String> imageUpload(@Part("m_email") RequestBody m_email , @Part MultipartBody.Part file);
 
 }
