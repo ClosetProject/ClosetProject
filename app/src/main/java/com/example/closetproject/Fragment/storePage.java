@@ -1,4 +1,4 @@
-package com.example.closetproject;
+package com.example.closetproject.Fragment;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import com.example.closetproject.Adapter.storeCA;
 import com.example.closetproject.DTO.StoreDTO;
+import com.example.closetproject.OneStoreActivity;
 import com.example.closetproject.R;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;

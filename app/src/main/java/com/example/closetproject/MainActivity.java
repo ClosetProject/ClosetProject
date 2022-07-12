@@ -1,10 +1,10 @@
 package com.example.closetproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.closetproject.Fragment.analysisPage;
 import com.example.closetproject.Fragment.mainPage;
