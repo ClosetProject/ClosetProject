@@ -7,7 +7,7 @@
     tools:context=".basketPage">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/next2"
         android:layout_width="41dp"
         android:layout_height="34dp"
         android:layout_marginStart="10dp"

@@ -1,5 +1,7 @@
 package com.example.closetproject.Fragment;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,8 +17,10 @@ import com.example.closetproject.R;
 
 import java.util.ArrayList;
 
+
 public class myPage extends Fragment {
 
+    View view9, view10, view11;
     GridView my_grid;
     ArrayList<myPageVO> data;
     myPageCA adapter;
@@ -30,6 +34,42 @@ public class myPage extends Fragment {
                              Bundle savedInstanceState) {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_my_page), null);
 
+        // 페이지 이동
+        view9 = view.findViewById(R.id.view9);
+        view10 = view.findViewById(R.id.view10);
+        view11 = view.findViewById(R.id.view11);
+
+        view9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.orderHistory"));
+                startActivity(intent);
+            }
+        });
+
+        view10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
+                startActivity(intent);
+            }
+        });
+
+        view11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.AnalysisActivity"));
+                startActivity(intent);
+            }
+        });
+
+        // grid 화면 적용
         my_grid = view.findViewById(R.id.my_grid);
         data = new ArrayList<myPageVO>();
 

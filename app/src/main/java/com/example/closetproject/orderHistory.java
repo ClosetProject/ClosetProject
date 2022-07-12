@@ -1,17 +1,25 @@
 package com.example.closetproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.closetproject.Adapter.orderCA;
 import com.example.closetproject.DTO.orderVO;
+import com.example.closetproject.Fragment.myPage;
 
 import java.util.ArrayList;
 
 public class orderHistory extends AppCompatActivity {
 
+    ImageView next1;
     ListView order_lv;
     ArrayList<orderVO> data;
     orderCA adapter;
@@ -24,8 +32,19 @@ public class orderHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_history);
 
+        next1 = findViewById(R.id.next1);
         order_lv = findViewById(R.id.order_lv);
         data = new ArrayList<orderVO>();
+
+        // 화면 전환
+        next1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(orderHistory.this, MainActivity.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               finish();
+            }
+        });
 
         for (int i = 0; i < s_name.length; i++){
             data.add(new orderVO("2022.07.07", "20,000원", s_name[i], p_name[i], "검정", "FREE", img[i]));
