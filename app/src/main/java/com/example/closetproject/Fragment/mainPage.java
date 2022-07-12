@@ -1,6 +1,7 @@
 package com.example.closetproject.Fragment;
 
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 
 public class mainPage extends Fragment {
 
+    ImageView basket_main;
     GridView main_grid;
     ArrayList<mainVO> data;
     mainCA adapter;
@@ -34,6 +36,19 @@ public class mainPage extends Fragment {
                              Bundle savedInstanceState) {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_main_page), null);
 
+        basket_main = view.findViewById(R.id.basket_main);
+
+        basket_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
+                startActivity(intent);
+            }
+        });
+
+        // 유튜브 링크 적용
         final ImageView imageView = (ImageView)view.findViewById(R.id.image);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +69,8 @@ public class mainPage extends Fragment {
             }
         });
 
+
+        // grid 화면 적용
         main_grid = view.findViewById(R.id.main_grid);
         data = new ArrayList<mainVO>();
 

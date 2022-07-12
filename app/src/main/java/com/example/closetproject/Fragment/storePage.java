@@ -1,5 +1,7 @@
-package com.example.closetproject;
+package com.example.closetproject.Fragment;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +15,7 @@ import android.widget.ListView;
 
 import com.example.closetproject.Adapter.storeCA;
 import com.example.closetproject.DTO.StoreDTO;
+import com.example.closetproject.R;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
@@ -25,7 +28,7 @@ import retrofit2.Response;
 
 public class storePage extends Fragment {
 
-    ImageView s_basket;
+    ImageView basket_store;
     ListView store_list;
     ArrayList<StoreDTO> storeList;
     storeCA adapter;
@@ -37,7 +40,20 @@ public class storePage extends Fragment {
                              Bundle savedInstanceState) {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_store_page), null);
 
+
+        basket_store = view.findViewById(R.id.basket_store);
         store_list = view.findViewById(R.id.store_list);
+
+        basket_store.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
+                startActivity(intent);
+            }
+        });
+
         setStoreAdapter();
 
         return view;

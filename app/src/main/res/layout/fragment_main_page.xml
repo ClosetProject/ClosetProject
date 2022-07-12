@@ -36,7 +36,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/basket_main"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="13dp"

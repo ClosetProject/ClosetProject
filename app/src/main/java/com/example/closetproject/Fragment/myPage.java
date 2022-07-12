@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import com.example.closetproject.Adapter.myPageCA;
 import com.example.closetproject.DTO.myPageVO;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class myPage extends Fragment {
 
+    ImageView basket_main;
     View view9, view10, view11;
     GridView my_grid;
     ArrayList<myPageVO> data;

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".storePage">
+    tools:context=".Fragment.storePage">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toEndOf="@+id/_dynamic" />
 
     <ImageView
-        android:id="@+id/s_basket"
+        android:id="@+id/basket_store"
         android:layout_width="29dp"
         android:layout_height="28dp"
         android:layout_marginEnd="25dp"

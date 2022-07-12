@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import com.example.closetproject.Fragment.analysisPage;
 import com.example.closetproject.Fragment.mainPage;
 import com.example.closetproject.Fragment.myPage;
+import com.example.closetproject.Fragment.storePage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
