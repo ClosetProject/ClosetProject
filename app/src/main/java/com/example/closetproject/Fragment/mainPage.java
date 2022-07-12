@@ -1,5 +1,8 @@
 package com.example.closetproject.Fragment;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.closetproject.Adapter.mainCA;
 import com.example.closetproject.DTO.mainVO;
 import com.example.closetproject.R;
@@ -29,6 +34,26 @@ public class mainPage extends Fragment {
                              Bundle savedInstanceState) {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_main_page), null);
 
+        final ImageView imageView = (ImageView)view.findViewById(R.id.image);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://www.youtube.com/watch?v=H9vAfkUyF4Q="+getActivity().getPackageName()));
+                try {
+                    startActivity(intent);
+                }catch (ActivityNotFoundException e){
+                    Intent weblntent = new Intent(Intent.ACTION_VIEW);
+                    weblntent.setData(Uri.parse("http://www.youtube.com/watch?v=H9vAfkUyF4Q="+getActivity().getPackageName()));
+                    if (weblntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(weblntent);
+                    }
+                }
+
+            }
+        });
+
         main_grid = view.findViewById(R.id.main_grid);
         data = new ArrayList<mainVO>();
 
@@ -43,4 +68,5 @@ public class mainPage extends Fragment {
         return view;
 
     }
+
 }
