@@ -6,18 +6,18 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/s_img"
+        android:id="@+id/caiv_s_img"
         android:layout_width="69dp"
         android:layout_height="72dp"
         android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/s_seq"
-        app:layout_constraintStart_toEndOf="@+id/s_seq"
+        app:layout_constraintBottom_toBottomOf="@+id/catv_s_seq"
+        app:layout_constraintStart_toEndOf="@+id/catv_s_seq"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/aaaa" />
 
     <TextView
-        android:id="@+id/s_seq"
+        android:id="@+id/catv_s_seq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -27,29 +27,30 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/s_img"
+        app:layout_constraintEnd_toStartOf="@+id/caiv_s_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/s_store_name"
+        android:id="@+id/catv_s_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:text="커먼유니크"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/s_img"
+        app:layout_constraintStart_toEndOf="@+id/caiv_s_img"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/s_store_concept"
+        android:id="@+id/catv_s_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="# 청순 # 하늘하늘"
-        app:layout_constraintStart_toEndOf="@+id/s_img"
-        app:layout_constraintTop_toBottomOf="@+id/s_store_name" />
+        app:layout_constraintStart_toEndOf="@+id/caiv_s_img"
+        app:layout_constraintTop_toBottomOf="@+id/catv_s_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>

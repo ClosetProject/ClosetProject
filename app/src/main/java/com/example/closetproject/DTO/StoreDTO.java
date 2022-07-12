@@ -4,25 +4,25 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class StoreDTO {
-    @SerializedName("s_seq")
+    @SerializedName("S_SEQ")
     private String s_seq;    // 순번
 
-    @SerializedName("s_name")
+    @SerializedName("S_NAME")
     private String s_name; // 가게명
 
-    @SerializedName("s_img")
+    @SerializedName("S_IMG")
     @Expose
     private String s_img;  // 이미지 경로
 
-    @SerializedName("s_tel")
+    @SerializedName("S_TEL")
     @Expose
     private String s_tel;  // 전화번호
 
-    @SerializedName("s_addr")
+    @SerializedName("S_ADDR")
     @Expose
     private String s_addr; // 주소
 
-    @SerializedName("s_desc")
+    @SerializedName("S_DESC")
     @Expose
     private String s_desc; // 쇼핑몰 설명
 

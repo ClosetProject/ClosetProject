@@ -37,5 +37,5 @@ public interface RetrofitInterface {
 
     // storeList
     @POST("query")
-    Call<ArrayList<StoreDTO>> storeList(@Body ParamsVO parameter);
+    Call<ArrayList<StoreDTO>> getStoreList(@Body ParamsVO parameter);
 }

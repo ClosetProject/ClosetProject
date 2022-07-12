@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.closetproject.DTO.StoreDTO;
 import com.example.closetproject.R;
-import com.example.closetproject.DTO.storeVO;
 
 import java.util.ArrayList;
 
@@ -17,10 +17,13 @@ public class storeCA extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<storeVO> data;
+    private ArrayList<StoreDTO> data;
     private LayoutInflater inflater;
 
-    public storeCA(Context context, int layout, ArrayList<storeVO> data) {
+    private TextView catv_s_seq, catv_s_name,catv_s_desc;
+    private ImageView caiv_s_img;
+
+    public storeCA(Context context, int layout, ArrayList<StoreDTO> data) {
         this.context = context;
         this.layout = layout;
         this.data = data;
@@ -42,14 +45,14 @@ public class storeCA extends BaseAdapter {
         view = inflater.inflate(layout,null);
         context = viewGroup.getContext();
 
-        TextView s_seq = view.findViewById(R.id.s_seq);
-        TextView s_store_name = view.findViewById(R.id.s_store_name);
-        TextView s_store_concept = view.findViewById(R.id.s_store_concept);
-        ImageView s_img = view.findViewById(R.id.s_img);
+        catv_s_seq = view.findViewById(R.id.catv_s_seq);
+        catv_s_name = view.findViewById(R.id.catv_s_name);
+        catv_s_desc = view.findViewById(R.id.catv_s_desc);
+        caiv_s_img = view.findViewById(R.id.caiv_s_img);
 
-        s_seq.setText(data.get(i).getSeq());
-        s_store_name.setText(data.get(i).getS_name());
-        s_store_concept.setText(data.get(i).getConcept());
+        catv_s_seq.setText(data.get(i).getS_seq());
+        catv_s_name.setText(data.get(i).getS_name());
+        catv_s_desc.setText(data.get(i).getS_desc());
 
         return view;
     }
