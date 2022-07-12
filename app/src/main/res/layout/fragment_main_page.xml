@@ -89,60 +89,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.44" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="414dp"
+    <ScrollView
+        android:layout_width="0dp"
         android:layout_height="163dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.008"
-        tools:ignore="MissingConstraints">>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="178dp"
-            android:layout_height="159dp"
-            android:layout_marginLeft="10dp"
-            app:cardBackgroundColor="#959393"
-            app:cardCornerRadius="4dp"
-            tools:ignore="MissingConstraints">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="#FFFFFF"
-                android:orientation="vertical"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:text="[쇼핑몰추천] 퍼스널컬러"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:text="유이레컬러"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/allcolor" />
-
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <View
         android:id="@+id/finish_lin"
@@ -152,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        tools:layout_editor_absoluteY="261dp" />
 
     <GridView
         android:id="@+id/main_grid"
@@ -164,7 +117,9 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
