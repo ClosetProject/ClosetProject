@@ -1,6 +1,7 @@
 package com.example.closetproject.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.closetproject.DTO.StoreDTO;
 import com.example.closetproject.R;
 
@@ -54,6 +56,12 @@ public class storeCA extends BaseAdapter {
         catv_s_name.setText(data.get(i).getS_name());
         catv_s_desc.setText(data.get(i).getS_desc());
 
-        return view;
+       String img_path = "http://121.147.185.76:8081/" + data.get(i).getS_img() + "profile.jpg";
+       Glide.with(context)
+               .load(img_path)
+               .error(R.drawable.aaaa)
+               .into(caiv_s_img);
+
+       return view;
     }
 }
