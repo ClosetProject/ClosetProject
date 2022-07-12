@@ -15,41 +15,53 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import kr.co.bootpay.Bootpay;
+import kr.co.bootpay.BootpayAnalytics;
+
+
 public class orderPayPage extends AppCompatActivity {
 
-    Dialog orderpay_dialog;
-    TextView parcel;
+    private int stuck = 10;
 
+//    Dialog orderpay_dialog;
+//    TextView parcel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_pay_page);
 
-        orderpay_dialog = new Dialog(orderPayPage.this);
-        orderpay_dialog.getWindow().setGravity(Gravity.BOTTOM);
-        orderpay_dialog.setContentView(R.layout.activity_orderpay_pay_dialog);
-
-
-        findViewById(R.id.parcel).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                orderpay_dialog.show();
-                showDialog01();
-            }
-        });
+        BootpayAnalytics.init(this, "[62ccbbd2e38c3000235af6e2]");
     }
 
-    public void showDialog01(){
-        orderpay_dialog.show();
-        TextView tv6 = orderpay_dialog.findViewById(R.id.tv6);
-        tv6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    public void onClick_request(View view){
+        // 결제 호출
+        //Bootuser bootuser = new Bootuser().setPhone("010-1234-5678");
 
-                parcel.setText("(CharSequence) tv6");
-                finish();
-            }
-        });
+//        orderpay_dialog = new Dialog(orderPayPage.this);
+//        orderpay_dialog.getWindow().setGravity(Gravity.BOTTOM);
+//        orderpay_dialog.setContentView(R.layout.activity_orderpay_pay_dialog);
+//
+//
+//        findViewById(R.id.parcel).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                orderpay_dialog.show();
+//                showDialog01();
+//            }
+//        });
+//    }
+//
+//    public void showDialog01(){
+//        orderpay_dialog.show();
+//        TextView tv6 = orderpay_dialog.findViewById(R.id.tv6);
+//        tv6.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                parcel.setText("(CharSequence) tv6");
+//                finish();
+//            }
+//        });
     }
 }

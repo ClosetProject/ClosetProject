@@ -45,11 +45,11 @@ public class myPageCA extends BaseAdapter {
         view = inflater.inflate(layout,null);
         context = viewGroup.getContext();
 
-        TextView p_my_name = view.findViewById(R.id.p_my_name);
-        TextView s_my_name = view.findViewById(R.id.s_my_name);
-        TextView p_my_price = view.findViewById(R.id.p_my_price);
-        ImageView p_my_img = view.findViewById(R.id.p_my_img);
-        CardView my_card = view.findViewById(R.id.myPage_card);
+        TextView p_my_name = view.findViewById(R.id.s_sho_name);
+        TextView s_my_name = view.findViewById(R.id.p_sho_name);
+        TextView p_my_price = view.findViewById(R.id.p_sho_price);
+        ImageView p_my_img = view.findViewById(R.id.p_sho_img);
+        CardView my_card = view.findViewById(R.id.sho_card);
        // LinearLayout linear = view.findViewById(R.id.linear);
 
         p_my_img.setImageResource(data.get(i).getImg());

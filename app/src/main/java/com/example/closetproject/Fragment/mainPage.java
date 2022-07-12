@@ -8,12 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import com.example.closetproject.Adapter.mainCA;
-import com.example.closetproject.Adapter.storeCA;
 import com.example.closetproject.DTO.mainVO;
-import com.example.closetproject.DTO.storeVO;
 import com.example.closetproject.R;
 
 import java.util.ArrayList;
@@ -39,7 +36,7 @@ public class mainPage extends Fragment {
             data.add(new mainVO(s_name[i], img[i]));
         }
 
-        adapter = new mainCA(getActivity(), R.layout.frgment_main_list,data);
+        adapter = new mainCA(getActivity(), R.layout.fragment_main_list,data);
 
         main_grid.setAdapter(adapter);
 

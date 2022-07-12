@@ -8,19 +8,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.closetproject.DTO.mainVO;
+import androidx.cardview.widget.CardView;
+
+import com.example.closetproject.DTO.shoppingmallVO;
 import com.example.closetproject.R;
 
 import java.util.ArrayList;
 
-public class mainCA extends BaseAdapter {
+public class shoppingmallCA extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<mainVO> data;
+    private ArrayList<shoppingmallVO> data;
     private LayoutInflater inflater;
 
-    public mainCA(Context context, int layout, ArrayList<mainVO> data) {
+    public shoppingmallCA(Context context, int layout, ArrayList<shoppingmallVO> data){
         this.context = context;
         this.layout = layout;
         this.data = data;
@@ -42,16 +44,20 @@ public class mainCA extends BaseAdapter {
         view = inflater.inflate(layout,null);
         context = viewGroup.getContext();
 
-        TextView s_main_name = view.findViewById(R.id.s_main_name);
-        TextView p_main_name = view.findViewById(R.id.s_sho_name);
-        TextView p_main_price = view.findViewById(R.id.p_main_price);
-        ImageView p_main_img = view.findViewById(R.id.p_main_img);
-        ImageView p_main_wish = view.findViewById(R.id.p_main_wish);
+        TextView s_sho_name = view.findViewById(R.id.s_sho_name);
+        TextView p_sho_name = view.findViewById(R.id.p_sho_name);
+        TextView p_sho_price = view.findViewById(R.id.p_sho_price);
+        ImageView p_sho_img = view.findViewById(R.id.p_sho_img);
+        CardView sho_card = view.findViewById(R.id.sho_card);
+        // LinearLayout linear = view.findViewById(R.id.linear);
 
-        s_main_name.setText(data.get(i).getS_name());
-        //p_main_name.setText(data.get(i).getP_name());
-        p_main_img.setImageResource(data.get(i).getImg());
+        p_sho_img.setImageResource(data.get(i).getImg());
+        p_sho_name.setText(data.get(i).getP_name());
+        s_sho_name.setText(data.get(i).getS_name());
+        p_sho_price.setText(data.get(i).getPrice());
+
 
         return view;
+
     }
 }
