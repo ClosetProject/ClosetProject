@@ -1,5 +1,6 @@
 package com.example.closetproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -38,6 +41,15 @@ public class storePage extends Fragment {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_store_page), null);
 
         store_list = view.findViewById(R.id.store_list);
+        store_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), OneStoreActivity.class);
+                intent.putExtra("s_seq", storeList.get(i).getS_seq());
+                startActivity(intent);
+            }
+        });
+
         setStoreAdapter();
 
         return view;
