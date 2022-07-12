@@ -1,4 +1,4 @@
-package com.example.closetproject.Fragment;
+package com.example.closetproject;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -47,10 +49,19 @@ public class storePage extends Fragment {
         basket_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = (Intent) new Intent();
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
-                startActivity(intent);
+                Intent basket_intent = (Intent) new Intent();
+                basket_intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                basket_intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
+                startActivity(basket_intent);
+            }
+        });
+
+        store_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent store_intent = new Intent(getActivity(), OneStoreActivity.class);
+                store_intent.putExtra("s_seq", storeList.get(i).getS_seq());
+                startActivity(store_intent);
             }
         });
 
