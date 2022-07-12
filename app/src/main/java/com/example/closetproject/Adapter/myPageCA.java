@@ -46,9 +46,9 @@ public class myPageCA extends BaseAdapter {
         context = viewGroup.getContext();
 
         TextView p_my_name = view.findViewById(R.id.s_sho_name);
-        TextView s_my_name = view.findViewById(R.id.p_sho_name);
-        TextView p_my_price = view.findViewById(R.id.p_sho_price);
-        ImageView p_my_img = view.findViewById(R.id.p_sho_img);
+        TextView s_my_name = view.findViewById(R.id.catv_sp_name);
+        TextView p_my_price = view.findViewById(R.id.catv_sp_price);
+        ImageView p_my_img = view.findViewById(R.id.caiv_sp_img);
         CardView my_card = view.findViewById(R.id.sho_card);
        // LinearLayout linear = view.findViewById(R.id.linear);
 

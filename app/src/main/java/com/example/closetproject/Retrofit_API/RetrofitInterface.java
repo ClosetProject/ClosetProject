@@ -1,6 +1,7 @@
 package com.example.closetproject.Retrofit_API;
 
 import com.example.closetproject.DTO.MemberDTO;
+import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.DTO.StoreDTO;
 import com.google.gson.JsonObject;
 
@@ -38,4 +39,9 @@ public interface RetrofitInterface {
     // storeList
     @POST("query")
     Call<ArrayList<StoreDTO>> getStoreList(@Body ParamsVO parameter);
+
+    // storeProductList
+    @POST("query")
+    Call<ArrayList<ProductDTO>> getProductAdapter(@Body ParamsVO parameter);
+
 }

@@ -26,7 +26,7 @@
 
         </activity>
         <activity
-            android:name=".shoppingmallPage"
+            android:name=".OneStoreActivity"
             android:exported="true">
 
         </activity>

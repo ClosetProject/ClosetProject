@@ -8,21 +8,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
-
-import com.example.closetproject.DTO.shoppingmallVO;
+import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.R;
 
 import java.util.ArrayList;
 
-public class shoppingmallCA extends BaseAdapter {
+public class storeProductCA extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<shoppingmallVO> data;
+    private ArrayList<ProductDTO> data;
     private LayoutInflater inflater;
 
-    public shoppingmallCA(Context context, int layout, ArrayList<shoppingmallVO> data){
+    private ImageView caiv_sp_img;
+    private TextView catv_sp_price, catv_sp_name;
+
+    public storeProductCA(Context context, int layout, ArrayList<ProductDTO> data){
         this.context = context;
         this.layout = layout;
         this.data = data;
@@ -44,18 +45,13 @@ public class shoppingmallCA extends BaseAdapter {
         view = inflater.inflate(layout,null);
         context = viewGroup.getContext();
 
-        TextView s_sho_name = view.findViewById(R.id.s_sho_name);
-        TextView p_sho_name = view.findViewById(R.id.p_sho_name);
-        TextView p_sho_price = view.findViewById(R.id.p_sho_price);
-        ImageView p_sho_img = view.findViewById(R.id.p_sho_img);
-        CardView sho_card = view.findViewById(R.id.sho_card);
-        // LinearLayout linear = view.findViewById(R.id.linear);
+        caiv_sp_img = view.findViewById(R.id.caiv_sp_img);
+        catv_sp_price = view.findViewById(R.id.catv_sp_price);
+        catv_sp_name = view.findViewById(R.id.catv_sp_name);
 
-        p_sho_img.setImageResource(data.get(i).getImg());
-        p_sho_name.setText(data.get(i).getP_name());
-        s_sho_name.setText(data.get(i).getS_name());
-        p_sho_price.setText(data.get(i).getPrice());
-
+        //caiv_sp_img.setText(data.get(i).getP_name());
+        catv_sp_price.setText(data.get(i).getP_price());
+        catv_sp_name.setText(data.get(i).getP_name());
 
         return view;
 
