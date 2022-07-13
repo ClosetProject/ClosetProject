@@ -43,7 +43,7 @@ public class mainCA extends BaseAdapter {
         context = viewGroup.getContext();
 
         TextView s_main_name = view.findViewById(R.id.s_main_name);
-        TextView p_main_name = view.findViewById(R.id.s_sho_name);
+        TextView p_main_name = view.findViewById(R.id.s_main_name);
         TextView p_main_price = view.findViewById(R.id.p_main_price);
         ImageView p_main_img = view.findViewById(R.id.p_main_img);
         ImageView p_main_wish = view.findViewById(R.id.p_main_wish);

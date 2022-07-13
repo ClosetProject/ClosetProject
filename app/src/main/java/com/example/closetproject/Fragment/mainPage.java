@@ -29,7 +29,7 @@ public class mainPage extends Fragment {
     mainCA adapter;
     String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
     String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
-    int[] img = {R.drawable.viling, R.drawable.p_jull, R.drawable.p_lrod, R.drawable.p_mall, R.drawable.p_pani, R.drawable.p_tano};
+    int[] img = {R.drawable.com_i_1, R.drawable.com_o_1, R.drawable.com_r_1, R.drawable.com_t_1, R.drawable.com_y_1, R.drawable.com_w_1};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,6 +61,46 @@ public class mainPage extends Fragment {
                 }catch (ActivityNotFoundException e){
                     Intent weblntent = new Intent(Intent.ACTION_VIEW);
                     weblntent.setData(Uri.parse("http://www.youtube.com/watch?v=H9vAfkUyF4Q="+getActivity().getPackageName()));
+                    if (weblntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(weblntent);
+                    }
+                }
+
+            }
+        });
+
+        final ImageView imageView1 = (ImageView)view.findViewById(R.id.img2);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.youtube.com/watch?v=D9Id0nd8TW4Q="+getActivity().getPackageName()));
+                try {
+                    startActivity(intent);
+                }catch (ActivityNotFoundException e){
+                    Intent weblntent = new Intent(Intent.ACTION_VIEW);
+                    weblntent.setData(Uri.parse("https://www.youtube.com/watch?v=D9Id0nd8TW4="+getActivity().getPackageName()));
+                    if (weblntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(weblntent);
+                    }
+                }
+
+            }
+        });
+
+        final ImageView imageView2 = (ImageView)view.findViewById(R.id.you_img1);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.youtube.com/watch?v=1bR0Ot40kdc="+getActivity().getPackageName()));
+                try {
+                    startActivity(intent);
+                }catch (ActivityNotFoundException e){
+                    Intent weblntent = new Intent(Intent.ACTION_VIEW);
+                    weblntent.setData(Uri.parse("https://www.youtube.com/watch?v=1bR0Ot40kdc="+getActivity().getPackageName()));
                     if (weblntent.resolveActivity(getActivity().getPackageManager()) != null) {
                         startActivity(weblntent);
                     }

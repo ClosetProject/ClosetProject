@@ -49,21 +49,105 @@
         app:layout_constraintVertical_bias="0.666" />
 
     <HorizontalScrollView
-        android:scrollbars="none"
         android:id="@+id/horizontalScrollView2"
         android:layout_width="0dp"
         android:layout_height="170dp"
-        android:layout_marginTop="10dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="216dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/you_img1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sddf23" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="216dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/youtube"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="216dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/you_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="퍼스널컬러 찾는 기준"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="216dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/you_name1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="5dp"
+                                android:text="유이레컬러"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/you_num1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="5dp"
+                                android:text="조회수 84만회"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="250dp"
@@ -87,7 +171,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/border2"
+                    android:background="@drawable/youtube"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -101,7 +185,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
-                            android:text="유튜브 제목" />
+                            android:text="퍼스널컬러 패션!"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -121,7 +207,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="5dp"
-                                android:text="유튜버 네임" />
+                                android:text="유이레컬러"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -136,7 +224,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="5dp"
-                                android:text="조회수 51만회" />
+                                android:text="조회수 51만회"
+                                android:textColor="#000000" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -156,16 +245,16 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView25"
-                        android:layout_width="216dp"
-                        android:layout_height="120dp"
-                        android:src="@drawable/allcolor" />
+                        android:id="@+id/img2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pandk" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/border2"
+                    android:background="@drawable/youtube"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -179,7 +268,9 @@
                             android:layout_width="216dp"
                             android:layout_height="20dp"
                             android:paddingLeft="5dp"
-                            android:text="유튜브 제목" />
+                            android:text="퍼스널컬러 | 기본개념 정리"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -199,7 +290,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="5dp"
-                                android:text="유튜버 네임" />
+                                android:text="다현쌤"
+                                android:textSize="13sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -214,7 +306,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:paddingLeft="5dp"
-                                android:text="조회수 51만회" />
+                                android:text="조회수 51만회"
+                                android:textColor="#000000" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -264,26 +357,28 @@
         android:id="@+id/finish_lin"
         android:layout_width="410dp"
         android:layout_height="11dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="156dp"
         android:background="@drawable/figure"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:text="현재 가장 인기있는 아이템"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="✨ 인기 아이템"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/finish_lin" />
 
     <GridView
         android:id="@+id/main_grid"
@@ -297,6 +392,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

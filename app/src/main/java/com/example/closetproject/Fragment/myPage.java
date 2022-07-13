@@ -4,32 +4,36 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.example.closetproject.Adapter.myPageCA;
 import com.example.closetproject.DTO.myPageVO;
 import com.example.closetproject.R;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 
 public class myPage extends Fragment {
 
+    ViewPager viewPager;
     ImageView basket_main;
     View view9, view10, view11;
     GridView my_grid;
     ArrayList<myPageVO> data;
     myPageCA adapter;
-    String[] p_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
-    String[] s_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
+    String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
+    String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
     int[] img = {R.drawable.viling, R.drawable.p_jull, R.drawable.p_lrod, R.drawable.p_mall, R.drawable.p_pani, R.drawable.p_tano};
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,7 +81,7 @@ public class myPage extends Fragment {
 
 
         for (int i = 0; i<s_name.length; i++){
-            data.add(new myPageVO(s_name[i], p_name[i], img[i], "20,000원"));
+            data.add(new myPageVO(p_name[i], img[i], "20,000원"));
         }
 
         adapter = new myPageCA(getActivity(), R.layout.fragment_my_list,data);

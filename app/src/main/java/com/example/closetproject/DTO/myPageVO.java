@@ -7,8 +7,8 @@ public class myPageVO {
     private String p_name;
     private int img;
 
-    public myPageVO(String s_name, String p_name, int img, String price) {
-        this.s_name = s_name;
+    public myPageVO(String p_name, int img, String price) {
+        this.price = price;
         this.p_name = p_name;
         this.img = img;
     }

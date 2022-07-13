@@ -4,61 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="5dp">
+    android:padding="10dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/sho_card"
-        android:layout_width="119dp"
-        android:layout_height="147dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="4dp"
-        tools:ignore="MissingConstraints">
+    <ImageView
+        android:id="@+id/p_my_img"
+        android:layout_width="108dp"
+        android:layout_height="130dp"
+        android:background="@drawable/nemo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/p_jull" />
 
-        <LinearLayout
-            android:id="@+id/linear"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_gravity="bottom"
-            android:background="#FFFFFF"
-            android:orientation="vertical"
-            android:padding="8dp">
+    <TextView
+        android:id="@+id/p_my_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:text="20,000원"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p_my_img" />
 
-            <TextView
-                android:id="@+id/s_sho_name"
-                android:layout_width="110dp"
-                android:layout_height="18dp"
-                android:layout_marginTop="-5dp"
-                android:padding="2dp"
-                android:text="커먼유니크"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/p_my_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="흰색블라우스"
+        android:textSize="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p_my_price" />
 
-            <TextView
-                android:id="@+id/catv_sp_name"
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:padding="2dp"
-                android:text="흰색블라우스"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/catv_sp_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="20,000원"
-                android:textColor="#000000"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/caiv_sp_img"
-            android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:background="@drawable/nemo"
-            android:src="@drawable/viling" />
-
-    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
