@@ -4,10 +4,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,6 +26,7 @@ import kr.co.bootpay.BootpayAnalytics;
 public class orderPayPage extends AppCompatActivity {
 
     private int stuck = 10;
+    ImageView order_pay_next;
 
 //    Dialog orderpay_dialog;
 //    TextView parcel;
@@ -30,6 +35,17 @@ public class orderPayPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_pay_page);
+
+        order_pay_next = findViewById(R.id.order_pay_next);
+
+        order_pay_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(orderPayPage.this, basketPage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+            }
+        });
 
         BootpayAnalytics.init(this, "[62ccbbd2e38c3000235af6e2]");
     }

@@ -21,15 +21,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
-            android:name=".productPage"
-            android:exported="true" >
+            android:name=".test_Dialog"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
+        <activity
+            android:name=".productPage"
+            android:exported="true"></activity>
         <activity
             android:name=".OneStoreActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="com.google.android.actions"
@@ -37,9 +43,7 @@
 
         <activity
             android:name=".loginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AnalysisActivity"
             android:exported="true" />
@@ -61,11 +65,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider

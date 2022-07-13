@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">ClosetProject</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_name1">Alert</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="color">Choose a color</string>
+    <string-array name="color_array">
+        <item>color</item>
+        <item>color</item>
+        <item>color</item>
+        <item>color</item>
+        <item>color</item>
+    </string-array>
+
+    <string name="size">Choose a size</string>
+    <string-array name="size_array">
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>Free</item>
+    </string-array>
 </resources>

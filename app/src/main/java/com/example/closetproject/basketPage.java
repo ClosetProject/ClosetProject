@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class basketPage extends AppCompatActivity {
 
+    Button basket_next;
     ImageView next2;
     ListView basket_lv;
     ArrayList<basketVO> data;
@@ -28,6 +30,7 @@ public class basketPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket_page);
 
+        basket_next = findViewById(R.id.basket_next);
         next2 = findViewById(R.id.next2);
         basket_lv = findViewById(R.id.basket_lv);
         data = new ArrayList<basketVO>();
@@ -37,6 +40,15 @@ public class basketPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(basketPage.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+            }
+        });
+
+        basket_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(basketPage.this, orderPayPage.class);
+                startActivity(intent1);
                 finish();
             }
         });
