@@ -3,105 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="5dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:layout_width="0dip"
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:text="Name:" />
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="0dip"
+            <Spinner
+                android:id="@+id/spSex"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:entries="@array/color_array"
+                android:padding="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-    </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+            tools:ignore="MissingConstraints">
 
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        tools:ignore="MissingConstraints">
-
-        <Spinner
-            android:id="@+id/spSex"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight=".7"
-            android:entries="@array/color_array"
-            android:prompt="색상 선택하기"
-            tools:ignore="TouchTargetSizeCheck" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:text="Birthday:" />
-
-        <EditText
-            android:id="@+id/etDate"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:hint="Bithday"
-            android:inputType="date"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/btnDate"
-            android:layout_width="0dip"
-            android:layout_height="49dp"
-            android:layout_weight=".2"
-            android:onClick="selectDate"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/cbHungry"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Is hungry?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
+            <Spinner
+                android:id="@+id/spSex2"
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/size_array"
+                android:padding="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
