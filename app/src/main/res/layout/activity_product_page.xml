@@ -120,173 +120,147 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/iv_pd_image"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_weight="1"
+                android:background="@drawable/nemo"
+                app:srcCompat="@drawable/p_jull" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="horizontal"
-                android:paddingTop="15dp">
+                android:layout_height="121dp"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="170dp"
+                <TextView
+                    android:id="@+id/tv_pd_name"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="30dp">
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="상품명"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
 
-                    <ImageView
-                        android:id="@+id/imageView27"
-                        android:layout_width="80dp"
-                        android:layout_height="120dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/nemo"
-                        app:srcCompat="@drawable/p_jull" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_pd_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="상품 가격"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView65"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="색상"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="121dp"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView62"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="15dp"
-                            android:text="상품명"
-                            android:textColor="#000000"
-                            android:textSize="15dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView63"
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="15dp"
-                            android:text="상품 가격"
-                            android:textColor="#000000"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView65"
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="15dp"
-                            android:text="색상"
-                            android:textColor="#000000"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="37dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:paddingLeft="15dp">
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="37dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView30"
-                                android:layout_height="27dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingRight="20dp"
-                                app:srcCompat="@drawable/circle"  android:layout_width="0dp"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="37dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView31"
-                                android:layout_height="27dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingRight="20dp"
-                                app:srcCompat="@drawable/circle"
-                                android:layout_width="0dp"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="37dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView32"
-                                android:layout_height="27dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingRight="20dp"
-                                app:srcCompat="@drawable/circle"
-                                android:layout_width="0dp"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="37dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView43"
-                                android:layout_height="27dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingRight="20dp"
-                                app:srcCompat="@drawable/circle"
-                                android:layout_width="0dp"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="37dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView28"
-                                android:layout_height="27dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:paddingTop="5dp"
-                                android:paddingEnd="5dp"
-                                android:paddingRight="20dp"
-                                app:srcCompat="@drawable/circle"
-                                android:layout_width="0dp"/>
-                        </LinearLayout>
-
+                        <ImageView
+                            android:id="@+id/imageView30"
+                            android:layout_width="0dp"
+                            android:layout_height="27dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingRight="20dp"
+                            app:srcCompat="@drawable/circle" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="37dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView31"
+                            android:layout_width="0dp"
+                            android:layout_height="27dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingRight="20dp"
+                            app:srcCompat="@drawable/circle" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="37dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView32"
+                            android:layout_width="0dp"
+                            android:layout_height="27dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingRight="20dp"
+                            app:srcCompat="@drawable/circle" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="37dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView43"
+                            android:layout_width="0dp"
+                            android:layout_height="27dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingRight="20dp"
+                            app:srcCompat="@drawable/circle" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="37dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView28"
+                            android:layout_width="0dp"
+                            android:layout_height="27dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingRight="20dp"
+                            app:srcCompat="@drawable/circle" />
+                    </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
