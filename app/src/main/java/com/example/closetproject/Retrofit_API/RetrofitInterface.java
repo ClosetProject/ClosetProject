@@ -25,7 +25,7 @@ public interface RetrofitInterface {
 
     // login
     @POST("query")
-    Call<MemberDTO> getMember(@Body ParamsVO parameter);
+    Call<ArrayList<MemberDTO>> getMember(@Body ParamsVO parameter);
 
     // joinMember
     @POST("manipulation")

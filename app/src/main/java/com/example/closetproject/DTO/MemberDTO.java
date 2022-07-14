@@ -21,9 +21,9 @@ public class MemberDTO {
     @Expose
     private String m_type = "N";
 
-    @SerializedName("m_date")
+    @SerializedName("m_joindate")
     @Expose
-    private String m_date;
+    private String m_joindate;
 
     // 생성자
     public MemberDTO(String m_email, String m_pw){
@@ -31,12 +31,12 @@ public class MemberDTO {
         this.m_pw = m_pw;
     }
 
-    public MemberDTO(String m_email, String m_pw, String m_name, String m_type, String m_date) {
+    public MemberDTO(String m_email, String m_pw, String m_name, String m_type, String m_joindate) {
         this.m_email = m_email;
         this.m_pw = m_pw;
         this.m_name = m_name;
         this.m_type = m_type;
-        this.m_date = m_date;
+        this.m_joindate = m_joindate;
     }
 
     // Getter, Setter
@@ -75,10 +75,10 @@ public class MemberDTO {
     }
 
     public String getM_date() {
-        return m_date;
+        return m_joindate;
     }
 
     public void setM_date(String m_date) {
-        this.m_date = m_date;
+        this.m_joindate = m_date;
     }
 }
