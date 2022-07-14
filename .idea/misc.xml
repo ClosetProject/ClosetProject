@@ -15,7 +15,7 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/nemo.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/round_bavkgroud_border.xml" value="0.1035" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/youtube.xml" value="0.1" />
-        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_analysis.xml" value="0.25" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_analysis.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_basket_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_join.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_login.xml" value="0.24660018132366274" />
@@ -37,6 +37,7 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_store_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_store_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/frgment_main_list.xml" value="0.33" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/login_dialog.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/main_youtube.xml" value="0.10843373493975904" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/order_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/orderpay_dialog.xml" value="0.33" />

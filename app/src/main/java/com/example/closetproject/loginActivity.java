@@ -1,13 +1,16 @@
 package com.example.closetproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,7 @@ public class loginActivity extends AppCompatActivity {
     EditText edit_loginemail, edit_loginpw;
     Button btn_login;
     TextView join;
+    LinearLayout dialogView;
 
     private RetrofitInterface retrofitAPI;
 
@@ -38,9 +42,14 @@ public class loginActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         join = findViewById(R.id.join);
 
+
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent(loginActivity.this,JoinActivity.class);
+                startActivity(intent);
+                finish();
 
             }
         });
@@ -56,15 +65,9 @@ public class loginActivity extends AppCompatActivity {
                 String[] header = {"m_email", "m_pw","m_name","m_date","m_type"};
                 String[] params = {login_email, login_pw};
 
-
                 ParamsVO paramsVO = new ParamsVO(sql, header, params);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
 
-//                if (params == null){
-//                    Toast.makeText(loginActivity.this,"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
-//                }else {
-//                    Toast.makeText(loginActivity.this,"로그인에 성공하였습니다.",Toast.LENGTH_SHORT).show();
-//                }
 
                 if (retrofitClient != null){
                     retrofitAPI = RetrofitClient.getRetrofitAPI();
@@ -76,9 +79,13 @@ public class loginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(loginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
-                            }else{
-                                Toast.makeText(loginActivity.this,"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
-                                Log.d("res","실패");
+                            }else {
+                                dialogView = (LinearLayout) View.inflate(loginActivity.this, R.layout.login_dialog, null);
+                                AlertDialog.Builder dig = new AlertDialog.Builder(loginActivity.this);
+                                dig.setTitle("alrt");
+                                dig.setView(dialogView);
+                                dig.setPositiveButton("OK",null);
+                                dig.show();
                             }
                         }
 
