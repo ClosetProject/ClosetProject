@@ -31,11 +31,11 @@ public class ProductDTO {
 
     @SerializedName("COLOR_NAME")
     @Expose
-    private int color_name;
+    private String color_name;
 
     @SerializedName("C_CODE")
     @Expose
-    private int c_code;
+    private String c_code;
 
     // 생성자
     public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq) {
@@ -48,7 +48,7 @@ public class ProductDTO {
         this.s_seq = s_seq;
     }
 
-    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, int color_name, int c_code) {
+    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, String color_name, String c_code) {
         this.p_code = p_code;
         this.p_name = p_name;
         this.p_img = p_img;
@@ -117,19 +117,19 @@ public class ProductDTO {
         this.s_seq = s_seq;
     }
 
-    public int getColor_name() {
+    public String getColor_name() {
         return color_name;
     }
 
-    public void setColor_name(int color_name) {
+    public void setColor_name(String color_name) {
         this.color_name = color_name;
     }
 
-    public int getC_code() {
+    public String getC_code() {
         return c_code;
     }
 
-    public void setC_code(int c_code) {
+    public void setC_code(String c_code) {
         this.c_code = c_code;
     }
 }
