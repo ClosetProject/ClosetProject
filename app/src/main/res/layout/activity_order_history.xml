@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".orderHistory">
 
+    <View
+        android:id="@+id/view4"
+        android:layout_width="410dp"
+        android:layout_height="11dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/figure"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
         android:id="@+id/next1"
         android:layout_width="41dp"
@@ -38,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <ListView
         android:id="@+id/order_lv"

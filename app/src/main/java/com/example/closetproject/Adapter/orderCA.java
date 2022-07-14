@@ -48,7 +48,6 @@ public class orderCA extends BaseAdapter {
         TextView p_order_color = view.findViewById(R.id.p_order_color);
         TextView p_order_size = view.findViewById(R.id.p_order_size);
         TextView order_text = view.findViewById(R.id.order_text);
-        View view4 = view.findViewById(R.id.view4);
         ImageView p_order_img = view.findViewById(R.id.p_order_img);
 
         order_date.setText(data.get(i).getDate());

@@ -2,6 +2,7 @@ package com.example.closetproject.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,11 +58,11 @@ public class basketCA extends BaseAdapter {
         TextView p_name = view.findViewById(R.id.p_name);
         TextView p_point = view.findViewById(R.id.p_point);
         TextView s_name = view.findViewById(R.id.s_name);
-        Button p_change = view.findViewById(R.id.p_change);
-        CheckBox check = view.findViewById(R.id.check);
-        Button p_cnt = view.findViewById(R.id.p_cnt);
+        Spinner p_cnt = view.findViewById(R.id.p_cnt);
         TextView p_price = view.findViewById(R.id.p_price);
-        View finish_lin = view.findViewById(R.id.finish_lin);
+
+        ImageView close = view.findViewById(R.id.close);
+        ImageView seomo = view.findViewById(R.id.seomo);
 
         s_name.setText(data.get(i).getS_name());
         p_name.setText(data.get(i).getP_name());
@@ -68,20 +70,6 @@ public class basketCA extends BaseAdapter {
         p_price.setText(data.get(i).getPrice());
         p_img.setImageResource(data.get(i).getImg());
 
-        p_change.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(),"옵션을 변경하시겠습니까?",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-        p_cnt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(),"수량을 변경하시겠습니까?",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
 
         return view;
     }

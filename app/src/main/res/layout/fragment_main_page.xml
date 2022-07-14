@@ -35,19 +35,6 @@
         app:layout_constraintStart_toStartOf="@+id/searchView"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/basket_main"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginEnd="25dp"
-        android:src="@drawable/icons8_24"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.666" />
-
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
         android:layout_width="0dp"
@@ -402,5 +389,15 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/basket_main"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/shopping_cart"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
