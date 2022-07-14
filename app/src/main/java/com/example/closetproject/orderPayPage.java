@@ -47,6 +47,15 @@ public class orderPayPage extends AppCompatActivity {
             }
         });
 
+        order_pay_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(orderPayPage.this, productPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         BootpayAnalytics.init(this, "[62ccbbd2e38c3000235af6e2]");
     }
 

@@ -44,6 +44,15 @@ public class basketPage extends AppCompatActivity {
             }
         });
 
+        next2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(basketPage.this, productPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         basket_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

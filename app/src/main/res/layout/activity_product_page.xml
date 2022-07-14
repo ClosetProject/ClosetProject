@@ -123,60 +123,35 @@
             <ImageView
                 android:id="@+id/iv_pd_image"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="241dp"
                 android:layout_weight="1"
                 android:background="@drawable/nemo"
                 app:srcCompat="@drawable/p_jull" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="121dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_pd_name"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="38dp"
                     android:gravity="center_vertical"
                     android:paddingLeft="15dp"
-                    android:text="상품명"
+                    android:text="[쇼핑몰이름] 상품이름"
                     android:textColor="#000000"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/tv_pd_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="상품 가격"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView65"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="색상"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingLeft="15dp">
+                    android:layout_height="27dp"
+                    android:paddingLeft="7dp">
 
                     <LinearLayout
                         android:layout_width="37dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -193,7 +168,7 @@
 
                     <LinearLayout
                         android:layout_width="37dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -210,7 +185,7 @@
 
                     <LinearLayout
                         android:layout_width="37dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -227,7 +202,7 @@
 
                     <LinearLayout
                         android:layout_width="37dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -244,7 +219,7 @@
 
                     <LinearLayout
                         android:layout_width="37dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -258,6 +233,37 @@
                             android:paddingRight="20dp"
                             app:srcCompat="@drawable/circle" />
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_pd_"
+                        android:layout_width="197dp"
+                        android:layout_height="38dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:text="상품 가격"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_pd_price"
+                        android:layout_width="197dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:paddingLeft="15dp"
+                        android:paddingEnd="30dp"
+                        android:text="20,000원"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -326,7 +332,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="bottom|center"
+                        android:gravity="bottom|center|right"
+                        android:paddingRight="47dp"
                         android:text="BEST color"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -343,7 +350,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="bottom|center"
+                        android:gravity="bottom|center|start"
+                        android:paddingStart="50dp"
                         android:text="GOOD color"
                         android:textColor="#000000"
                         android:textSize="13sp"
@@ -360,15 +368,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="50dp">
 
                     <View
                         android:id="@+id/line6"
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="1.5dp"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="0dp"
                         android:background="#BAB7B7"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.437"
@@ -385,11 +393,10 @@
 
                     <View
                         android:id="@+id/line9"
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="1.5dp"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="25dp"
                         android:layout_marginRight="50dp"
-                        android:layout_weight="1"
                         android:background="#BAB7B7"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.437"
@@ -411,21 +418,21 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="120dp"
+                        android:layout_width="136dp"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:id="@+id/imageView34"
-                            android:layout_width="118dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:paddingLeft="35dp"
+                            android:paddingLeft="47dp"
                             app:srcCompat="@drawable/piple" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -466,11 +473,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:orientation="vertical"
-                        android:paddingLeft="45dp">
+                        android:paddingStart="20dp">
 
                         <ImageView
-                            android:id="@+id/imageView37"
-                            android:layout_width="118dp"
+                            android:id="@+id/imageView00"
+                            android:layout_width="130dp"
                             android:layout_height="match_parent"
                             app:srcCompat="@drawable/figure3" />
                     </LinearLayout>
@@ -484,7 +491,8 @@
                             android:id="@+id/textView69"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center"
+                            android:gravity="center|start"
+                            android:paddingStart="50dp"
                             android:text="WORST color"
                             android:textColor="#000000"
                             android:textSize="13sp"
@@ -497,10 +505,10 @@
                         android:orientation="vertical">
 
                         <View
-                            android:id="@+id/line13"
-                            android:layout_width="match_parent"
+                            android:id="@+id/line12"
+                            android:layout_width="120dp"
                             android:layout_height="1.5dp"
-                            android:layout_marginLeft="50dp"
+                            android:layout_marginLeft="25dp"
                             android:layout_marginRight="50dp"
                             android:background="#BAB7B7"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -513,43 +521,23 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:paddingStart="20dp">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <ImageView
+                            android:id="@+id/imageView37"
+                            android:layout_width="130dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView39"
-                                android:layout_width="59dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="right"
-                                app:srcCompat="@drawable/figure4" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView38"
-                                android:layout_width="59dp"
-                                android:layout_height="match_parent"
-                                app:srcCompat="@drawable/figure5" />
-                        </LinearLayout>
+                            app:srcCompat="@drawable/figure5" />
                     </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingLeft="32dp">
+                android:paddingLeft="38dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"

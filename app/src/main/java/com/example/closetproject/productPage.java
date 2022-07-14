@@ -46,7 +46,7 @@ public class productPage extends AppCompatActivity {
         s_basket3 = findViewById(R.id.s_basket3);
 
         tv_pd_name = findViewById(R.id.tv_pd_name);
-        tv_pd_price = findViewById(R.id.tv_pd_price);
+        tv_pd_price = findViewById(R.id.tv_pd_);
 
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
@@ -69,21 +69,25 @@ public class productPage extends AppCompatActivity {
         alert.setTitle("옵션선택");
         alert.setView(alertLayout);
         alert.setCancelable(false);
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("장바구니", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getBaseContext(), "Cancel clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(productPage.this, basketPage.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        alert.setPositiveButton("구매하기", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 String sex = String.valueOf(spSex.getSelectedItem());
                 String sex1 = String.valueOf(spSex2.getSelectedItem());
 
-                Toast.makeText(getBaseContext(), "color: " + sex + "\nsize: " + sex1, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(productPage.this, orderPayPage.class);
+                startActivity(intent);
+                finish();
             }
         });
 
