@@ -58,6 +58,8 @@ public class JoinActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()){
+                                GlobalVariate.getInstance().setM_email(m_email);
+
                                 // (추가)진단페이지로 넘어가도록 추후 수정
                                 Intent intent = new Intent(JoinActivity.this, AnalysisActivity.class);
                                 intent.putExtra("m_email", m_email);

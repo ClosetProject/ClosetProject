@@ -33,8 +33,6 @@ public class loginActivity extends AppCompatActivity {
     private TextView tv_join;
     private Button btn_login;
 
-
-
     private RetrofitInterface retrofitAPI;
 
     @Override
@@ -99,6 +97,8 @@ public class loginActivity extends AppCompatActivity {
                                     autoLoginEdit.putString("m_pw", memberDTO.getM_pw());
                                     autoLoginEdit.commit();
                                 }
+
+                                GlobalVariate.getInstance().setM_email(memberDTO.getM_email());
 
                                 Intent intent = new Intent(loginActivity.this, MainActivity.class);
                                 startActivity(intent);
