@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,18 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.closetproject.Adapter.mainCA;
+import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.DTO.mainVO;
 import com.example.closetproject.R;
+import com.example.closetproject.Retrofit_API.ParamsVO;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class mainPage extends Fragment {
 
@@ -31,7 +40,9 @@ public class mainPage extends Fragment {
     ListView listView;
     ImageView basket_main;
     GridView main_grid;
-    ArrayList<mainVO> data;
+    ArrayList<ProductDTO> productList;
+    private RetrofitInterface retrofitAPI;
+
     mainCA adapter;
     String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
     String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
@@ -133,19 +144,46 @@ public class mainPage extends Fragment {
 
 
         // grid 화면 적용
-        main_grid = view.findViewById(R.id.main_grid);
-        data = new ArrayList<mainVO>();
-
-        for (int i = 0; i<s_name.length; i++){
-            data.add(new mainVO(s_name[i], img[i]));
-        }
-
-        adapter = new mainCA(getActivity(), R.layout.fragment_main_list,data);
-
-        main_grid.setAdapter(adapter);
+        setProductAdapter();
 
         return view;
 
     }
 
+    // grid 화면 적용
+    private void setProductAdapter() {
+
+        // 데이터 불러오기
+        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND ROWNUM < 7";
+        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
+        String[] params = {"null"};
+
+        ParamsVO paramsVO = new ParamsVO(sql, header, params);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+
+        if (retrofitClient != null) {
+
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getProductAdapter(paramsVO).enqueue(new Callback<ArrayList<ProductDTO>>() {
+
+                @Override
+                public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
+                    if (response.isSuccessful()) {
+                        productList = response.body();
+                        adapter = new mainCA(getActivity(), R.layout.fragment_main_list, productList);
+                        main_grid.setAdapter(adapter);
+
+                    } else {
+                        Log.d("failure", "불러올 제품이 없습니다");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
+                    Log.d("failure", t.getMessage());
+
+                }
+            });
+        }
+    }
 }

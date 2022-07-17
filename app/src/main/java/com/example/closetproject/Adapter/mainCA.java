@@ -8,8 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.closetproject.DTO.mainVO;
+import com.bumptech.glide.Glide;
+import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -17,10 +20,13 @@ public class mainCA extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<mainVO> data;
+    private ArrayList<ProductDTO> data;
     private LayoutInflater inflater;
 
-    public mainCA(Context context, int layout, ArrayList<mainVO> data) {
+    private TextView tv_mpd_price, tv_mpd_name, tv_mpd_store;
+    private ImageView iv_mpd_img, iv_mwishlist;
+
+    public mainCA(Context context, int layout, ArrayList<ProductDTO> data) {
         this.context = context;
         this.layout = layout;
         this.data = data;
@@ -42,15 +48,22 @@ public class mainCA extends BaseAdapter {
         view = inflater.inflate(layout,null);
         context = viewGroup.getContext();
 
-        TextView s_main_name = view.findViewById(R.id.s_main_name);
-        TextView p_main_name = view.findViewById(R.id.s_main_name);
-        TextView p_main_price = view.findViewById(R.id.p_main_price);
-        ImageView p_main_img = view.findViewById(R.id.p_main_img);
-        ImageView p_main_wish = view.findViewById(R.id.p_main_wish);
+        tv_mpd_price = view.findViewById(R.id.tv_mpd_price);
+        tv_mpd_name = view.findViewById(R.id.tv_mpd_name);
+        tv_mpd_store = view.findViewById(R.id.tv_mpd_store);
+        iv_mpd_img = view.findViewById(R.id.iv_mpd_img);
+        iv_mwishlist = view.findViewById(R.id.iv_mwishlist);
 
-        s_main_name.setText(data.get(i).getS_name());
-        //p_main_name.setText(data.get(i).getP_name());
-        p_main_img.setImageResource(data.get(i).getImg());
+        //text
+        tv_mpd_price.setText(data.get(i).getP_price());
+        tv_mpd_name.setText(data.get(i).getP_name());
+        tv_mpd_store.setText(data.get(i).getS_name());
+
+        String img_path = "http://121.147.185.76:8081/" + data.get(i).getP_img() + "/BLACK.jpg";
+        Glide.with(context)
+                .load(img_path)
+                .error(R.drawable.noimg)
+                .into(iv_mpd_img);
 
         return view;
     }

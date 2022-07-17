@@ -7,7 +7,7 @@
     android:padding="10dp">
 
     <ImageView
-        android:id="@+id/p_main_img"
+        android:id="@+id/iv_mpd_img"
         android:layout_width="177dp"
         android:layout_height="208dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/com_i_1" />
 
     <TextView
-        android:id="@+id/s_main_name"
+        android:id="@+id/tv_mpd_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="커먼유니크"
@@ -25,19 +25,19 @@
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p_main_price" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_mpd_price" />
 
     <TextView
-        android:id="@+id/p_main_name"
+        android:id="@+id/tv_mpd_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="흰색블라우스셔츠"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_main_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_mpd_store" />
 
     <TextView
-        android:id="@+id/p_main_price"
+        android:id="@+id/tv_mpd_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -45,15 +45,15 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p_main_img" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_mpd_img" />
 
     <ImageView
-        android:id="@+id/p_main_wish"
+        android:id="@+id/iv_mwishlist"
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/p_main_img"
-        app:layout_constraintEnd_toEndOf="@+id/p_main_img"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_mpd_img"
+        app:layout_constraintEnd_toEndOf="@+id/iv_mpd_img"
         app:layout_constraintHorizontal_bias="0.962"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
