@@ -42,7 +42,7 @@ public class orderPayPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(orderPayPage.this, basketPage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 finish();
             }
         });

@@ -39,19 +39,19 @@ public class basketPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(basketPage.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 finish();
             }
         });
 
-        next2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(basketPage.this, productPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        next2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(basketPage.this, productPage.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
         basket_next.setOnClickListener(new View.OnClickListener() {
             @Override

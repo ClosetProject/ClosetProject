@@ -14,22 +14,28 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/figure5.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/nemo.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/round_bavkgroud_border.xml" value="0.1035" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/search.xml" value="0.1625" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/youtube.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_analysis.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_basket_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_join.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_login.xml" value="0.24660018132366274" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_my_analysis_page.xml" value="0.25657298277425206" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_one_store.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_order_history.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_order_pay_dailog.xml" value="0.21033544877606528" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_order_pay_page.xml" value="0.25" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_orderpay_pay_dialog.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_product_page.xml" value="0.33" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_search_view.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_shoppingmall_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_test_dialog.xml" value="0.25" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/basket_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_analysis_page.xml" value="0.33" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_ex01mycolor.xml" value="0.22" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_ex02mycolor.xml" value="0.22" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_ex03mycolor.xml" value="0.18" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_main_list.xml" value="0.25" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_main_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/fragment_my_list.xml" value="0.30055579307396324" />
@@ -39,9 +45,12 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/frgment_main_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/login_dialog.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/main_youtube.xml" value="0.10843373493975904" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/mycolorchoose.xml" value="0.22" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/order_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/orderpay_dialog.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/orderpay_dialog_list.xml" value="0.33" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/searchview.xml" value="0.20444242973708068" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/searchview_list.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/shoppingmall_list.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/store_item_layout.xml" value="0.22" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/test_dialog_option.xml" value="0.3074712643678161" />

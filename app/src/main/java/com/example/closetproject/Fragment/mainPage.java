@@ -1,5 +1,6 @@
 package com.example.closetproject.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -11,10 +12,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.closetproject.Adapter.mainCA;
 import com.example.closetproject.DTO.mainVO;
 import com.example.closetproject.R;
@@ -23,6 +27,8 @@ import java.util.ArrayList;
 
 public class mainPage extends Fragment {
 
+    TextView searchView;
+    ListView listView;
     ImageView basket_main;
     GridView main_grid;
     ArrayList<mainVO> data;
@@ -30,13 +36,29 @@ public class mainPage extends Fragment {
     String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
     String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
     int[] img = {R.drawable.com_i_1, R.drawable.com_o_1, R.drawable.com_r_1, R.drawable.com_t_1, R.drawable.com_y_1, R.drawable.com_w_1};
+    ArrayAdapter<String> arrayAdapter;
+    ArrayList<String> arrayList;
 
+    @SuppressLint("ResourceType")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_main_page), null);
 
         basket_main = view.findViewById(R.id.basket_main);
+        main_grid = view.findViewById(R.id.main_grid);
+        searchView = view.findViewById(R.id.searchView);
+
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = (Intent) new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setComponent(new ComponentName("com.example.closetproject", "com.example.closetproject.searchView"));
+                startActivity(intent);
+            }
+        });
+
 
         basket_main.setOnClickListener(new View.OnClickListener() {
             @Override
