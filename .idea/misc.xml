@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/border2.xml" value="0.1" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/btn_color.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/figure.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/drawable/figure1.xml" value="0.1" />
@@ -21,7 +22,7 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_join.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_login.xml" value="0.24660018132366274" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_my_analysis_page.xml" value="0.25657298277425206" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_my_analysis_page.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_one_store.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_order_history.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/ClosetProject/app/src/main/res/layout/activity_order_pay_dailog.xml" value="0.21033544877606528" />
