@@ -2,30 +2,24 @@ package com.example.closetproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.util.Calendar;
 
 public class test_Dialog extends AppCompatActivity {
 
     Button btnShow;
+    private final Spinner spColor, spSize;
+
+    public test_Dialog(Spinner spColor, Spinner spSize) {
+        this.spColor = spColor;
+        this.spSize = spSize;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +67,4 @@ public class test_Dialog extends AppCompatActivity {
             AlertDialog dialog = alert.create();
             dialog.show();
         }
-
-
     }

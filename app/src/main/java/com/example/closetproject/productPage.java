@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +38,9 @@ public class productPage extends AppCompatActivity {
     private RetrofitInterface retrofitAPI;
     private String p_code;
     private String m_email;
+
     private ArrayList<ProductDTO> productList;
+    private ArrayList<String> colorList, sizeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +70,12 @@ public class productPage extends AppCompatActivity {
 
         LayoutInflater inflater = getLayoutInflater();
         View alertLayout = inflater.inflate(R.layout.test_dialog_option, null);
-        final Spinner spSex = (Spinner) alertLayout.findViewById(R.id.spSex);
-        final Spinner spSex2 = (Spinner) alertLayout.findViewById(R.id.spSex2);
+        final Spinner spColor = (Spinner) alertLayout.findViewById(R.id.spSex);
+        final Spinner spSize = (Spinner) alertLayout.findViewById(R.id.spSex2);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+                android.R.layout.simple_spinner_dropdown_item,
+                colorList);
+        spColor.setAdapter(arrayAdapter);
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("옵션선택");
@@ -86,8 +94,8 @@ public class productPage extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                String sex = String.valueOf(spSex.getSelectedItem());
-                String sex1 = String.valueOf(spSex2.getSelectedItem());
+                String sex = String.valueOf(spColor.getSelectedItem());
+                String sex1 = String.valueOf(spSize.getSelectedItem());
 
                 Intent intent = new Intent(productPage.this, orderPayPage.class);
                 startActivity(intent);
@@ -132,15 +140,20 @@ public class productPage extends AppCompatActivity {
                 public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
                     productList = response.body();
 
-                    tv_pd_name.setText(productList.get(0).getP_name());
+                    String pd_name = "[" + productList.get(0).getS_name() + "] " +productList.get(0).getP_name();
+                    tv_pd_name.setText(pd_name);
                     tv_pd_price.setText(productList.get(0).getP_price());
 
-                    String img_path = "http://121.147.185.76:8081/" + productList.get(0).getP_img() + "/BLACK.jpg";
+                    String img_path = "http://121.147.185.76:8081/" + productList.get(0).getP_img() + "/" + productList.get(0).getColor_name() + ".jpg";
                     Glide.with(getApplicationContext())
                                 .load(img_path)
                                 .error(R.drawable.noimg)
                                 .into(iv_pd_image);
 
+                    colorList = new ArrayList<String>();
+                    for(int i = 0; i < productList.size() -1 ; i++){
+                        colorList.add(productList.get(i).getColor_name());
+                    }
                 }
 
                 @Override
