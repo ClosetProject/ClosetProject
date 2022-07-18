@@ -36,6 +36,10 @@ public class storePage extends Fragment {
     ArrayList<StoreDTO> storeList;
     storeCA adapter;
 
+    String[] desc = {"# 청순  # 하늘하늘", "# 캠퍼스룩  # 심플베이직", "# 러블리  # 캐주얼", "# 러블리  #오피스룩",
+                      "# 모던미니멀  # 심플베이직", "# 러블리  # 섹시글램", "# 러블리  # 로맨틱", "# 페미닌  # 심플베이직",
+                        "# 캐주얼  #심플베이직", "# 스트릿  # 캐주얼", "# 심플베이직  # 캐주얼", "# 빈티지  # 캠퍼스룩"};
+
     private RetrofitInterface retrofitAPI;
 
     @Override
