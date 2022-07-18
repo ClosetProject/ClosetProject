@@ -1,6 +1,8 @@
 package com.example.closetproject.Retrofit_API;
 
 import com.example.closetproject.DTO.MemberDTO;
+import com.example.closetproject.DTO.PColorDTO;
+import com.example.closetproject.DTO.PSizeDTO;
 import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.DTO.StoreDTO;
 import com.google.gson.JsonObject;
@@ -47,4 +49,12 @@ public interface RetrofitInterface {
     // productDetail
     @POST("query")
     Call<ArrayList<ProductDTO>> getProduct(@Body ParamsVO parameter);
+
+    // productDetail
+    @POST("query")
+    Call<ArrayList<PColorDTO>> getProductColor(@Body ParamsVO parameter);
+
+    // productDetail
+    @POST("query")
+    Call<ArrayList<PSizeDTO>> getProductSize(@Body ParamsVO parameter);
 }

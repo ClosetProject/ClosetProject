@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.closetproject.DTO.PColorDTO;
+import com.example.closetproject.DTO.PSizeDTO;
 import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
@@ -40,7 +42,9 @@ public class productPage extends AppCompatActivity {
     private String m_email;
 
     private ArrayList<ProductDTO> productList;
-    private ArrayList<String> colorList, sizeList;
+    private ArrayList<PColorDTO> colorList;
+    private ArrayList<PSizeDTO> sizeList;
+    private ArrayList<String> colorOption, sizeOption;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +78,13 @@ public class productPage extends AppCompatActivity {
         final Spinner spSize = (Spinner) alertLayout.findViewById(R.id.spSex2);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,
-                colorList);
+                colorOption);
         spColor.setAdapter(arrayAdapter);
+
+        arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+                android.R.layout.simple_spinner_dropdown_item,
+                sizeOption);
+        spSize.setAdapter(arrayAdapter);
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("옵션선택");
@@ -123,10 +132,10 @@ public class productPage extends AppCompatActivity {
      * setProductPersonal() - 제품 색상 & 퍼스널 적합도
      */
     private void setProduct(){
-        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME, C.COLOR_NAME, C.C_CODE" +
-                "  FROM TBL_PRODUCT A, TBL_STORE B, TBL_COLOR C" +
-                " WHERE A.S_SEQ = B.S_SEQ AND A.P_CODE = C.P_CODE AND A.P_CODE = :1";
-        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME", "COLOR_NAME", "C_CODE"};
+        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME" +
+                "  FROM TBL_PRODUCT A, TBL_STORE B" +
+                " WHERE A.S_SEQ = B.S_SEQ AND A.P_CODE = :1";
+        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
         String[] params = {p_code};
 
         ParamsVO paramsVO = new ParamsVO(sql, header, params);
@@ -143,22 +152,77 @@ public class productPage extends AppCompatActivity {
                     String pd_name = "[" + productList.get(0).getS_name() + "] " +productList.get(0).getP_name();
                     tv_pd_name.setText(pd_name);
                     tv_pd_price.setText(productList.get(0).getP_price());
+                    setProductColor();
+                    setProductSize();
 
-                    String img_path = "http://121.147.185.76:8081/" + productList.get(0).getP_img() + "/" + productList.get(0).getColor_name() + ".jpg";
-                    Glide.with(getApplicationContext())
-                                .load(img_path)
-                                .error(R.drawable.noimg)
-                                .into(iv_pd_image);
-
-                    colorList = new ArrayList<String>();
-                    for(int i = 0; i < productList.size() -1 ; i++){
-                        colorList.add(productList.get(i).getColor_name());
-                    }
                 }
 
                 @Override
                 public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
                     Log.d("failure", t.getMessage());
+                }
+            });
+        }
+    }
+
+    private void setProductColor(){
+        String sql = "SELECT COLOR_SEQ, COLOR_NAME, C_CODE  FROM TBL_COLOR WHERE P_CODE = :1";
+        String[] header = {"COLOR_SEQ", "COLOR_NAME", "C_CODE"};
+        String[] params = {p_code};
+
+        ParamsVO paramsVO = new ParamsVO(sql, header, params);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getProductColor(paramsVO).enqueue(new Callback<ArrayList<PColorDTO>>() {
+                @Override
+                public void onResponse(Call<ArrayList<PColorDTO>> call, Response<ArrayList<PColorDTO>> response) {
+                    colorList = response.body();
+                    String img_path = "http://121.147.185.76:8081/" + productList.get(0).getP_img() + "/" + colorList.get(0).getColor_name() + ".jpg";
+                    Glide.with(getApplicationContext())
+                            .load(img_path)
+                            .error(R.drawable.noimg)
+                            .into(iv_pd_image);
+
+                    colorOption = new ArrayList<String>();
+                    for(int i = 0; i < colorList.size() -1 ; i++){
+                        colorOption.add(colorList.get(i).getColor_name());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ArrayList<PColorDTO>> call, Throwable t) {
+
+                }
+            });
+        }
+    }
+
+    private void setProductSize(){
+        String sql = "SELECT SIZE_SEQ, SIZE_NAME, SIZE_DESC, SIZE_PART  FROM TBL_SIZE WHERE P_CODE = :1";
+        String[] header = {"SIZE_SEQ", "SIZE_NAME", "SIZE_DESC", "SIZE_PART"};
+        String[] params = {p_code};
+
+        ParamsVO paramsVO = new ParamsVO(sql, header, params);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getProductSize(paramsVO).enqueue(new Callback<ArrayList<PSizeDTO>>() {
+                @Override
+                public void onResponse(Call<ArrayList<PSizeDTO>> call, Response<ArrayList<PSizeDTO>> response) {
+                    sizeList = response.body();
+
+                    sizeOption = new ArrayList<String>();
+                    for(int i = 0; i < sizeList.size() -1 ; i++){
+                        sizeOption.add(sizeList.get(i).getSize_name());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ArrayList<PSizeDTO>> call, Throwable t) {
+
                 }
             });
         }
