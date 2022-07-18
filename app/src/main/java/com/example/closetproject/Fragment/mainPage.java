@@ -57,19 +57,7 @@ public class mainPage extends Fragment {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_main_page), null);
 
         basket_main = view.findViewById(R.id.basket_main);
-        main_grid = view.findViewById(R.id.main_grid);
-        searchView = view.findViewById(R.id.searchView);
-
-        searchView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = (Intent) new Intent();
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(new ComponentName("com.example.closetproject", "com.example.closetproject.searchView"));
-                startActivity(intent);
-            }
-        });
-
+        //main_grid = view.findViewById(R.id.main_grid);
 
         basket_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,46 +132,46 @@ public class mainPage extends Fragment {
 
 
         // grid 화면 적용
-        setProductAdapter();
+        //setProductAdapter();
 
         return view;
 
     }
 
     // grid 화면 적용
-    private void setProductAdapter() {
-
-        // 데이터 불러오기
-        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND ROWNUM < 7";
-        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
-        String[] params = {"null"};
-
-        ParamsVO paramsVO = new ParamsVO(sql, header, params);
-        RetrofitClient retrofitClient = RetrofitClient.getInstance();
-
-        if (retrofitClient != null) {
-
-            retrofitAPI = RetrofitClient.getRetrofitAPI();
-            retrofitAPI.getProductAdapter(paramsVO).enqueue(new Callback<ArrayList<ProductDTO>>() {
-
-                @Override
-                public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
-                    if (response.isSuccessful()) {
-                        productList = response.body();
-                        adapter = new mainCA(getActivity(), R.layout.fragment_main_list, productList);
-                        main_grid.setAdapter(adapter);
-
-                    } else {
-                        Log.d("failure", "불러올 제품이 없습니다");
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
-                    Log.d("failure", t.getMessage());
-
-                }
-            });
-        }
-    }
+//    private void setProductAdapter() {
+//
+//        // 데이터 불러오기
+//        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND ROWNUM < 7";
+//        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
+//        String[] params = {"null"};
+//
+//        ParamsVO paramsVO = new ParamsVO(sql, header, params);
+//        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+//
+//        if (retrofitClient != null) {
+//
+//            retrofitAPI = RetrofitClient.getRetrofitAPI();
+//            retrofitAPI.getProductAdapter(paramsVO).enqueue(new Callback<ArrayList<ProductDTO>>() {
+//
+//                @Override
+//                public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
+//                    if (response.isSuccessful()) {
+//                        productList = response.body();
+//                        adapter = new mainCA(getActivity(), R.layout.fragment_main_list, productList);
+//                        // main_grid.setAdapter(adapter);
+//
+//                    } else {
+//                        Log.d("failure", "불러올 제품이 없습니다");
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
+//                    Log.d("failure", t.getMessage());
+//
+//                }
+//            });
+//        }
+//    }
 }

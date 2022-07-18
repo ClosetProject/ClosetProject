@@ -7,43 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.mainPage">
 
-    <View
-        android:id="@+id/line13"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="14dp"
-        android:background="#e0e0e0"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view11"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/searchView"
-        android:layout_width="329dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/search"
-        android:padding="5dip"
-        android:queryHint="아이템과 스토어를 검색해보세요."
-        app:iconifiedByDefault="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:queryHint="아이템과 스토어를 검색해보세요.">
-
-    </TextView>
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
@@ -55,7 +23,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="31dp"
                 android:orientation="horizontal"
                 android:paddingTop="5dp">
 
@@ -85,7 +53,7 @@
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView2"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="180dp"
                 android:scrollbars="none"
                 app:layout_constraintBottom_toTopOf="@+id/guideline3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +89,7 @@
 
                         <LinearLayout
                             android:layout_width="216dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/youtube"
                             android:orientation="vertical">
 
@@ -350,103 +318,786 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/view12"
+                    android:layout_width="match_parent"
+                    android:layout_height="11dp"
+                    android:background="@drawable/figure"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:orientation="vertical"
+                android:paddingLeft="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_marginStart="14dp"
+                        android:text="✨ 계절 코디 추천 콤비네이션"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/view"
+                        tools:layout_editor_absoluteX="46dp" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <ImageView
+                        android:id="@+id/imageView20"
+                        android:layout_width="350dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="17dp"
+                        android:src="@drawable/search"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.03" />
+
+                    <TextView
+                        android:id="@+id/textView94"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:text="봄 스타일링 🌸"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView20"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/imageView20"
+                        app:layout_constraintTop_toTopOf="@+id/imageView20"
+                        app:layout_constraintVertical_bias="0.761" />
+
+                    <ImageView
+                        android:id="@+id/imageView25"
+                        android:layout_width="350dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/search1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+                    <TextView
+                        android:id="@+id/textView95"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:text="여름 스타일링 🍉"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView25"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/imageView25"
+                        app:layout_constraintTop_toTopOf="@+id/imageView25"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <ImageView
+                        android:id="@+id/imageView27"
+                        android:layout_width="350dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/search2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+
+                    <TextView
+                        android:id="@+id/textView96"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:text="가을 스타일링 🍁"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView25"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/imageView27"
+                        app:layout_constraintTop_toTopOf="@+id/imageView27"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <ImageView
+                        android:id="@+id/imageView29"
+                        android:layout_width="350dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/search3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.058"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView27"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/textView97"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:text="겨울 스타일링 ⛄"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView29"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView25"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/imageView29"
+                        app:layout_constraintTop_toTopOf="@+id/imageView29"
+                        app:layout_constraintVertical_bias="1.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="vertical"
+                    android:paddingTop="3dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="16dp"
+                        android:text="✨ 인기 아이템"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="850dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="5dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="212dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/com_i_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_i_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart1"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_i_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_i_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price1"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price1"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price1" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="루엔 언발 카라 1/2 블라우스"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store1"
+                                    app:layout_constraintHorizontal_bias="0.027"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store1" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price1"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="18,000원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_i_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/com_o_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_o_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart2"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_o_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_o_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price2"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price2"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price2" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="웨이 컬러링 크로스 스트랩 슬리브리스"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store2"
+                                    app:layout_constraintHorizontal_bias="0.0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store2" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price2"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="22,000원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_o_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/com_r_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_r_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart3"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_r_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_r_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price3"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price3"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price3" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="펀칭 스캘럽 1/2 니트 가디건"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store3"
+                                    app:layout_constraintHorizontal_bias="0.027"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store3" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price3"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="24,000원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_r_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/com_t_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_t_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart4"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_t_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_t_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price4"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price4"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price4" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="루키 베이직 오픈 카라 1/2 니트"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store4"
+                                    app:layout_constraintHorizontal_bias="0.027"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store4" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price4"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="16,000원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_t_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/com_y_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_y_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart5"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_y_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_y_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price5"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price5"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price5" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="레미엔 링클 슬리브리스 원피스 - 2 버전"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store5"
+                                    app:layout_constraintHorizontal_bias="0.027"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store5" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price5"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="16,500원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_y_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:id="@+id/com_w_img"
+                                    android:layout_width="177dp"
+                                    android:layout_height="208dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.551"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"
+                                    app:srcCompat="@drawable/com_w_1" />
+
+                                <ImageView
+                                    android:id="@+id/hart6"
+                                    android:layout_width="25dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginStart="164dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight="1"
+                                    app:layout_constraintBottom_toBottomOf="@+id/com_w_img"
+                                    app:layout_constraintEnd_toEndOf="@+id/com_w_img"
+                                    app:layout_constraintHorizontal_bias="0.962"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:srcCompat="@drawable/hearts_heart_love_favorite_5565" />
+
+                                <TextView
+                                    android:id="@+id/mpd_store6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="커먼유니크"
+                                    android:textColor="#4C4C4C"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_price6"
+                                    app:layout_constraintStart_toStartOf="@+id/mpd_price6"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_price6" />
+
+                                <TextView
+                                    android:id="@+id/mpd_name6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="밀리 크롭 1/2 셔츠"
+                                    android:textSize="13sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mpd_store6"
+                                    app:layout_constraintHorizontal_bias="0.027"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/mpd_store6" />
+
+                                <TextView
+                                    android:id="@+id/mpd_price6"
+                                    android:layout_width="57dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:text="19,500원"
+                                    android:textColor="#000000"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/com_w_img" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07960199" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="22dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:text="✨ 인기 아이템"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <GridView
-            android:id="@+id/main_grid"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:numColumns="2"
-            android:paddingLeft="10dp" />
-
-    </LinearLayout>
 
     <View
         android:id="@+id/view"
         android:layout_width="410dp"
         android:layout_height="11dp"
         android:background="@drawable/figure"
+        app:layout_constraintBottom_toTopOf="@+id/guideline23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="276dp" />
+        app:layout_constraintGuide_percent="0.7511381" />
 
     <ImageView
         android:id="@+id/basket_main"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="25dp"
         android:src="@drawable/shopping_cart"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView85"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="92dp"
-        android:text="아이템과 스토어를 검색해보세요"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.454" />
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="9dp"
+        android:text="Closet"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/car_ui_toolbar_search_search_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toStartOf="@+id/textView85"
-        app:layout_constraintStart_toStartOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/textView93"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="8dp"
+        android:text="봄 웜 🌸?"
+        android:textColor="#2196F3"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/basket_main"
+        app:layout_constraintEnd_toStartOf="@+id/basket_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

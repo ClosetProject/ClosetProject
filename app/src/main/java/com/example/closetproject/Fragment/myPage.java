@@ -21,6 +21,8 @@ import com.example.closetproject.R;
 
 import java.util.ArrayList;
 import java.util.Timer;
+import android.content.Context;
+import android.util.AttributeSet;
 
 
 public class myPage extends Fragment {
@@ -90,4 +92,5 @@ public class myPage extends Fragment {
 
         return view;
     }
+
 }
