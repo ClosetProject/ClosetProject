@@ -77,16 +77,15 @@ public class storePage extends Fragment {
 
     private void setStoreAdapter(){
         // 데이터 불러오기
-        String sql = "SELECT S_SEQ, S_NAME, S_IMG, S_TEL, S_ADDR, STYLE FROM TBL_STORE";
-        String[] header = {"S_SEQ", "S_NAME", "S_IMG", "S_TEL", "S_ADDR", "STYLE"};
-        String[] params = {"null"};
-
-        ParamsVO paramsVO = new ParamsVO(sql, header, params);
+//        String sql = "SELECT S_SEQ, S_NAME, S_IMG, S_TEL, S_ADDR, STYLE FROM TBL_STORE";
+//        String[] header = {"S_SEQ", "S_NAME", "S_IMG", "S_TEL", "S_ADDR", "STYLE"};
+//        String[] params = {"null"};
+//
+//        ParamsVO paramsVO = new ParamsVO(sql, header, params);
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
-
         if(retrofitClient != null){
             retrofitAPI = RetrofitClient.getRetrofitAPI();
-            retrofitAPI.getStoreList(paramsVO).enqueue(new Callback<ArrayList<StoreDTO>>() {
+            retrofitAPI.getStoreList().enqueue(new Callback<ArrayList<StoreDTO>>() {
                 @Override
                 public void onResponse(Call<ArrayList<StoreDTO>> call, Response<ArrayList<StoreDTO>> response) {
                     if(response.isSuccessful()){

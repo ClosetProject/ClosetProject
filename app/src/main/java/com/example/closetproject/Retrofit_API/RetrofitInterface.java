@@ -45,8 +45,8 @@ public interface RetrofitInterface {
     Call<String> imageUpload(@Part("m_email") RequestBody m_email , @Part MultipartBody.Part file);
 
     // storeList
-    @POST("query")
-    Call<ArrayList<StoreDTO>> getStoreList(@Body ParamsVO parameter);
+    @GET("store_list")
+    Call<ArrayList<StoreDTO>> getStoreList();
 
     // storeProductList
     @POST("query")
