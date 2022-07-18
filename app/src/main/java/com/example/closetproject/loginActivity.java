@@ -44,14 +44,15 @@ public class loginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // 자동 로그인 정보가 있을경우 바로 메인 페이지로 이동
-//        SharedPreferences auto = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
-//        String mEmail = auto.getString("m_email", null);
-//        String mPW = auto.getString("m_pw", null);
-//        if(mEmail != null && mPW != null){
-//            Intent intent = new Intent(loginActivity.this,MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        SharedPreferences auto = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
+        String mEmail = auto.getString("m_email", null);
+        String mPW = auto.getString("m_pw", null);
+        if(mEmail != null && mPW != null){
+            GlobalVariate.getInstance().setM_email(mEmail);
+            Intent intent = new Intent(loginActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         edit_loginemail = findViewById(R.id.edit_loginemail);
         edit_loginpw = findViewById(R.id.edit_loginpw);
@@ -98,8 +99,6 @@ public class loginActivity extends AppCompatActivity {
                                     autoLoginEdit.putString("m_pw", memberDTO.getM_pw());
                                     autoLoginEdit.commit();
                                 }
-
-                                GlobalVariate.getInstance().setM_email(memberDTO.getM_email());
 
                                 Intent intent = new Intent(loginActivity.this, MainActivity.class);
                                 startActivity(intent);

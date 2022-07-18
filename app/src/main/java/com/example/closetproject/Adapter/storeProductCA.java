@@ -8,9 +8,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.closetproject.DTO.PColorDTO;
 import com.example.closetproject.DTO.ProductDTO;
+import com.example.closetproject.GlobalVariate;
 import com.example.closetproject.R;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class storeProductCA extends BaseAdapter {
@@ -49,7 +53,26 @@ public class storeProductCA extends BaseAdapter {
         catv_sp_price = view.findViewById(R.id.catv_sp_price);
         catv_sp_name = view.findViewById(R.id.catv_sp_name);
 
-        //caiv_sp_img.setText(data.get(i).getP_name());
+        if(data.get(i).getColorList().size() > 0){
+            ArrayList<PColorDTO> colorList = data.get(i).getColorList();
+            String[] imgList = new String[colorList.size()];
+            for(int c = 0; c < colorList.size(); c++){
+                String colorName = colorList.get(c).getColor_name();
+                String imgPath = GlobalVariate.getInstance().getBaseURL() + data.get(i).getP_img() + "/" + colorName + ".jpg";
+                imgList[c] = imgPath;
+            }
+
+            Glide.with(context)
+                    .load(imgList[0])
+                    .error(R.drawable.noimg)
+                    .into(caiv_sp_img);
+        }else{
+            Glide.with(context)
+                    .load(R.drawable.noimg)
+                    .error(R.drawable.noimg)
+                    .into(caiv_sp_img);
+        }
+
         catv_sp_price.setText(data.get(i).getP_price());
         catv_sp_name.setText(data.get(i).getP_name());
 

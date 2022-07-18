@@ -3,6 +3,8 @@ package com.example.closetproject.DTO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class ProductDTO {
 
     @SerializedName("P_CODE")
@@ -29,6 +31,10 @@ public class ProductDTO {
     @Expose
     private int s_seq;
 
+    @SerializedName("COLOR")
+    @Expose
+    private ArrayList<PColorDTO> colorList;
+
     // 생성자
     public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq) {
         this.p_code = p_code;
@@ -38,6 +44,17 @@ public class ProductDTO {
         this.p_price = p_price;
         this.s_name = s_name;
         this.s_seq = s_seq;
+    }
+
+    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList) {
+        this.p_code = p_code;
+        this.p_name = p_name;
+        this.p_img = p_img;
+        this.p_cat = p_cat;
+        this.p_price = p_price;
+        this.s_name = s_name;
+        this.s_seq = s_seq;
+        this.colorList = colorList;
     }
 
     // Getter , Setter
@@ -97,4 +114,11 @@ public class ProductDTO {
         this.s_seq = s_seq;
     }
 
+    public ArrayList<PColorDTO> getColorList() {
+        return colorList;
+    }
+
+    public void setColorList(ArrayList<PColorDTO> colorList) {
+        this.colorList = colorList;
+    }
 }

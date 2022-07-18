@@ -49,8 +49,9 @@ public interface RetrofitInterface {
     Call<ArrayList<StoreDTO>> getStoreList();
 
     // storeProductList
-    @POST("query")
-    Call<ArrayList<ProductDTO>> getProductAdapter(@Body ParamsVO parameter);
+    @FormUrlEncoded
+    @POST("get_product_list")
+    Call<ArrayList<ProductDTO>> getProductAdapter(@FieldMap HashMap<String, String> parameter);
 
     // productDetail
     @POST("query")
