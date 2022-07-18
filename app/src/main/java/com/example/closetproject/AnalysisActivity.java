@@ -45,13 +45,14 @@ public class AnalysisActivity extends AppCompatActivity {
 
     private String imageFilePath;
     private Uri photoUri;
-    private String m_email = "ddd@naver.com";
+    private String m_email;
     private RetrofitInterface retrofitAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis);
+        m_email = GlobalVariate.getInstance().getM_email();
         checkPermission(); // 이중 권한 체크
 
         btn_runmodel = findViewById(R.id.btn_runmodel);

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
@@ -53,6 +54,7 @@ public class productPage extends AppCompatActivity {
 
         Intent intent = getIntent();
         p_code = intent.getStringExtra("p_code");
+        m_email = GlobalVariate.getInstance().getM_email();
 
         // View 정의
         s_basket3 = findViewById(R.id.s_basket3);
@@ -76,6 +78,7 @@ public class productPage extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.test_dialog_option, null);
         final Spinner spColor = (Spinner) alertLayout.findViewById(R.id.spSex);
         final Spinner spSize = (Spinner) alertLayout.findViewById(R.id.spSex2);
+        final EditText et_pd_cnt = (EditText) alertLayout.findViewById(R.id.et_pd_cnt);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,
                 colorOption);
@@ -93,6 +96,12 @@ public class productPage extends AppCompatActivity {
         alert.setNegativeButton("장바구니", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                String color = String.valueOf(spColor.getSelectedItem());
+                String size = String.valueOf(spSize.getSelectedItem());
+                String cnt = String.valueOf(et_pd_cnt.getText());
+
+                saveProductBasket(color, size, cnt);
                 Intent intent = new Intent(productPage.this, basketPage.class);
                 startActivity(intent);
                 finish();
@@ -103,8 +112,8 @@ public class productPage extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                String sex = String.valueOf(spColor.getSelectedItem());
-                String sex1 = String.valueOf(spSize.getSelectedItem());
+                String color = String.valueOf(spColor.getSelectedItem());
+                String size = String.valueOf(spSize.getSelectedItem());
 
                 Intent intent = new Intent(productPage.this, orderPayPage.class);
                 startActivity(intent);
@@ -222,6 +231,30 @@ public class productPage extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<ArrayList<PSizeDTO>> call, Throwable t) {
+
+                }
+            });
+        }
+    }
+
+    private void saveProductBasket(String color, String size, String cnt){
+        String sql = "INSERT INTO TBL_BASKET(P_CODE, P_CNT, M_EMAIL, P_COLOR, P_SIZE) VALUES(:1,:2,:3,:4,:5)";
+        //String[] header = {"B_SEQ, P_CODE, P_CNT, M_EMAIL, P_COLOR, P_SIZE"};
+        String[] params = {p_code, cnt, m_email, color, size};
+
+        ParamsVO paramsVO = new ParamsVO(sql, params);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.saveProductBasket(paramsVO).enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
 
                 }
             });

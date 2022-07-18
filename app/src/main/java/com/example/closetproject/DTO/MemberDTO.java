@@ -7,21 +7,21 @@ public class MemberDTO {
 
     // @SerializedName : 매핑 => 서버에서 받아오는 json명칭과 일치
     // @Expose : object 중 해당 값이 null인 경우 필드 자동 생략
-    @SerializedName("m_email")
+    @SerializedName("M_EMAIL")
     private String m_email;
 
-    @SerializedName("m_pw")
+    @SerializedName("M_PW")
     private String m_pw;
 
-    @SerializedName("m_name")
+    @SerializedName("M_NAME")
     @Expose
     private String m_name;
 
-    @SerializedName("m_type")
+    @SerializedName("M_TYPE")
     @Expose
     private String m_type = "N";
 
-    @SerializedName("m_joindate")
+    @SerializedName("M_JOINDATE")
     @Expose
     private String m_joindate;
 
@@ -29,6 +29,12 @@ public class MemberDTO {
     public MemberDTO(String m_email, String m_pw){
         this.m_email = m_email;
         this.m_pw = m_pw;
+    }
+
+    public MemberDTO(String m_email, String m_pw, String m_name) {
+        this.m_email = m_email;
+        this.m_pw = m_pw;
+        this.m_name = m_name;
     }
 
     public MemberDTO(String m_email, String m_pw, String m_name, String m_type, String m_joindate) {

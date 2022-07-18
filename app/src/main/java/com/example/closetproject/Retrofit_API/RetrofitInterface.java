@@ -8,11 +8,16 @@ import com.example.closetproject.DTO.StoreDTO;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -26,12 +31,13 @@ public interface RetrofitInterface {
     // manipulation : insert(데이터삽입), update(기존 데이터 변경), delete
 
     // login
-    @POST("query")
-    Call<ArrayList<MemberDTO>> getMember(@Body ParamsVO parameter);
+    @FormUrlEncoded
+    @POST("login")
+    Call<MemberDTO> getMember(@FieldMap HashMap<String, String> parameter);
 
     // joinMember
-    @POST("manipulation")
-    Call<String> joinMember(@Body ParamsVO parameter);
+    @POST("join")
+    Call<String> joinMember(@Body MemberDTO parameter);
 
     // Analysis Image Upload
     @Multipart
@@ -57,4 +63,7 @@ public interface RetrofitInterface {
     // productDetail
     @POST("query")
     Call<ArrayList<PSizeDTO>> getProductSize(@Body ParamsVO parameter);
+
+    @POST("manipulation")
+    Call<String> saveProductBasket(@Body ParamsVO parameter);
 }

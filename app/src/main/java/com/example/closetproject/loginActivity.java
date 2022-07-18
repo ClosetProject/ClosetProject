@@ -21,7 +21,10 @@ import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,14 +44,14 @@ public class loginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // 자동 로그인 정보가 있을경우 바로 메인 페이지로 이동
-        SharedPreferences auto = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
-        String mEmail = auto.getString("m_email", null);
-        String mPW = auto.getString("m_pw", null);
-        if(mEmail != null && mPW != null){
-            Intent intent = new Intent(loginActivity.this,MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        SharedPreferences auto = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
+//        String mEmail = auto.getString("m_email", null);
+//        String mPW = auto.getString("m_pw", null);
+//        if(mEmail != null && mPW != null){
+//            Intent intent = new Intent(loginActivity.this,MainActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
         edit_loginemail = findViewById(R.id.edit_loginemail);
         edit_loginpw = findViewById(R.id.edit_loginpw);
@@ -68,24 +71,22 @@ public class loginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String login_email = edit_loginemail.getText().toString();
                 String login_pw = edit_loginpw.getText().toString();
 
-                String sql = "select m_email, m_pw, m_name, m_joindate, m_type from tbl_member where m_email = :1 and m_pw = :2";
-                String[] header = {"m_email", "m_pw","m_name","m_joindate","m_type"};
-                String[] params = {login_email, login_pw};
-
-                ParamsVO paramsVO = new ParamsVO(sql, header, params);
+                HashMap<String, String> params = new HashMap<>();
+                params.put("m_email", login_email);
+                params.put("m_pw", login_pw);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
 
                 if (retrofitClient != null){
                     retrofitAPI = RetrofitClient.getRetrofitAPI();
-                    retrofitAPI.getMember(paramsVO).enqueue(new Callback<ArrayList<MemberDTO>>() {
+                    retrofitAPI.getMember(params).enqueue(new Callback<MemberDTO>() {
                         @Override
-                        public void onResponse(Call<ArrayList<MemberDTO>> call, Response<ArrayList<MemberDTO>> response) {
-                            if(response.isSuccessful() && !(response.body().isEmpty())) {
-                                MemberDTO memberDTO = response.body().get(0);
+                        public void onResponse(Call<MemberDTO> call, Response<MemberDTO> response) {
+                            if(response.isSuccessful()) {
+                                MemberDTO memberDTO = response.body();
+                                GlobalVariate.getInstance().setM_email(login_email);
 
                                 CheckBox chk_autoLogin = findViewById(R.id.chk_autoLogin);
                                 // 자동 로그인을 위해 데이터 저장
@@ -113,7 +114,7 @@ public class loginActivity extends AppCompatActivity {
                             }
                         }
                         @Override
-                        public void onFailure(Call<ArrayList<MemberDTO>> call, Throwable t) {
+                        public void onFailure(Call<MemberDTO> call, Throwable t) {
                             Log.d("failure", t.getMessage());
                         }
                     });

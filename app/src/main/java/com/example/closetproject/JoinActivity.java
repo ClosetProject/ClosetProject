@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.closetproject.DTO.MemberDTO;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
@@ -39,22 +40,21 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // email, pw, 이름을 가져온다.
                 String m_email = edit_joinemail.getText().toString();
                 String m_pw = edit_joinpw.getText().toString();
                 String m_name = edit_joinname.getText().toString();
-
+                MemberDTO memberDTO =  new MemberDTO(m_email, m_pw, m_name);
                 // (추가)공백 불가, 중복 이메일 체킹 기능 추가
 
                 // insert된 이메일, pw, 이름, 관리자 타입을 추가
-                String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
-                String[] params = {m_email, m_pw, m_name, "N"};
+//                String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
+//                String[] params = {m_email, m_pw, m_name, "N"};
 
-                ParamsVO paramsVO = new ParamsVO(sql, params);
+//                ParamsVO paramsVO = new ParamsVO(sql, params);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
                 if(retrofitClient != null){
                     retrofitAPI = RetrofitClient.getRetrofitAPI();
-                    retrofitAPI.joinMember(paramsVO).enqueue(new Callback<String>() {
+                    retrofitAPI.joinMember(memberDTO).enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()){
