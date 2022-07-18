@@ -56,7 +56,7 @@ public class storeCA extends BaseAdapter {
         catv_s_name.setText(data.get(i).getS_name());
         catv_s_desc.setText(data.get(i).getS_desc());
 
-       String img_path = "http://121.147.185.76:8081/" + data.get(i).getS_img() + "profile.jpg";
+       String img_path = "http://121.147.185.76:8081/" + data.get(i).getS_img();
        Glide.with(context)
                .load(img_path)
                .error(R.drawable.aaaa)

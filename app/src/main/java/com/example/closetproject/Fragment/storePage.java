@@ -73,8 +73,8 @@ public class storePage extends Fragment {
 
     private void setStoreAdapter(){
         // 데이터 불러오기
-        String sql = "SELECT S_SEQ, S_NAME, S_IMG, S_TEL, S_ADDR, '#청순 #유니크' AS S_DESC FROM TBL_STORE";
-        String[] header = {"S_SEQ", "S_NAME", "S_IMG", "S_TEL", "S_ADDR", "S_DESC"};
+        String sql = "SELECT S_SEQ, S_NAME, S_IMG, S_TEL, S_ADDR, STYLE FROM TBL_STORE";
+        String[] header = {"S_SEQ", "S_NAME", "S_IMG", "S_TEL", "S_ADDR", "STYLE"};
         String[] params = {"null"};
 
         ParamsVO paramsVO = new ParamsVO(sql, header, params);
