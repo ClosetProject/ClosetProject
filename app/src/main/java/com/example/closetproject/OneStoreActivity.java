@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
@@ -44,12 +46,21 @@ public class OneStoreActivity extends AppCompatActivity {
 //            }
 //        });
 
-
         Intent intent = getIntent();
         s_seq = intent.getStringExtra("s_seq");
 
         setContentView(R.layout.activity_one_store);
         gv_sp_list = findViewById(R.id.gv_sp_list);
+
+        gv_sp_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent product_intent = new Intent(OneStoreActivity.this, productPage.class);
+                product_intent.putExtra("p_code", productList.get(i).getP_code());
+                startActivity(product_intent);
+            }
+        });
+
         setProductAdapter();
     }
 

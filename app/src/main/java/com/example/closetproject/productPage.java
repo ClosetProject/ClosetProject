@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
@@ -33,7 +34,7 @@ public class productPage extends AppCompatActivity {
     private Button btn_pay;
 
     private RetrofitInterface retrofitAPI;
-    private String p_code = "top0009";
+    private String p_code;
     private String m_email;
     private ArrayList<ProductDTO> productList;
 
@@ -42,11 +43,14 @@ public class productPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_page);
 
+        Intent intent = getIntent();
+        p_code = intent.getStringExtra("p_code");
+
         // View 정의
         s_basket3 = findViewById(R.id.s_basket3);
-
         tv_pd_name = findViewById(R.id.tv_pd_name);
         tv_pd_price = findViewById(R.id.tv_pd_);
+        iv_pd_image = findViewById(R.id.iv_pd_image);
 
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +134,12 @@ public class productPage extends AppCompatActivity {
 
                     tv_pd_name.setText(productList.get(0).getP_name());
                     tv_pd_price.setText(productList.get(0).getP_price());
+
+                    String img_path = "http://121.147.185.76:8081/" + productList.get(0).getP_img() + "/BLACK.jpg";
+                    Glide.with(getApplicationContext())
+                                .load(img_path)
+                                .error(R.drawable.noimg)
+                                .into(iv_pd_image);
 
                 }
 
