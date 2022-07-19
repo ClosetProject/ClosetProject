@@ -78,7 +78,7 @@ public class productPage extends AppCompatActivity {
         View alertLayout = inflater.inflate(R.layout.test_dialog_option, null);
         final Spinner spColor = (Spinner) alertLayout.findViewById(R.id.spSex);
         final Spinner spSize = (Spinner) alertLayout.findViewById(R.id.spSex2);
-        final EditText et_pd_cnt = (EditText) alertLayout.findViewById(R.id.et_pd_cnt);
+        //final EditText et_pd_cnt = (EditText) alertLayout.findViewById(R.id.et_pd_cnt);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,
                 colorOption);
@@ -99,9 +99,9 @@ public class productPage extends AppCompatActivity {
 
                 String color = String.valueOf(spColor.getSelectedItem());
                 String size = String.valueOf(spSize.getSelectedItem());
-                String cnt = String.valueOf(et_pd_cnt.getText());
+                //String cnt = String.valueOf(et_pd_cnt.getText());
 
-                saveProductBasket(color, size, cnt);
+                //saveProductBasket(color, size, cnt);
                 Intent intent = new Intent(productPage.this, basketPage.class);
                 startActivity(intent);
                 finish();

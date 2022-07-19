@@ -24,10 +24,12 @@
             android:name=".myAnalysisPage"
             android:exported="true" >
 
+
         </activity>
         <activity
             android:name=".test_Dialog"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".productPage"
             android:exported="true" />

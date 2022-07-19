@@ -16,11 +16,16 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bnv;
+    analysisPage fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 프래그먼트를 여러개 사용 할 수 있게 만들어줌
+        fragment = new analysisPage();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fl, fragment).commit();
 
         bnv = findViewById(R.id.bnv);
         getSupportFragmentManager().beginTransaction().replace(R.id.fl, new mainPage()).commit();
