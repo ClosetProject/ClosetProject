@@ -22,7 +22,7 @@ public class StoreDTO {
     @Expose
     private String s_addr; // 주소
 
-    @SerializedName("S_DESC")
+    @SerializedName("STYLE")
     @Expose
     private String s_desc; // 쇼핑몰 설명
 
