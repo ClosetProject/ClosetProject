@@ -23,22 +23,6 @@ public class myAnalysisPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_analysis_page);
 
-
-//        btn_y1 = findViewById(R.id.btn_y1);
-//        btn_y2 = findViewById(R.id.btn_y2);
-//        btn_y3 = findViewById(R.id.btn_y3);
-//        btn_y4 = findViewById(R.id.btn_y4);
-//
-//        btn_g1 = findViewById(R.id.btn_g1);
-//        btn_g2 = findViewById(R.id.btn_g2);
-//        btn_g3 = findViewById(R.id.btn_g3);
-//        btn_g4 = findViewById(R.id.btn_g4);
-//
-//        btn_b1 = findViewById(R.id.btn_b1);
-//        btn_b2 = findViewById(R.id.btn_b2);
-//        btn_b3 = findViewById(R.id.btn_b3);
-//        btn_b4 = findViewById(R.id.btn_b4);
-
         pager = findViewById(R.id.pager);
         pagerAdapter = new ScreeSlidePagerAdapter(this);
         pager.setAdapter(pagerAdapter);

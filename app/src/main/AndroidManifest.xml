@@ -22,7 +22,7 @@
         tools:targetApi="28">
         <activity
             android:name=".myAnalysisPage"
-            android:exported="false" >
+            android:exported="true" >
 
 
         </activity>
@@ -49,6 +49,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".AnalysisActivity"

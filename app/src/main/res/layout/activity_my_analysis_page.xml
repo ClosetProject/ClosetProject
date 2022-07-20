@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pager"
-        app:srcCompat="@drawable/piple" />
+        app:srcCompat="@drawable/img_5" />
 
     <TextView
         android:id="@+id/textView87"

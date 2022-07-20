@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.closetproject.Adapter.storeProductCA;
 import com.example.closetproject.DTO.ProductDTO;
@@ -38,15 +39,6 @@ public class OneStoreActivity extends AppCompatActivity {
         m_email = GlobalVariate.getInstance().getM_email();
 
         s_basket2 = (ImageView) findViewById(R.id.s_basket2);
-
-//        basket2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent1 = new Intent(OneStoreActivity.this, basketPage.class);
-//                startActivity(intent1);
-//                finish();
-//            }
-//        });
 
         Intent intent = getIntent();
         s_seq = intent.getStringExtra("s_seq");
@@ -102,6 +94,7 @@ public class OneStoreActivity extends AppCompatActivity {
 
                 }
             });
+
         }
 
     }
