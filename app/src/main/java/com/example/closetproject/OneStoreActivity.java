@@ -17,6 +17,8 @@ import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -32,12 +34,14 @@ public class OneStoreActivity extends AppCompatActivity {
     private RetrofitInterface retrofitAPI;
     private String s_seq,m_email;
     private GridView gv_sp_list;
+    private TextView tv_outer, tv_sab, tv_top, tv_ops, tv_knit;
+    private ImageView iv_all;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         m_email = GlobalVariate.getInstance().getM_email();
-
         s_basket2 = (ImageView) findViewById(R.id.s_basket2);
 
         Intent intent = getIntent();
@@ -45,7 +49,6 @@ public class OneStoreActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_one_store);
         gv_sp_list = findViewById(R.id.gv_sp_list);
-
         gv_sp_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -55,20 +58,62 @@ public class OneStoreActivity extends AppCompatActivity {
             }
         });
 
-        setProductAdapter();
+        iv_all = findViewById(R.id.iv_all);
+        iv_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("ALL");
+            }
+        });
+
+        tv_outer = findViewById(R.id.tv_outer);
+        tv_outer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("OUT");
+            }
+        });
+
+        tv_sab = findViewById(R.id.tv_sab);
+        tv_sab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("SAB");
+            }
+        });
+
+        tv_top = findViewById(R.id.tv_top);
+        tv_top.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("TOP");
+            }
+        });
+
+        tv_ops = findViewById(R.id.tv_ops);
+        tv_ops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("OPS");
+            }
+        });
+
+        tv_knit = findViewById(R.id.tv_knit);
+        tv_knit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setProductAdapter("KNI");
+            }
+        });
+
+        setProductAdapter("ALL");
     }
 
-    private void setProductAdapter(){
-
-        // 데이터 불러오기
-        //String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND A.S_SEQ = :1";
-        //String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
-        //String[] params = {s_seq};
-
-        //ParamsVO paramsVO = new ParamsVO(sql, header, params);
+    private void setProductAdapter(String p_cat){
         HashMap<String, String> params = new HashMap<>();
         params.put("m_email", m_email);
         params.put("s_seq", s_seq);
+        params.put("p_cat", p_cat);
 
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
         if(retrofitClient != null){
