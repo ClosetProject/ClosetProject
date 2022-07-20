@@ -149,6 +149,17 @@
                     android:layout_height="27dp"
                     android:paddingLeft="7dp">
 
+                    <TableLayout
+                        android:id="@+id/tl_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:id="@+id/tr_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </TableLayout>
+
                     <LinearLayout
                         android:layout_width="37dp"
                         android:layout_height="wrap_content"
@@ -242,7 +253,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_pd_"
+                        android:id="@+id/textbox2"
                         android:layout_width="197dp"
                         android:layout_height="38dp"
                         android:gravity="center_vertical"
