@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 프래그먼트를 여러개 사용 할 수 있게 만들어줌
         fragment = new analysisPage();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fl, fragment).commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.fl, fragment).commit();
 
         bnv = findViewById(R.id.bnv);
         getSupportFragmentManager().beginTransaction().replace(R.id.fl, new mainPage()).commit();
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.tab2) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fl, new storePage()).commit();
                 } else if (item.getItemId() == R.id.tab3) {
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fl, new analysisPage()).commit();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fl, new analysisPage()).commit();
                 } else if (item.getItemId() == R.id.tab4) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fl, new myPage()).commit();

@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout8"
+    android:id="@+id/frameLayout8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ex01mycolor" >
+    tools:context=".Ex04mycolor">
 
     <Button
-        android:id="@+id/btn_g1"
+        android:id="@+id/btn_b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -16,108 +16,83 @@
         android:backgroundTint="#686565"
         android:text="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/g_color2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
 
     <Button
-        android:id="@+id/btn_g2"
+        android:id="@+id/btn_b2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:backgroundTint="#686565"
         android:text="2"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_g1"
-        app:layout_constraintStart_toEndOf="@+id/btn_g1"
-        app:layout_constraintTop_toTopOf="@+id/btn_g1" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_b1"
+        app:layout_constraintStart_toEndOf="@+id/btn_b1"
+        app:layout_constraintTop_toTopOf="@+id/btn_b1" />
 
     <Button
-        android:id="@+id/btn_g3"
+        android:id="@+id/btn_b3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:backgroundTint="#686565"
         android:text="3"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_g2"
-        app:layout_constraintStart_toEndOf="@+id/btn_g2"
-        app:layout_constraintTop_toTopOf="@+id/btn_g2" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_b2"
+        app:layout_constraintStart_toEndOf="@+id/btn_b2"
+        app:layout_constraintTop_toTopOf="@+id/btn_b2" />
 
     <Button
-        android:id="@+id/btn_g4"
+        android:id="@+id/btn_b4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:backgroundTint="#686565"
         android:text="4"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_g3"
-        app:layout_constraintStart_toEndOf="@+id/btn_g3"
-        app:layout_constraintTop_toTopOf="@+id/btn_g3" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_b3"
+        app:layout_constraintStart_toEndOf="@+id/btn_b3"
+        app:layout_constraintTop_toTopOf="@+id/btn_b3" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline24"
+        android:id="@+id/guideline27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="394dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline32"
+        android:id="@+id/guideline29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline33"
+        android:id="@+id/guideline30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="197dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline34"
+        android:id="@+id/guideline31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="209dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline35"
+        android:id="@+id/guideline25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/g_color4"
+        android:id="@+id/constraintLayout8"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#97d568"
-        app:layout_constraintBottom_toTopOf="@+id/guideline24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/g_color3"
-        app:layout_constraintVertical_bias="0.0">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/g_color3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#2ea25b"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/g_color1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#088d5d"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        android:background="#5067ac"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout9"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -126,24 +101,40 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/g_color2"
+        android:id="@+id/constraintLayout9"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#82c785"
-        app:layout_constraintBottom_toTopOf="@+id/guideline24"
-        app:layout_constraintEnd_toStartOf="@+id/g_color4"
+        android:background="#2977be"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#6c9cc6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintEnd_toStartOf="@+id/guideline25"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline33"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50121653" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#69a5cd"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout10"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

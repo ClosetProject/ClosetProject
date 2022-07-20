@@ -20,6 +20,7 @@ import java.util.Objects;
 
 public class analysisPage extends Fragment {
 
+
     private ViewPager2 viewpager;
     private ViewGroup viewGroup; // 뷰 객체 선언
     BarChart bar;
@@ -32,7 +33,7 @@ public class analysisPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+   }
 
     public analysisPage() {
         // Required empty public constructor
@@ -42,12 +43,16 @@ public class analysisPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      View view =inflater.inflate(R.layout.fragment_analysis_page, container, false);
+//      View view =inflater.inflate(R.layout.fragment_analysis_page, container, false);
 //
 //        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/ProductSans.ttf");
 //
 //        bar = (BarChart)view.findViewById(R.id.bar);
 
+
+//       container = (ViewGroup) inflater.inflate(R.layout.fragment_analysis_page, container, false);
+
+        // 프래그먼트 부분
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_analysis_page, container, false);
 
         setInint();
@@ -57,6 +62,7 @@ public class analysisPage extends Fragment {
 
     private void setInint() {
         viewpager = viewGroup.findViewById(R.id.viewpager);
+
         FragmentStateAdapter SetupPagerAdapter = new FragmentStateAdapter(getActivity()) {
             @Override
             public int getItemCount() {

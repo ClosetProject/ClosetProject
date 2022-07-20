@@ -22,20 +22,20 @@
         tools:targetApi="28">
         <activity
             android:name=".myAnalysisPage"
-            android:exported="true" >
+            android:exported="false" >
 
 
         </activity>
         <activity
             android:name=".test_Dialog"
-            android:exported="true"
+            android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".productPage"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".OneStoreActivity"
-            android:exported="true" />
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.actions"
@@ -43,25 +43,27 @@
 
         <activity
             android:name=".loginActivity"
-            android:exported="true" />
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".AnalysisActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".orderpay_pay_dialog"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".orderPayPage"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".orderHistory"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".JoinActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".basketPage"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -70,6 +72,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <provider

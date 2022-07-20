@@ -322,24 +322,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="361dp">
 
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewpager"
-                        android:layout_width="0dp"
+                        android:layout_width="404dp"
                         android:layout_height="0dp"
                         android:layout_marginStart="1dp"
-                        android:layout_marginTop="70dp"
                         android:layout_marginEnd="1dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
