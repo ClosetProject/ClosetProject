@@ -35,6 +35,10 @@ public class ProductDTO {
     @Expose
     private ArrayList<PColorDTO> colorList;
 
+    @SerializedName("SIZE")
+    @Expose
+    private ArrayList<PSizeDTO> sizeList;
+
     // 생성자
     public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq) {
         this.p_code = p_code;
@@ -46,7 +50,7 @@ public class ProductDTO {
         this.s_seq = s_seq;
     }
 
-    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList) {
+    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList, ArrayList<PSizeDTO> sizeList) {
         this.p_code = p_code;
         this.p_name = p_name;
         this.p_img = p_img;
@@ -55,6 +59,7 @@ public class ProductDTO {
         this.s_name = s_name;
         this.s_seq = s_seq;
         this.colorList = colorList;
+        this.sizeList = sizeList;
     }
 
     // Getter , Setter
@@ -120,5 +125,13 @@ public class ProductDTO {
 
     public void setColorList(ArrayList<PColorDTO> colorList) {
         this.colorList = colorList;
+    }
+
+    public ArrayList<PSizeDTO> getSizeList() {
+        return sizeList;
+    }
+
+    public void setSizeList(ArrayList<PSizeDTO> sizeList) {
+        this.sizeList = sizeList;
     }
 }

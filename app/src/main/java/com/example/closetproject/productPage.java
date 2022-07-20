@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,6 +24,8 @@ import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,8 +44,6 @@ public class productPage extends AppCompatActivity {
     private String p_code;
     private String m_email;
 
-    private ArrayList<PColorDTO> colorList;
-    private ArrayList<PSizeDTO> sizeList;
     private ArrayList<String> colorOption, sizeOption;
 
     @Override
@@ -55,7 +58,7 @@ public class productPage extends AppCompatActivity {
         // View 정의
         s_basket3 = findViewById(R.id.s_basket3);
         tv_pd_name = findViewById(R.id.tv_pd_name);
-        tv_pd_price = findViewById(R.id.textbox2);
+        tv_pd_price = findViewById(R.id.tv_pd_price);
         iv_pd_image = findViewById(R.id.iv_pd_image);
 
         btn_pay = findViewById(R.id.btn_pay);
@@ -148,14 +151,17 @@ public class productPage extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<ProductDTO> call, Response<ProductDTO> response) {
                     ProductDTO product = response.body();
+                    ArrayList<PColorDTO> colorList = null;
+                    ArrayList<PSizeDTO> sizeList = null;
 
-                    String pd_name = "[" + product.getS_name() + "] " + product.getP_name();
+                    String pd_name = "[" + product.getS_name() + "] " + product.getP_name() + "원";
 
                     tv_pd_name.setText(pd_name);
                     tv_pd_price.setText(product.getP_price());
 
+                    // 색상 세팅
                     if(product.getColorList().size() > 0){
-                        ArrayList<PColorDTO> colorList = product.getColorList();
+                        colorList = product.getColorList();
                         String[] imgList = new String[colorList.size()];
                         for(int c = 0; c < colorList.size(); c++){
                             String colorName = colorList.get(c).getColor_name();
@@ -174,42 +180,40 @@ public class productPage extends AppCompatActivity {
                                 .error(R.drawable.noimg)
                                 .into(iv_pd_image);
                     }
+                    
+                    // 사이즈 세팅
+                    if(product.getSizeList().size() > 0){
+                        sizeList = product.getSizeList();
+                    }
 
-                 //   setProductSize();
+                    // 색상추가
+                    ChipGroup color_group = (ChipGroup)findViewById(R.id.color_group);
+                    for(int i = 0; i < colorList.size(); i++){
+                        String color_name = colorList.get(i).getColor_name();
+                        String color_code = colorList.get(i).getC_code();
+
+                        Chip colorChip = new Chip(productPage.this);
+                        colorChip = setColorChip(colorChip, color_name, color_code);
+                        color_group.addView(colorChip);
+                    }
+
+
+                    ChipGroup size_group = (ChipGroup)findViewById(R.id.size_group);
+                    String size_name = "";
+                    for(int i = 0;i < sizeList.size(); i++){
+                        if(!sizeList.get(i).getSize_name().equals(size_name)){
+                            size_name = sizeList.get(i).getSize_name();
+
+                            Chip sizeChip = new Chip(productPage.this);
+                            sizeChip = setSizeChip(sizeChip, size_name);
+                            size_group.addView(sizeChip);
+                        }
+                    }
+
                 }
-
                 @Override
                 public void onFailure(Call<ProductDTO> call, Throwable t) {
-
-                }
-            });
-        }
-    }
-
-    private void setProductSize(){
-        String sql = "SELECT SIZE_SEQ, SIZE_NAME, SIZE_DESC, SIZE_PART  FROM TBL_SIZE WHERE P_CODE = :1";
-        String[] header = {"SIZE_SEQ", "SIZE_NAME", "SIZE_DESC", "SIZE_PART"};
-        String[] params = {p_code};
-
-        ParamsVO paramsVO = new ParamsVO(sql, header, params);
-        RetrofitClient retrofitClient = RetrofitClient.getInstance();
-
-        if(retrofitClient != null){
-            retrofitAPI = RetrofitClient.getRetrofitAPI();
-            retrofitAPI.getProductSize(paramsVO).enqueue(new Callback<ArrayList<PSizeDTO>>() {
-                @Override
-                public void onResponse(Call<ArrayList<PSizeDTO>> call, Response<ArrayList<PSizeDTO>> response) {
-                    sizeList = response.body();
-
-                    sizeOption = new ArrayList<String>();
-                    for(int i = 0; i < sizeList.size() -1 ; i++){
-                        sizeOption.add(sizeList.get(i).getSize_name());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ArrayList<PSizeDTO>> call, Throwable t) {
-
+                    Log.d("failure", t.getMessage());
                 }
             });
         }
@@ -237,5 +241,25 @@ public class productPage extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private Chip setColorChip(Chip color, String colorName, String colorCode){
+        color.setText(colorName);
+        color.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor(colorCode)));
+        color.setCheckable(true);
+        color.setTextSize((float)13);
+        color.setGravity(View.TEXT_ALIGNMENT_CENTER);
+        return color;
+    }
+
+    private Chip setSizeChip(Chip size, String sizeName){
+        size.setText(sizeName);
+        size.setChipBackgroundColor(ColorStateList.valueOf(getResources().getColor(R.color.white)));
+        size.setChipStrokeColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        size.setChipStrokeWidth((float)3);
+        size.setCheckable(true);
+        size.setTextSize((float)13);
+        size.setGravity(View.TEXT_ALIGNMENT_CENTER);
+        return size;
     }
 }
