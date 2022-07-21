@@ -7,10 +7,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,8 +74,6 @@ public class productPage extends AppCompatActivity {
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-               // Chip color_chip = findViewById(color_group.getCheckedChipId());
-               // Chip size_chip = findViewById(size_group.getCheckedChipId());
                 int color = color_group.getCheckedChipId();
                 int size = size_group.getCheckedChipId();
                 setBasket(color, size, 1);
@@ -83,7 +85,6 @@ public class productPage extends AppCompatActivity {
     }
 
     private void showDialog() {
-
         LayoutInflater inflater = getLayoutInflater();
         View alertLayout = inflater.inflate(R.layout.test_dialog_option, null);
         final Spinner spColor = (Spinner) alertLayout.findViewById(R.id.spSex);
@@ -196,9 +197,29 @@ public class productPage extends AppCompatActivity {
                     if(product.getSizeList().size() > 0){
                         sizeList = product.getSizeList();
 
+                        // 사이즈 항목
                         TableLayout tl_size = (TableLayout)findViewById(R.id.tl_size);
                         TableRow[] tr_size = new TableRow[2];
+                        TextView[] td_size = new TextView[sizeList.size()];
 
+                        tr_size[0] = new TableRow(productPage.this);
+                        for(int s = 0 ; s < td_size.length; s++){
+                            td_size[s] = new TextView(productPage.this);
+                            td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_desc());
+                            tr_size[0].addView(td_size[s]);
+                        }
+                        tl_size.addView(tr_size[0]);
+
+                        tr_size[1] = new TableRow(productPage.this);
+                        for(int s = 0 ; s < td_size.length; s++){
+                            td_size[s] = new TextView(productPage.this);
+                            td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_part());
+                            if(s == 0){
+                                td_size[s].setText(sizeList.get(s).getSize_name());
+                            }
+                            tr_size[1].addView(td_size[s]);
+                        }
+                        tl_size.addView(tr_size[1]);
                     }
 
                     // 색상추가
@@ -231,7 +252,6 @@ public class productPage extends AppCompatActivity {
             });
         }
     }
-
     private void setBasket(int color, int size, int cnt){
         BasketDTO basketDTO = new BasketDTO(p_code, cnt, m_email, color, size);
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
@@ -251,6 +271,11 @@ public class productPage extends AppCompatActivity {
         }
     }
 
+    /*
+     * 옵션세팅
+     * setColorChip() - 색상
+     * setSizeChip() - 사이즈
+     */
     private Chip setColorChip(Chip color, PColorDTO dto){
         color.setText(dto.getColor_name());
         color.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor(dto.getC_code())));
@@ -260,7 +285,6 @@ public class productPage extends AppCompatActivity {
         color.setGravity(View.TEXT_ALIGNMENT_CENTER);
         return color;
     }
-
     private Chip setSizeChip(Chip size, PSizeDTO dto){
         size.setText(dto.getSize_name());
         size.setId(Integer.parseInt(dto.getSize_seq()));
@@ -271,5 +295,15 @@ public class productPage extends AppCompatActivity {
         size.setTextSize((float)13);
         size.setGravity(View.TEXT_ALIGNMENT_CENTER);
         return size;
+    }
+    private TextView setDesign(TextView tv, String text){
+        TableRow.LayoutParams param = new TableRow.LayoutParams( TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f );
+        param.setMargins(2,2,2,2);
+        tv.setLayoutParams(param);
+        tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        tv.setPadding(5,5,5,5);
+        tv.setGravity(Gravity.CENTER);
+        tv.setText(text);
+        return tv;
     }
 }
