@@ -29,6 +29,31 @@ public class BasketDTO {
     @Expose
     private int p_size;
 
+    //부가 변수
+    @SerializedName("COLOR_NAME")
+    @Expose
+    private String color_name;
+
+    @SerializedName("SIZE_NAME")
+    @Expose
+    private String size_name;
+
+    @SerializedName("P_NAME")
+    @Expose
+    private String p_name;
+
+    @SerializedName("P_PRICE")
+    @Expose
+    private String p_price;
+
+    @SerializedName("P_IMG")
+    @Expose
+    private String p_img;
+
+    @SerializedName("S_NAME")
+    @Expose
+    private String s_name;
+
     // 생성자
     public BasketDTO(String p_code, int p_cnt, String m_email, int p_color, int p_size) {
         this.p_code = p_code;
@@ -37,6 +62,7 @@ public class BasketDTO {
         this.p_color = p_color;
         this.p_size = p_size;
     }
+
     public BasketDTO(String s_seq, String p_code, int p_cnt, String m_email, int p_color, int p_size) {
         this.s_seq = s_seq;
         this.p_code = p_code;
@@ -44,6 +70,21 @@ public class BasketDTO {
         this.m_email = m_email;
         this.p_color = p_color;
         this.p_size = p_size;
+    }
+
+    public BasketDTO(String s_seq, String p_code, int p_cnt, String m_email, int p_color, int p_size, String color_name, String size_name, String p_name, String p_price, String p_img, String s_name) {
+        this.s_seq = s_seq;
+        this.p_code = p_code;
+        this.p_cnt = p_cnt;
+        this.m_email = m_email;
+        this.p_color = p_color;
+        this.p_size = p_size;
+        this.color_name = color_name;
+        this.size_name = size_name;
+        this.p_name = p_name;
+        this.p_price = p_price;
+        this.p_img = p_img;
+        this.s_name = s_name;
     }
 
     // Getter, Setter
@@ -94,4 +135,53 @@ public class BasketDTO {
     public void setP_size(int p_size) {
         this.p_size = p_size;
     }
+
+    public String getColor_name() {
+        return color_name;
+    }
+
+    public void setColor_name(String color_name) {
+        this.color_name = color_name;
+    }
+
+    public String getSize_name() {
+        return size_name;
+    }
+
+    public void setSize_name(String size_name) {
+        this.size_name = size_name;
+    }
+
+    public String getP_name() {
+        return p_name;
+    }
+
+    public void setP_name(String p_name) {
+        this.p_name = p_name;
+    }
+
+    public String getP_price() {
+        return p_price;
+    }
+
+    public void setP_price(String p_price) {
+        this.p_price = p_price;
+    }
+
+    public String getP_img() {
+        return p_img;
+    }
+
+    public void setP_img(String p_img) {
+        this.p_img = p_img;
+    }
+
+    public String getS_name() {
+        return s_name;
+    }
+
+    public void setS_name(String s_name) {
+        this.s_name = s_name;
+    }
+
 }

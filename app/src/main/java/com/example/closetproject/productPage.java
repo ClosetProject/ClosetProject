@@ -260,7 +260,23 @@ public class productPage extends AppCompatActivity {
             retrofitAPI.setBasket(basketDTO).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
-                    Log.d("success", "성공");
+                    AlertDialog.Builder dig = new AlertDialog.Builder(productPage.this);
+                    dig.setTitle("장바구니 저장");
+                    dig.setMessage("장바구니에 저장하였습니다. 장바구니로 이동하시겠습니까?");
+                    dig.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(productPage.this, basketPage.class);
+                            startActivity(intent);
+                        }
+                    });
+                    dig.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            onBackPressed();
+                        }
+                    });
+                    dig.show();
                 }
 
                 @Override

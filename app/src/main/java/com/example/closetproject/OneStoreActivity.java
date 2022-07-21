@@ -117,7 +117,6 @@ public class OneStoreActivity extends AppCompatActivity {
 
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
         if(retrofitClient != null){
-
             retrofitAPI = RetrofitClient.getRetrofitAPI();
             retrofitAPI.getProductAdapter(params).enqueue(new Callback<ArrayList<ProductDTO>>() {
                 @Override
@@ -136,11 +135,8 @@ public class OneStoreActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
                     Log.d("failure", t.getMessage());
-
                 }
             });
-
         }
-
     }
 }
