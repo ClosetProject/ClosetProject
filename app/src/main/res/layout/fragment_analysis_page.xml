@@ -187,8 +187,9 @@
                             android:text="GOOD color"
                             android:textColor="#000000"
                             android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView40"
                             app:layout_constraintStart_toEndOf="@+id/textView40"
-                            tools:layout_editor_absoluteY="0dp" />
+                            app:layout_constraintTop_toTopOf="@+id/textView40" />
 
                         <View
                             android:id="@+id/line10"
@@ -206,7 +207,7 @@
                             tools:ignore="MissingConstraints" />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout"
+                            android:id="@+id/best1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="25dp"
@@ -218,85 +219,86 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout2"
+                            android:id="@+id/best2"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#FBB1B2"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+                            app:layout_constraintBottom_toBottomOf="@+id/best1"
+                            app:layout_constraintStart_toEndOf="@+id/best1"
+                            app:layout_constraintTop_toTopOf="@+id/best1">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout3"
+                            android:id="@+id/best3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#A5D215"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+                            app:layout_constraintBottom_toBottomOf="@+id/best2"
+                            app:layout_constraintStart_toEndOf="@+id/best2"
+                            app:layout_constraintTop_toTopOf="@+id/best2">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout4"
+                            android:id="@+id/best4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#BAEBD6"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout3">
+                            app:layout_constraintBottom_toBottomOf="@+id/best3"
+                            app:layout_constraintStart_toEndOf="@+id/best3"
+                            app:layout_constraintTop_toTopOf="@+id/best3">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout5"
+                            android:id="@+id/good1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="56dp"
                             android:layout_marginTop="4dp"
                             android:background="#D82D19"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+                            app:layout_constraintStart_toEndOf="@+id/best4"
                             app:layout_constraintTop_toBottomOf="@+id/line10">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout6"
+                            android:id="@+id/good2"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#E88452"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout5"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout5">
+                            app:layout_constraintBottom_toBottomOf="@+id/good1"
+                            app:layout_constraintStart_toEndOf="@+id/good1"
+                            app:layout_constraintTop_toTopOf="@+id/good1">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout7"
+                            android:id="@+id/good3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#2A8C29"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout6"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout6">
+                            app:layout_constraintBottom_toBottomOf="@+id/good2"
+                            app:layout_constraintStart_toEndOf="@+id/good2"
+                            app:layout_constraintTop_toTopOf="@+id/good2">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/good4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="5dp"
                             android:background="#2E6A9C"
-                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout7"
-                            app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout7" />
+                            app:layout_constraintBottom_toBottomOf="@+id/good3"
+                            app:layout_constraintStart_toEndOf="@+id/good3"
+                            app:layout_constraintTop_toTopOf="@+id/good3" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
