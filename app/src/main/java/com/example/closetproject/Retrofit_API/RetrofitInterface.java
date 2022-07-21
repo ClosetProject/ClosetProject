@@ -1,5 +1,6 @@
 package com.example.closetproject.Retrofit_API;
 
+import com.example.closetproject.DTO.BasketDTO;
 import com.example.closetproject.DTO.MemberDTO;
 import com.example.closetproject.DTO.PColorDTO;
 import com.example.closetproject.DTO.PSizeDTO;
@@ -58,18 +59,6 @@ public interface RetrofitInterface {
     @POST("get_product")
     Call<ProductDTO> getProduct(@FieldMap HashMap<String, String> parameter);
 
-    // productDetail
-    @POST("query")
-    Call<ArrayList<ProductDTO>> getProduct(@Body ParamsVO parameter);
-
-    // productDetail
-    @POST("query")
-    Call<ArrayList<PColorDTO>> getProductColor(@Body ParamsVO parameter);
-
-    // productDetail
-    @POST("query")
-    Call<ArrayList<PSizeDTO>> getProductSize(@Body ParamsVO parameter);
-
-    @POST("manipulation")
-    Call<String> saveProductBasket(@Body ParamsVO parameter);
+    @POST("setBasket")
+    Call<String> setBasket(@Body BasketDTO parameter);
 }

@@ -47,10 +47,6 @@ public class JoinActivity extends AppCompatActivity {
                 // (추가)공백 불가, 중복 이메일 체킹 기능 추가
 
                 // insert된 이메일, pw, 이름, 관리자 타입을 추가
-//                String sql = "insert into tbl_member(m_email, m_pw, m_name, m_type) values (:1, :2, :3, :4)";
-//                String[] params = {m_email, m_pw, m_name, "N"};
-
-//                ParamsVO paramsVO = new ParamsVO(sql, params);
                 RetrofitClient retrofitClient = RetrofitClient.getInstance();
                 if(retrofitClient != null){
                     retrofitAPI = RetrofitClient.getRetrofitAPI();
