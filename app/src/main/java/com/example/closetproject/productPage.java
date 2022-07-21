@@ -3,22 +3,17 @@ package com.example.closetproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.fonts.Font;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -51,8 +46,6 @@ public class productPage extends AppCompatActivity {
     private String p_code;
     private String m_email;
 
-    private ArrayList<String> colorOption, sizeOption;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,74 +69,22 @@ public class productPage extends AppCompatActivity {
             @Override public void onClick(View v) {
                 int color = color_group.getCheckedChipId();
                 int size = size_group.getCheckedChipId();
-                setBasket(color, size, 1);
-                //showDialog();
+
+                if(color == -1 || size == -1){
+                    AlertDialog.Builder checkDial = new AlertDialog.Builder(productPage.this);
+                    checkDial.setMessage("색상/사이즈를 선택해주세요");
+                    checkDial.setPositiveButton("확인",null);
+                    checkDial.show();
+                }
+                else{
+                    setBasket(color, size, 1);
+                    color_group.clearCheck();
+                    size_group.clearCheck();
+                }
             }
         });
 
         setProduct();
-    }
-
-    private void showDialog() {
-        LayoutInflater inflater = getLayoutInflater();
-        View alertLayout = inflater.inflate(R.layout.test_dialog_option, null);
-        final Spinner spColor = (Spinner) alertLayout.findViewById(R.id.spSex);
-        final Spinner spSize = (Spinner) alertLayout.findViewById(R.id.spSex2);
-        //final EditText et_pd_cnt = (EditText) alertLayout.findViewById(R.id.et_pd_cnt);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item,
-                colorOption);
-        spColor.setAdapter(arrayAdapter);
-
-        arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item,
-                sizeOption);
-        spSize.setAdapter(arrayAdapter);
-
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("옵션선택");
-        alert.setView(alertLayout);
-        alert.setCancelable(false);
-        alert.setNegativeButton("장바구니", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                String color = String.valueOf(spColor.getSelectedItem());
-                String size = String.valueOf(spSize.getSelectedItem());
-                //String cnt = String.valueOf(et_pd_cnt.getText());
-
-                //saveProductBasket(color, size, cnt);
-                Intent intent = new Intent(productPage.this, basketPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        alert.setPositiveButton("구매하기", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                String color = String.valueOf(spColor.getSelectedItem());
-                String size = String.valueOf(spSize.getSelectedItem());
-
-                Intent intent = new Intent(productPage.this, orderPayPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        AlertDialog dialog = alert.create();
-        dialog.show();
-
-        s_basket3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(productPage.this, basketPage.class);
-                startActivity(intent1);
-                finish();
-            }
-        });
-
     }
 
     /*
@@ -262,7 +203,7 @@ public class productPage extends AppCompatActivity {
                 public void onResponse(Call<String> call, Response<String> response) {
                     AlertDialog.Builder dig = new AlertDialog.Builder(productPage.this);
                     dig.setTitle("장바구니 저장");
-                    dig.setMessage("장바구니에 저장하였습니다. 장바구니로 이동하시겠습니까?");
+                    dig.setMessage("장바구니에 저장하였습니다. \n장바구니로 이동하시겠습니까?");
                     dig.setPositiveButton("네", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
