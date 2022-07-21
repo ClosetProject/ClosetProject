@@ -71,7 +71,7 @@ public class basketCA extends BaseAdapter {
         p_price.setText(data.get(i).getP_price() + "원");
         String cnt = data.get(i).toString();
         p_cnt.setTooltipText((CharSequence)cnt);
-        String img_path = GlobalVariate.getInstance().getBaseURL() + data.get(i).getP_img() + "/" + data.get(i).getColor_name() + ".jpg";
+        String img_path = GlobalVariate.getInstance().getBaseURL() + data.get(i).getP_img() + data.get(i).getColor_name() + ".jpg";
 
         Glide.with(context)
                 .load(img_path)
