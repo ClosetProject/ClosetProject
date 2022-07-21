@@ -177,7 +177,7 @@ public class productPage extends AppCompatActivity {
                         String[] imgList = new String[colorList.size()];
                         for(int c = 0; c < colorList.size(); c++){
                             String colorName = colorList.get(c).getColor_name();
-                            String imgPath = GlobalVariate.getInstance().getBaseURL() + product.getP_img() + "/" + colorName + ".jpg";
+                            String imgPath = GlobalVariate.getInstance().getBaseURL() + product.getP_img() + colorName + ".jpg";
                             imgList[c] = imgPath;
                         }
 

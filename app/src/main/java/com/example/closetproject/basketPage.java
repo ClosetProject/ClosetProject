@@ -42,7 +42,6 @@ public class basketPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket_page);
         m_email = GlobalVariate.getInstance().getM_email();
-        m_email = "admin@naver.com";
 
         basket_next = findViewById(R.id.basket_next);
         next2 = findViewById(R.id.next2);
