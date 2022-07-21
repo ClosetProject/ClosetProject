@@ -3,17 +3,20 @@ package com.example.closetproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.print.PrintAttributes;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.closetproject.Adapter.storeProductCA;
 import com.example.closetproject.DTO.ProductDTO;
-import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
@@ -28,26 +31,41 @@ import retrofit2.Response;
 
 public class OneStoreActivity extends AppCompatActivity {
 
-    ImageView s_basket2;
     private ArrayList<ProductDTO> productList;
     private storeProductCA adapter;
     private RetrofitInterface retrofitAPI;
     private String s_seq,m_email;
     private GridView gv_sp_list;
     private TextView tv_outer, tv_sab, tv_top, tv_ops, tv_knit;
-    private ImageView iv_all;
+    private ImageView iv_all, iv_storeback, s_basket2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        m_email = GlobalVariate.getInstance().getM_email();
-        s_basket2 = (ImageView) findViewById(R.id.s_basket2);
+        setContentView(R.layout.activity_one_store);
 
         Intent intent = getIntent();
         s_seq = intent.getStringExtra("s_seq");
+        m_email = GlobalVariate.getInstance().getM_email();
 
-        setContentView(R.layout.activity_one_store);
+        iv_storeback = findViewById(R.id.iv_storeback);
+        iv_storeback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        s_basket2 = findViewById(R.id.s_basket2);
+        s_basket2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent basketActivity = new Intent(OneStoreActivity.this, basketPage.class);
+                startActivity(basketActivity);
+            }
+        });
+
         gv_sp_list = findViewById(R.id.gv_sp_list);
         gv_sp_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -62,6 +80,11 @@ public class OneStoreActivity extends AppCompatActivity {
         iv_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tv_knit.setTextColor(Color.BLACK);
+                tv_ops.setTextColor(Color.BLACK);
+                tv_outer.setTextColor(Color.BLACK);
+                tv_sab.setTextColor(Color.BLACK);
+                tv_top.setTextColor(Color.BLACK);
                 setProductAdapter("ALL");
             }
         });
@@ -70,6 +93,7 @@ public class OneStoreActivity extends AppCompatActivity {
         tv_outer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setchoiceDesign((TextView) view);
                 setProductAdapter("OUT");
             }
         });
@@ -78,6 +102,7 @@ public class OneStoreActivity extends AppCompatActivity {
         tv_sab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setchoiceDesign((TextView) view);
                 setProductAdapter("SAB");
             }
         });
@@ -86,6 +111,7 @@ public class OneStoreActivity extends AppCompatActivity {
         tv_top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setchoiceDesign((TextView) view);
                 setProductAdapter("TOP");
             }
         });
@@ -94,6 +120,7 @@ public class OneStoreActivity extends AppCompatActivity {
         tv_ops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setchoiceDesign((TextView) view);
                 setProductAdapter("OPS");
             }
         });
@@ -102,6 +129,7 @@ public class OneStoreActivity extends AppCompatActivity {
         tv_knit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setchoiceDesign((TextView) view);
                 setProductAdapter("KNI");
             }
         });
@@ -138,5 +166,14 @@ public class OneStoreActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void setchoiceDesign(TextView tv){
+        tv_knit.setTextColor(Color.BLACK);
+        tv_ops.setTextColor(Color.BLACK);
+        tv_outer.setTextColor(Color.BLACK);
+        tv_sab.setTextColor(Color.BLACK);
+        tv_top.setTextColor(Color.BLACK);
+        tv.setTextColor(Color.parseColor("#FF54E5F3"));
     }
 }
