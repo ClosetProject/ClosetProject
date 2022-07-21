@@ -35,6 +35,8 @@ public class basketPage extends AppCompatActivity {
     private basketCA adapter;
     private String m_email;
 
+    int maxLength = 10;
+
     private RetrofitInterface retrofitAPI;
 
     @Override

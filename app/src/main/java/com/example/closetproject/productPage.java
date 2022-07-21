@@ -45,6 +45,7 @@ public class productPage extends AppCompatActivity {
     private RetrofitInterface retrofitAPI;
     private String p_code;
     private String m_email;
+    ImageView[] imageArray = new ImageView[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

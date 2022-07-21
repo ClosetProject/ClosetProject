@@ -30,9 +30,12 @@
 
     <TextView
         android:id="@+id/p_name"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="흰색 블라우스 셔츠"
         android:textColor="#505050"
         android:textSize="13sp"
@@ -86,6 +89,7 @@
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/p_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.789"
