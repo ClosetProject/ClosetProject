@@ -29,63 +29,55 @@ public class Ex03mycolor extends Fragment {
         btn_g3 = view.findViewById(R.id.btn_g3);
         btn_g4 = view.findViewById(R.id.btn_g4);
 
-        btn_g1.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint({"ResourceAsColor", "ClickableViewAccessibility"})
+        btn_g1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                String data = btn_g1.getBackground().toString();
-                Log.d("red : ", data);
-
-                view.setSelected(!view.isSelected());
-                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-                    btn_g1.setBackgroundColor(Color.rgb(8,141,93));
-                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP) { // 버튼을 눌렀다가 땠을 때
-                    btn_g1.setBackgroundColor(Color.rgb(8, 141, 93));
+            public void onClick(View view) {
+                if (view.isClickable()){ // 버튼을 눌렀을 때
+                    btn_g1.setBackgroundColor(Color.parseColor("#088D5D"));
+                    btn_g2.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g3.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g4.setBackgroundColor(Color.parseColor("#686565"));
                 }
-                return false;
+
             }
         });
 
-        btn_g2.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ResourceAsColor")
+        btn_g2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-                    btn_g2.setBackgroundColor(Color.rgb(46,162,91));
-                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-                    btn_g2.setBackgroundColor(Color.rgb(46,162,91));
+            public void onClick(View view) {
+                if (view.isClickable()){ // 버튼을 눌렀을 때
+                    btn_g1.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g2.setBackgroundColor(Color.parseColor("#2EA25B"));
+                    btn_g3.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g4.setBackgroundColor(Color.parseColor("#686565"));
                 }
-                return false;
+
             }
         });
 
-        btn_g3.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ResourceAsColor")
+        btn_g3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-                    btn_g3.setBackgroundColor(Color.rgb(130,199,133));
-                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-                    btn_g3.setBackgroundColor(Color.rgb(130,199,133));
+            public void onClick(View view) {
+                if (view.isClickable()){ // 버튼을 눌렀을 때
+                    btn_g1.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g2.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g3.setBackgroundColor(Color.parseColor("#82C785"));
+                    btn_g4.setBackgroundColor(Color.parseColor("#686565"));
                 }
-                return false;
+
             }
         });
 
-        btn_g4.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ResourceAsColor")
+        btn_g4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-                    btn_g4.setBackgroundColor(Color.rgb(151,213,104));
-                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-                    btn_g4.setBackgroundColor(Color.rgb(151,213,104));
+            public void onClick(View view) {
+                if (view.isClickable()){ // 버튼을 눌렀을 때
+                    btn_g1.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g2.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g3.setBackgroundColor(Color.parseColor("#686565"));
+                    btn_g4.setBackgroundColor(Color.parseColor("#97D568"));
                 }
-                return false;
+
             }
         });
         return view;
