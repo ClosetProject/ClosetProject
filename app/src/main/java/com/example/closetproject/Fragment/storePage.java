@@ -62,6 +62,7 @@ public class storePage extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent store_intent = new Intent(getContext(), OneStoreActivity.class);
                 store_intent.putExtra("s_seq", storeList.get(i).getS_seq());
+                store_intent.putExtra("s_name", storeList.get(i).getS_name());
                 startActivity(store_intent);
             }
         });

@@ -15,20 +15,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_store_name" />
 
     <ImageView
         android:id="@+id/iv_storeback"
         android:layout_width="41dp"
         android:layout_height="34dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView44"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_store_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView44"
+        app:layout_constraintTop_toTopOf="@+id/tv_store_name"
         app:srcCompat="@drawable/left" />
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/tv_store_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -80,9 +80,9 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView44"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_store_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView44"
+        app:layout_constraintTop_toTopOf="@+id/tv_store_name"
         app:srcCompat="@drawable/shopping_cart" />
 
     <LinearLayout

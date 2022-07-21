@@ -34,7 +34,7 @@ public class OneStoreActivity extends AppCompatActivity {
     private ArrayList<ProductDTO> productList;
     private storeProductCA adapter;
     private RetrofitInterface retrofitAPI;
-    private String s_seq,m_email;
+    private String s_seq, m_email;
     private GridView gv_sp_list;
     private TextView tv_outer, tv_sab, tv_top, tv_ops, tv_knit;
     private ImageView iv_all, iv_storeback, s_basket2;
@@ -47,7 +47,11 @@ public class OneStoreActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         s_seq = intent.getStringExtra("s_seq");
+        String s_name = intent.getStringExtra("s_name");
         m_email = GlobalVariate.getInstance().getM_email();
+
+        TextView tv_store_name = findViewById(R.id.tv_store_name);
+        tv_store_name.setText(s_name);
 
         iv_storeback = findViewById(R.id.iv_storeback);
         iv_storeback.setOnClickListener(new View.OnClickListener() {
