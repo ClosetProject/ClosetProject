@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.closetproject.DTO.BasketDTO;
+import com.example.closetproject.DTO.MyPageDTO;
 import com.example.closetproject.DTO.PColorDTO;
 import com.example.closetproject.DTO.PSizeDTO;
 import com.example.closetproject.DTO.ProductDTO;
@@ -38,13 +39,14 @@ import retrofit2.Response;
 public class productPage extends AppCompatActivity {
 
     private ChipGroup color_group, size_group;
-    private ImageView s_basket3, iv_pd_image;
+    private ImageView s_basket3, iv_pd_image, product_hart;
     private TextView tv_pd_name, tv_pd_price;
     private Button btn_pay;
 
     private RetrofitInterface retrofitAPI;
     private String p_code;
     private String m_email;
+    private String p_name;
     ImageView[] imageArray = new ImageView[4];
 
     @Override
@@ -82,6 +84,15 @@ public class productPage extends AppCompatActivity {
                     color_group.clearCheck();
                     size_group.clearCheck();
                 }
+            }
+        });
+
+        product_hart = findViewById(R.id.product_hart);
+        product_hart.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                setmyPage();
             }
         });
 
@@ -219,6 +230,25 @@ public class productPage extends AppCompatActivity {
                         }
                     });
                     dig.show();
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+
+                }
+            });
+        }
+    }
+
+    private void setmyPage(){
+        MyPageDTO myPageDTO = new MyPageDTO(p_code,m_email);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if (retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.setBasket(myPageDTO).enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+
                 }
 
                 @Override

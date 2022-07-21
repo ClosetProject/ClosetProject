@@ -16,13 +16,23 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.example.closetproject.Adapter.myPageCA;
+import com.example.closetproject.DTO.BasketDTO;
+import com.example.closetproject.DTO.MyPageDTO;
 import com.example.closetproject.DTO.myPageVO;
+import com.example.closetproject.GlobalVariate;
 import com.example.closetproject.R;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Timer;
 import android.content.Context;
 import android.util.AttributeSet;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class myPage extends Fragment {
@@ -31,11 +41,14 @@ public class myPage extends Fragment {
     ImageView basket_main;
     View view9, view10, view11;
     GridView my_grid;
-    ArrayList<myPageVO> data;
-    myPageCA adapter;
+    private ArrayList<MyPageDTO> data;
+    private myPageCA adapter;
     String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
     String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
     int[] img = {R.drawable.viling, R.drawable.p_jull, R.drawable.p_lrod, R.drawable.p_mall, R.drawable.p_pani, R.drawable.p_tano};
+    private String m_email;
+    private RetrofitInterface retrofitAPI;
+    int maxLength = 10;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,13 +59,17 @@ public class myPage extends Fragment {
         view9 = view.findViewById(R.id.view9);
         view10 = view.findViewById(R.id.view10);
         view11 = view.findViewById(R.id.view11);
+        m_email = GlobalVariate.getInstance().getM_email();
+        my_grid = view.findViewById(R.id.my_grid);
+
+        setMy_grid();
 
         view9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = (Intent) new Intent();
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.orderHistory"));
+                intent.setComponent(new ComponentName("com.example.closetproject", "com.example.closetproject.orderHistory"));
                 startActivity(intent);
             }
         });
@@ -62,7 +79,7 @@ public class myPage extends Fragment {
             public void onClick(View view) {
                 Intent intent = (Intent) new Intent();
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.basketPage"));
+                intent.setComponent(new ComponentName("com.example.closetproject", "com.example.closetproject.basketPage"));
                 startActivity(intent);
             }
         });
@@ -72,25 +89,46 @@ public class myPage extends Fragment {
             public void onClick(View view) {
                 Intent intent = (Intent) new Intent();
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.AnalysisActivity"));
+                intent.setComponent(new ComponentName("com.example.closetproject", "com.example.closetproject.AnalysisActivity"));
                 startActivity(intent);
             }
         });
-
         // grid 화면 적용
-        my_grid = view.findViewById(R.id.my_grid);
-        data = new ArrayList<myPageVO>();
 
-
-        for (int i = 0; i<s_name.length; i++){
-            data.add(new myPageVO(p_name[i], img[i], "20,000원"));
-        }
-
-        adapter = new myPageCA(getActivity(), R.layout.fragment_my_list,data);
-
-        my_grid.setAdapter(adapter);
-
+//        data = new ArrayList<myPageVO>();
+//
+//
+//        for (int i = 0; i<s_name.length; i++){
+//            data.add(new myPageVO(p_name[i], img[i], "20,000원"));
+//        }
+//
+//        adapter = new myPageCA(getActivity(), R.layout.fragment_my_list,data);
+//
+//        my_grid.setAdapter(adapter);
+//
         return view;
     }
+    private void setMy_grid(){
+        HashMap<String, String> params = new HashMap<>();
+        params.put("m_email", m_email);
 
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getMyPageAdater(params).enqueue(new Callback<ArrayList<MyPageDTO>>() {
+
+                @Override
+                public void onResponse(Call<ArrayList<MyPageDTO>> call, Response<ArrayList<MyPageDTO>> response) {
+                    data = response.body();
+                    adapter = new myPageCA(getActivity(),R.layout.fragment_my_list, data);
+                    my_grid.setAdapter(adapter);
+                }
+
+                @Override
+                public void onFailure(Call<ArrayList<MyPageDTO>> call, Throwable t) {
+
+                }
+            });
+        }
+    }
 }

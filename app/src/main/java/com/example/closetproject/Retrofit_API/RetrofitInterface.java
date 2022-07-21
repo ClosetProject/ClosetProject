@@ -2,6 +2,7 @@ package com.example.closetproject.Retrofit_API;
 
 import com.example.closetproject.DTO.BasketDTO;
 import com.example.closetproject.DTO.MemberDTO;
+import com.example.closetproject.DTO.MyPageDTO;
 import com.example.closetproject.DTO.PColorDTO;
 import com.example.closetproject.DTO.PSizeDTO;
 import com.example.closetproject.DTO.ProductDTO;
@@ -66,4 +67,12 @@ public interface RetrofitInterface {
     @FormUrlEncoded
     @POST("get_basket_list")
     Call<ArrayList<BasketDTO>> getBasketAdapter(@FieldMap HashMap<String, String> parameter);
+
+    // Basket
+    @POST("set_myPage")
+    Call<String> setBasket(@Body MyPageDTO parameter);
+
+    @FormUrlEncoded
+    @POST("get_myPage_list")
+    Call<ArrayList<MyPageDTO>> getMyPageAdater(@FieldMap HashMap<String, String> parameter);
 }
