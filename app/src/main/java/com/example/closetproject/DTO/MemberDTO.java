@@ -25,6 +25,10 @@ public class MemberDTO {
     @Expose
     private String m_joindate;
 
+    @SerializedName("D_SEASON")
+    @Expose
+    private String d_season;
+
     // 생성자
     public MemberDTO(String m_email, String m_pw){
         this.m_email = m_email;
@@ -37,17 +41,16 @@ public class MemberDTO {
         this.m_name = m_name;
     }
 
-    public MemberDTO(String m_email, String m_pw, String m_name, String m_type, String m_joindate) {
+    public MemberDTO(String m_email, String m_pw, String m_name, String m_type, String m_joindate, String d_season) {
         this.m_email = m_email;
         this.m_pw = m_pw;
         this.m_name = m_name;
         this.m_type = m_type;
         this.m_joindate = m_joindate;
+        this.d_season = d_season;
     }
 
     // Getter, Setter
-
-
     public String getM_email() {
         return m_email;
     }
@@ -80,11 +83,19 @@ public class MemberDTO {
         this.m_type = m_type;
     }
 
-    public String getM_date() {
+    public String getM_joindate() {
         return m_joindate;
     }
 
-    public void setM_date(String m_date) {
-        this.m_joindate = m_date;
+    public void setM_joindate(String m_joindate) {
+        this.m_joindate = m_joindate;
+    }
+
+    public String getD_season() {
+        return d_season;
+    }
+
+    public void setD_season(String d_season) {
+        this.d_season = d_season;
     }
 }

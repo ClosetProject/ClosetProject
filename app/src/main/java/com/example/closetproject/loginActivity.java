@@ -88,6 +88,7 @@ public class loginActivity extends AppCompatActivity {
                             if(response.isSuccessful()) {
                                 MemberDTO memberDTO = response.body();
                                 GlobalVariate.getInstance().setM_email(login_email);
+                                GlobalVariate.getInstance().setD_season(memberDTO.getD_season());
 
                                 CheckBox chk_autoLogin = findViewById(R.id.chk_autoLogin);
                                 // 자동 로그인을 위해 데이터 저장
