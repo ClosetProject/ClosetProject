@@ -12,6 +12,8 @@ import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.example.closetproject.DTO.MyPageDTO;
+import com.example.closetproject.DTO.PColorDTO;
+import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.GlobalVariate;
 import com.example.closetproject.R;
 import com.example.closetproject.DTO.myPageVO;
@@ -22,10 +24,10 @@ public class myPageCA extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<MyPageDTO> data;
+    private ArrayList<ProductDTO> data;
     private LayoutInflater inflater;
 
-    public myPageCA(Context context, int layout, ArrayList<MyPageDTO> data) {
+    public myPageCA(Context context, int layout, ArrayList<ProductDTO> data) {
         this.context = context;
         this.layout = layout;
         this.data = data;
@@ -51,20 +53,30 @@ public class myPageCA extends BaseAdapter {
         TextView p_my_name = view.findViewById(R.id.p_my_name);
         TextView p_my_price = view.findViewById(R.id.p_my_price);
         ImageView p_my_img = view.findViewById(R.id.p_my_img);
-       // LinearLayout linear = view.findViewById(R.id.linear);
 
-//        p_my_img.setImageResource(data.get(i).getImg());
-//        p_my_name.setText(data.get(i).getP_name());
-//        p_my_price.setText(data.get(i).getPrice());
+        if(data.get(i).getColorList().size() > 0){
+            ArrayList<PColorDTO> colorList = data.get(i).getColorList();
+            String[] imgList = new String[colorList.size()];
+            for(int c = 0; c < colorList.size(); c++){
+                String colorName = colorList.get(c).getColor_name();
+                String imgPath = GlobalVariate.getInstance().getBaseURL() + data.get(i).getP_img() + colorName + ".jpg";
+                imgList[c] = imgPath;
+            }
+
+            Glide.with(context)
+                    .load(imgList[0])
+                    .error(R.drawable.noimg)
+                    .into(p_my_img);
+        }else{
+            Glide.with(context)
+                    .load(R.drawable.noimg)
+                    .error(R.drawable.noimg)
+                    .into(p_my_img);
+        }
 
         p_my_name.setText(data.get(i).getP_name());
         p_my_price.setText(data.get(i).getP_price());
-        String img_path = GlobalVariate.getInstance().getBaseURL() + data.get(i).getP_img() + data.get(i).getColor_name() + ".jpg";
 
-        Glide.with(context)
-                .load(img_path)
-                .error(R.drawable.noimg)
-                .into(p_my_img);
         return view;
     }
 }

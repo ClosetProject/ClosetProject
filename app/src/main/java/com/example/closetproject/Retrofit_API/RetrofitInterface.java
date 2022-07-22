@@ -68,11 +68,11 @@ public interface RetrofitInterface {
     @POST("get_basket_list")
     Call<ArrayList<BasketDTO>> getBasketAdapter(@FieldMap HashMap<String, String> parameter);
 
-    // Basket
-    @POST("set_myPage")
-    Call<String> setBasket(@Body MyPageDTO parameter);
+    @FormUrlEncoded
+    @POST("set_wishlist")
+    Call<String> setWishlist(@FieldMap HashMap<String, String> parameter);
 
     @FormUrlEncoded
-    @POST("get_myPage_list")
-    Call<ArrayList<MyPageDTO>> getMyPageAdater(@FieldMap HashMap<String, String> parameter);
+    @POST("get_wish_list")
+    Call<ArrayList<ProductDTO>> getWishlist(@FieldMap HashMap< String, String> parameter);
 }

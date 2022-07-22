@@ -42,6 +42,7 @@ public class productPage extends AppCompatActivity {
     private ImageView s_basket3, iv_pd_image, product_hart;
     private TextView tv_pd_name, tv_pd_price;
     private Button btn_pay;
+    private int [] arry = {R.drawable.heart1,R.drawable.heart2};
 
     private RetrofitInterface retrofitAPI;
     private String p_code;
@@ -67,9 +68,21 @@ public class productPage extends AppCompatActivity {
         color_group = findViewById(R.id.color_group);
         size_group = findViewById(R.id.size_group);
 
+//        product_hart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int num = 0;
+//                product_hart.setImageResource(arry[num]);
+//
+//                if(num==2){
+//                    num = 0;
+//
+//                }
+
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
+
                 int color = color_group.getCheckedChipId();
                 int size = size_group.getCheckedChipId();
 
@@ -87,12 +100,31 @@ public class productPage extends AppCompatActivity {
             }
         });
 
+
+
         product_hart = findViewById(R.id.product_hart);
         product_hart.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                setmyPage();
+                HashMap<String, String> params = new HashMap<>();
+                params.put("m_email", m_email);
+                params.put("p_code", p_code);
+                RetrofitClient retrofitClient = RetrofitClient.getInstance();
+                RetrofitClient.getRetrofitAPI().setWishlist(params).enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if (response.isSuccessful()){
+                            // 이미지 바꿔주기
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Log.d("failure", t.getMessage());
+                    }
+                });
+
             }
         });
 
@@ -240,24 +272,6 @@ public class productPage extends AppCompatActivity {
         }
     }
 
-    private void setmyPage(){
-        MyPageDTO myPageDTO = new MyPageDTO(p_code,m_email);
-        RetrofitClient retrofitClient = RetrofitClient.getInstance();
-        if (retrofitClient != null){
-            retrofitAPI = RetrofitClient.getRetrofitAPI();
-            retrofitAPI.setBasket(myPageDTO).enqueue(new Callback<String>() {
-                @Override
-                public void onResponse(Call<String> call, Response<String> response) {
-
-                }
-
-                @Override
-                public void onFailure(Call<String> call, Throwable t) {
-
-                }
-            });
-        }
-    }
 
     /*
      * 옵션세팅

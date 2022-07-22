@@ -55,13 +55,11 @@ public class MyPageDTO {
     private String s_name;
 
     // 생성자
-    public MyPageDTO(String p_code, String m_email) {
+    public MyPageDTO(String m_email, String p_code) {
+
         this.p_code = p_code;
         this.m_email = m_email;
-        this.p_name = p_name;
-        this.p_price = p_price;
-        this.p_img = p_img;
-        this.s_name = s_name;
+
     }
 
     public MyPageDTO(String s_seq, String p_code, String m_email, String p_name, String p_price, String p_img, String s_name) {

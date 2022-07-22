@@ -193,7 +193,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/heart"
+        android:src="@drawable/heart1"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line35"
