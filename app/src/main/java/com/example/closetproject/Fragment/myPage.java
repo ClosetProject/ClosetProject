@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
@@ -27,6 +28,7 @@ import com.example.closetproject.OneStoreActivity;
 import com.example.closetproject.R;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
+import com.example.closetproject.productPage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -135,6 +137,15 @@ public class myPage extends Fragment {
                 @Override
                 public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
 
+                }
+            });
+
+            my_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent product_intent = new Intent(getContext(), productPage.class);
+                    product_intent.putExtra("p_code", data.get(i).getP_code());
+                    startActivity(product_intent);
                 }
             });
         }
