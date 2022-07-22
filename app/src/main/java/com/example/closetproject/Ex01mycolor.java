@@ -14,10 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
+
 public class Ex01mycolor extends Fragment {
 
     Button btn_r1, btn_r2, btn_r3, btn_r4;
     ColorDrawable color;
+
+    private RetrofitInterface retrofitAPI;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +34,10 @@ public class Ex01mycolor extends Fragment {
         btn_r3 = view.findViewById(R.id.btn_r3);
         btn_r4 = view.findViewById(R.id.btn_r4);
 
+
+
+        // if(d_result().equals("spring")){
+
         btn_r1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +46,8 @@ public class Ex01mycolor extends Fragment {
                     btn_r2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r4.setBackgroundColor(Color.parseColor("#686565"));
+
+
                 }
 
             }
@@ -82,48 +92,8 @@ public class Ex01mycolor extends Fragment {
             }
         });
 
-//        btn_r2.setOnTouchListener(new View.OnTouchListener() {
-//            @SuppressLint("ResourceAsColor")
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//
-//                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-//                    btn_r2.setBackgroundColor(Color.rgb(243,70,64));
-//                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-//                    btn_r2.setBackgroundColor(Color.rgb(243,70,64));
-//                }
-//                return false;
-//            }
-//        });
-//
-//        btn_r3.setOnTouchListener(new View.OnTouchListener() {
-//            @SuppressLint("ResourceAsColor")
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//
-//                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-//                    btn_r3.setBackgroundColor(Color.rgb(249,104,126));
-//                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-//                    btn_r3.setBackgroundColor(Color.rgb(249,104,126));
-//                }
-//                return false;
-//            }
-//        });
-//
-//        btn_r4.setOnTouchListener(new View.OnTouchListener() {
-//            @SuppressLint("ResourceAsColor")
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//
-//                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){ // 버튼을 눌렀을 때
-//                    btn_r4.setBackgroundColor(Color.rgb(254,110,116));
-//                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){ // 버튼을 눌렀다가 땠을 때
-//                    btn_r4.setBackgroundColor(Color.rgb(254,110,116));
-//                }
-//                return false;
-//            }
-//        });
-
         return view;
     }
+
+
 }
