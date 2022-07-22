@@ -562,6 +562,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/Linear_all"
                     android:layout_width="match_parent"
                     android:layout_height="850dp"
                     android:orientation="vertical">

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -27,6 +28,7 @@ import com.example.closetproject.R;
 import com.example.closetproject.Retrofit_API.ParamsVO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
+import com.example.closetproject.productPage;
 
 import java.util.ArrayList;
 
@@ -38,15 +40,12 @@ public class mainPage extends Fragment {
 
     TextView searchView;
     ListView listView;
-    ImageView basket_main;
+    ImageView basket_main, com_i_img, com_o_img, com_r_img,com_t_img, com_y_img, com_w_img ;
     GridView main_grid;
     ArrayList<ProductDTO> productList;
     private RetrofitInterface retrofitAPI;
 
     mainCA adapter;
-    String[] s_name = {"커먼유니크", "육육걸즈", "언니날다", "블랙업", "메롱샵", "입어보고"};
-    String[] p_name = {"흰색블라우스", "공주님옷", "샤랄라라", "힙해요", "메롱메롱", "체크무늬크롭"};
-    int[] img = {R.drawable.com_i_1, R.drawable.com_o_1, R.drawable.com_r_1, R.drawable.com_t_1, R.drawable.com_y_1, R.drawable.com_w_1};
     ArrayAdapter<String> arrayAdapter;
     ArrayList<String> arrayList;
 
@@ -57,6 +56,12 @@ public class mainPage extends Fragment {
         View view = this.getLayoutInflater().inflate((R.layout.fragment_main_page), null);
 
         basket_main = view.findViewById(R.id.basket_main);
+        com_i_img = (ImageView)view.findViewById(R.id.com_i_img);
+        com_o_img = (ImageView)view.findViewById(R.id.com_o_img);
+        com_r_img = (ImageView)view.findViewById(R.id.com_r_img);
+        com_t_img = (ImageView)view.findViewById(R.id.com_t_img);
+        com_y_img = (ImageView)view.findViewById(R.id.com_y_img);
+        com_w_img = (ImageView)view.findViewById(R.id.com_w_img);
         //main_grid = view.findViewById(R.id.main_grid);
 
         basket_main.setOnClickListener(new View.OnClickListener() {
@@ -130,48 +135,20 @@ public class mainPage extends Fragment {
             }
         });
 
-
-        // grid 화면 적용
-        //setProductAdapter();
+        com_i_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent product_intent = new Intent(getContext(), productPage.class);
+                product_intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                product_intent.setComponent(new ComponentName("com.example.closetproject","com.example.closetproject.productPage"));
+                startActivity(product_intent);
+            }
+        });
 
         return view;
 
     }
 
-    // grid 화면 적용
-//    private void setProductAdapter() {
-//
-//        // 데이터 불러오기
-//        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND ROWNUM < 7";
-//        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
-//        String[] params = {"null"};
-//
-//        ParamsVO paramsVO = new ParamsVO(sql, header, params);
-//        RetrofitClient retrofitClient = RetrofitClient.getInstance();
-//
-//        if (retrofitClient != null) {
-//
-//            retrofitAPI = RetrofitClient.getRetrofitAPI();
-//            retrofitAPI.getProductAdapter(paramsVO).enqueue(new Callback<ArrayList<ProductDTO>>() {
-//
-//                @Override
-//                public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
-//                    if (response.isSuccessful()) {
-//                        productList = response.body();
-//                        adapter = new mainCA(getActivity(), R.layout.fragment_main_list, productList);
-//                        // main_grid.setAdapter(adapter);
-//
-//                    } else {
-//                        Log.d("failure", "불러올 제품이 없습니다");
-//                    }
-//                }
-//
-//                @Override
-//                public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
-//                    Log.d("failure", t.getMessage());
-//
-//                }
-//            });
-//        }
-//    }
+
+
 }

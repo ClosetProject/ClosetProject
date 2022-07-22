@@ -100,24 +100,9 @@ public class myPage extends Fragment {
             }
         });
         getWishlist();
-        // grid 화면 적용
 
-//        data = new ArrayList<myPageVO>();
-//
-//
-//        for (int i = 0; i<s_name.length; i++){
-//            data.add(new myPageVO(p_name[i], img[i], "20,000원"));
-//        }
-//
-//        adapter = new myPageCA(getActivity(), R.layout.fragment_my_list,data);
-//
-//        my_grid.setAdapter(adapter);
-//
         return view;
-
-
     }
-
 
     private void getWishlist(){
         HashMap<String, String> params = new HashMap<>();
