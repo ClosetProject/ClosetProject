@@ -85,13 +85,12 @@ public class AnalysisActivity extends AppCompatActivity {
                                     public void onResponse(Call<String> call, Response<String> response) {
                                         if(response.isSuccessful()){
                                             // (추가)진단페이지로 넘어가도록 추후 수정
-                                            Toast.makeText(AnalysisActivity.this, "업로드에 성공하였습니다", Toast.LENGTH_SHORT);
-
+                                            Intent selfIntent = new Intent(AnalysisActivity.this, myAnalysisPage.class);
+                                            startActivity(selfIntent);
                                         }else{
                                             Log.d("Res Failure","실패");
                                         }
                                     }
-
                                     @Override
                                     public void onFailure(Call<String> call, Throwable t) {
                                         Log.d("failure message", t.getMessage());
