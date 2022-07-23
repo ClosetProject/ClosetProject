@@ -82,5 +82,8 @@ public interface RetrofitInterface {
     @POST("get_analysis")
     Call<DiagnosisDTO> getAnalysis(@FieldMap HashMap< String, String> parameter);
 
-
+    // diagnosis
+    @FormUrlEncoded
+    @POST("set_personal_color")
+    Call<String> setPersonal(@FieldMap HashMap< String, String> parameter);
 }
