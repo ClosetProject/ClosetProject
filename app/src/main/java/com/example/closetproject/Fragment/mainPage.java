@@ -38,7 +38,7 @@ import java.util.HashMap;
 
 public class mainPage extends Fragment {
 
-    TextView searchView;
+
     ListView listView;
     ImageView basket_main, com_i_img, com_o_img, com_r_img,com_t_img, com_y_img, com_w_img,
               string_color, summer_color, autumn_color, winter_color;
@@ -74,121 +74,130 @@ public class mainPage extends Fragment {
         summer_color = (ImageView)view.findViewById(R.id.summer_color);
         autumn_color = (ImageView)view.findViewById(R.id.autumn_color);
         winter_color = (ImageView)view.findViewById(R.id.winter_color);
-        Button btn_pop = view.findViewById(R.id.btn_pop);
+        TextView btn_pop = view.findViewById(R.id.btn_pop);
 
 
-//        m_email = GlobalVariate.getInstance().getM_email();
-//        d_season = GlobalVariate.getInstance().getD_season();
-//
-//        if (d_season.contains("SW")) {
-//            string_color.setImageResource(R.drawable.spring_w1);
-//            string_color.setImageResource(R.drawable.spring_w2);
-//            string_color.setImageResource(R.drawable.spring_w3);
-//            string_color.setImageResource(R.drawable.spring_w4);
-//
-//            btn_pop.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-//                    dlg.setTitle("봄 웜\uD83C\uDF38"); //제목
-//                    dlg.setMessage("- 밝고 생기있고 사랑스러운 동안 인상\n" +
-//                            "- 투명하고 복숭아 빛의 피부\n" +
-//                            "- 밝은 파스텔톤이나 비비드 컬러가 잘어울리는편\n" +
-//                            "- 대표 연예인 : 수지, 아이유, 윤아, 송혜교 등"); // 메세지
-//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            // 토스트 메세지
-//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//
-//                    dlg.show();
-//                }
-//            });
-//
-//        }else if (d_season.equals("SCL")&&d_season.equals("SCB")){
-//            string_color.setImageResource(R.drawable.spring_w1);
-//            string_color.setImageResource(R.drawable.spring_w2);
-//            string_color.setImageResource(R.drawable.spring_w3);
-//            string_color.setImageResource(R.drawable.spring_w4);
-//
-//            btn_pop.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-//                    dlg.setTitle("여름 쿨\uD83C\uDF49"); //제목
-//                    dlg.setMessage("- 시원하고 깨끗하며 지적이고 우아한 인상\n" +
-//                            "        - 밝고 투명하면서도 붉은 기가 감도는 피부\n" +
-//                            "        - 맑고 가벼운 메이크업이 잘어울리는편\n" +
-//                            "        - 대표 연예인 : 장원영, 이영애, 태연, 김연아 등"); // 메세지
-//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            // 토스트 메세지
-//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//
-//                    dlg.show();
-//                }
-//            });
-//
-//        }else if (d_season.equals("AWM")&&d_season.equals("AWD")){
-//            string_color.setImageResource(R.drawable.spring_w1);
-//            string_color.setImageResource(R.drawable.spring_w2);
-//            string_color.setImageResource(R.drawable.spring_w3);
-//            string_color.setImageResource(R.drawable.spring_w4);
-//
-//            btn_pop.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-//                    dlg.setTitle("가을 웜\uD83C\uDF41"); //제목
-//                    dlg.setMessage("- 성숙하면서 섹시하고 분위기있는 인상\n" +
-//                            "        - 누르스름한 피부톤에 혈색이 있으며 매끈매끈하며 탄력이 있는 피부를 가짐\n" +
-//                            "        - 과한 음영과 그라데이션이 잘어울리는편\n" +
-//                            "        - 대표 연예인 : 제니, 이효리, 신세경, 전지현 등"); // 메세지
-//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            // 토스트 메세지
-//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//
-//                    dlg.show();
-//                }
-//            });
-//
-//        }else {
-//            string_color.setImageResource(R.drawable.spring_w1);
-//            string_color.setImageResource(R.drawable.spring_w2);
-//            string_color.setImageResource(R.drawable.spring_w3);
-//            string_color.setImageResource(R.drawable.spring_w4);
-//
-//            btn_pop.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-//                    dlg.setTitle("겨울 쿨⛄"); //제목
-//                    dlg.setMessage("- 현대적이고 세련되고 도도한 인상\n" +
-//                            "        - 홍조가 없는 새하얀 피부\n" +
-//                            "        - 푸른색과 검은색을 바탕으로 한 차갑고 채도가 높은 컬러가 잘어울리는편\n" +
-//                            "        - 대표 연예인 : 현아, 선미, 김혜수, 이나영 등"); // 메세지
-//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            // 토스트 메세지
-//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//
-//                    dlg.show();
-//                }
-//            });
-//
-//        }
+        m_email = GlobalVariate.getInstance().getM_email();
+        d_season = GlobalVariate.getInstance().getD_season();;
+
+        if (d_season.contains("SW")) {
+
+            btn_pop.setText("봄 웜\uD83C\uDF38");
+            string_color.setImageResource(R.drawable.spring_w1);
+            summer_color.setImageResource(R.drawable.spring_w2);
+            autumn_color.setImageResource(R.drawable.spring_w3);
+            winter_color.setImageResource(R.drawable.spring_w4);
+
+            btn_pop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+                    dlg.setTitle("봄 웜\uD83C\uDF38"); //제목
+                    dlg.setMessage("- 밝고 생기있고 사랑스러운 동안 인상\n" +
+                            "- 투명하고 복숭아 빛의 피부\n" +
+                            "- 밝은 파스텔톤이나 비비드 컬러가 잘어울리는편\n" +
+                            "- 대표 연예인 : 수지, 아이유, 윤아, 송혜교 등"); // 메세지
+                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // 토스트 메세지
+                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dlg.show();
+                }
+            });
+
+        }else if (d_season.contains("SC")){
+            btn_pop.setText("여름 쿨\uD83C\uDF49");
+            string_color.setImageResource(R.drawable.summer_c1);
+            summer_color.setImageResource(R.drawable.summer_c2);
+            autumn_color.setImageResource(R.drawable.summer_c3);
+            winter_color.setImageResource(R.drawable.summer_c4);
+
+            btn_pop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+                    dlg.setTitle("여름 쿨\uD83C\uDF49"); //제목
+                    dlg.setMessage("- 시원하고 깨끗하며 지적이고 우아한 인상\n" +
+                            "        - 밝고 투명하면서도 붉은 기가 감도는 피부\n" +
+                            "        - 맑고 가벼운 메이크업이 잘어울리는편\n" +
+                            "        - 대표 연예인 : 장원영, 이영애, 태연, 김연아 등"); // 메세지
+                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // 토스트 메세지
+                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dlg.show();
+                }
+            });
+
+        }else if (d_season.contains("AW")){
+            btn_pop.setText("가을 웜\uD83C\uDF41");
+            string_color.setImageResource(R.drawable.aw1);
+            summer_color.setImageResource(R.drawable.aw2);
+            autumn_color.setImageResource(R.drawable.aw3);
+            winter_color.setImageResource(R.drawable.aw4);
+
+            btn_pop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+                    dlg.setTitle("가을 웜\uD83C\uDF41"); //제목
+                    dlg.setMessage("- 성숙하면서 섹시하고 분위기있는 인상\n" +
+                            "        - 누르스름한 피부톤에 혈색이 있으며\n " +
+                            "          매끈매끈하며 탄력이 있는 피부를 가짐\n" +
+                            "        - 과한 음영과 그라데이션이 잘어울리는편\n" +
+                            "        - 대표 연예인 : 제니, 이효리, 신세경,\n " +
+                            "          전지현 등"); // 메세지
+                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // 토스트 메세지
+                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dlg.show();
+                }
+            });
+
+        }else if (d_season.contains("WC")) {
+            btn_pop.setText("겨울 쿨⛄");
+            string_color.setImageResource(R.drawable.wc1);
+            summer_color.setImageResource(R.drawable.wc2);
+            autumn_color.setImageResource(R.drawable.wc3);
+            winter_color.setImageResource(R.drawable.wc4);
+
+            btn_pop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+                    dlg.setTitle("겨울 쿨⛄"); //제목
+                    dlg.setMessage("- 현대적이고 세련되고 도도한 인상\n" +
+                            "        - 홍조가 없는 새하얀 피부\n" +
+                            "        - 푸른색과 검은색을 바탕으로 한 차갑고\n " +
+                            "          채도가 높은 컬러가 잘어울리는편\n" +
+                            "        - 대표 연예인 : 현아, 선미, 김혜수, \n" +
+                            "          이나영 등"); // 메세지
+                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // 토스트 메세지
+                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dlg.show();
+                }
+            });
+
+        }
 
         basket_main.setOnClickListener(new View.OnClickListener() {
             @Override
