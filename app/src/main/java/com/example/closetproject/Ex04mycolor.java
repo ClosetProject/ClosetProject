@@ -1,6 +1,7 @@
 package com.example.closetproject;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -15,12 +16,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.closetproject.DTO.DiagnosisDTO;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
+
+import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Ex04mycolor extends Fragment {
 
     Button btn_b1, btn_b2, btn_b3, btn_b4;
     ConstraintLayout b_color1, b_color2, b_color3, b_color4;
     ColorDrawable color;
     private int[] arrColor;
+    private RetrofitInterface retrofitAPI;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,8 +81,9 @@ public class Ex04mycolor extends Fragment {
                     btn_b2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(3,1);
+                    setpersonal();
                 }
-
             }
         });
         btn_b2.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +94,9 @@ public class Ex04mycolor extends Fragment {
                     btn_b2.setBackgroundColor(Color.parseColor("#2977BE"));
                     btn_b3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(3,2);
+                    setpersonal();
                 }
-
             }
         });
         btn_b3.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +107,9 @@ public class Ex04mycolor extends Fragment {
                     btn_b2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b3.setBackgroundColor(Color.parseColor("#6C9CC6"));
                     btn_b4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(3,3);
+                    setpersonal();
                 }
-
             }
         });
         btn_b4.setOnClickListener(new View.OnClickListener() {
@@ -105,40 +120,36 @@ public class Ex04mycolor extends Fragment {
                     btn_b2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_b4.setBackgroundColor(Color.parseColor("#69A5CD"));
+                    GlobalVariate.getInstance().addSelf_cnt(3,4);
+                    setpersonal();
                 }
-
             }
         });
         return view;
     }
 
-    @SuppressLint("ResourceAsColor")
-    private void setSeasonColor(){
-        switch(GlobalVariate.getInstance().getD_season()){
-            case "WS":
-                b_color1.setBackgroundResource(R.color.spring_l_blue1);
-                b_color2.setBackgroundResource(R.color.spring_l_blue2);
-                b_color3.setBackgroundResource(R.color.spring_b_blue1);
-                b_color4.setBackgroundResource(R.color.spring_b_blue2);
-                break;
-            case "SC":
-                b_color1.setBackgroundResource(R.color.summer_m_blue1);
-                b_color2.setBackgroundResource(R.color.summer_m_blue2);
-                b_color3.setBackgroundResource(R.color.summer_l_blue1);
-                b_color4.setBackgroundResource(R.color.summer_l_blue2);
-                break;
-            case "AW":
-                b_color1.setBackgroundResource(R.color.autumn_m_blue1);
-                b_color2.setBackgroundResource(R.color.autumn_m_blue2);
-                b_color3.setBackgroundResource(R.color.autumn_d_blue1);
-                b_color4.setBackgroundResource(R.color.autumn_d_blue2);
-                break;
-            case "WC":
-                b_color1.setBackgroundResource(R.color.winter_b_blue1);
-                b_color2.setBackgroundResource(R.color.winter_b_blue2);
-                b_color3.setBackgroundResource(R.color.winter_d_blue1);
-                b_color4.setBackgroundResource(R.color.winter_d_blue2);
-                break;
+    private void setpersonal(){
+        String m_email = GlobalVariate.getInstance().getM_email();
+        String season = GlobalVariate.getInstance().getSelf_cnt();
+        HashMap<String, String> params = new HashMap<>();
+        params.put("m_email", m_email);
+        params.put("season", season);
+
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.setPersonal(params).enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    Log.d("fail_log",t.getMessage());
+                }
+            });
         }
     }
 }

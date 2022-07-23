@@ -41,8 +41,7 @@ public class myAnalysisPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_analysis_page);
 
-        //m_email = GlobalVariate.getInstance().getM_email();
-        m_email = "test@naver.com";
+        m_email = GlobalVariate.getInstance().getM_email();
         HashMap<String, String> params = new HashMap<>();
         params.put("m_email", m_email);
 

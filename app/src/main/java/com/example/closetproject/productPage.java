@@ -31,6 +31,7 @@ import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,13 +43,9 @@ public class productPage extends AppCompatActivity {
     private ImageView s_basket3, iv_pd_image, product_hart;
     private TextView tv_pd_name, tv_pd_price;
     private Button btn_pay;
-    private int [] arry = {R.drawable.heart1,R.drawable.heart2};
 
     private RetrofitInterface retrofitAPI;
-    private String p_code;
-    private String m_email;
-    private String p_name;
-    ImageView[] imageArray = new ImageView[4];
+    private String p_code, m_email, wish_yn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +64,6 @@ public class productPage extends AppCompatActivity {
 
         color_group = findViewById(R.id.color_group);
         size_group = findViewById(R.id.size_group);
-
-//        product_hart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int num = 0;
-//                product_hart.setImageResource(arry[num]);
-//
-//                if(num==2){
-//                    num = 0;
-//
-//                }
 
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
@@ -100,11 +86,8 @@ public class productPage extends AppCompatActivity {
             }
         });
 
-
-
         product_hart = findViewById(R.id.product_hart);
         product_hart.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 HashMap<String, String> params = new HashMap<>();
@@ -115,7 +98,13 @@ public class productPage extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.isSuccessful()){
-                            // 이미지 바꿔주기
+                            if(wish_yn.equals("N")){
+                                wish_yn = "Y";
+                                product_hart.setImageResource(R.drawable.heart2);
+                            }else{
+                                wish_yn = "N";
+                                product_hart.setImageResource(R.drawable.heart1);
+                            }
                         }
                     }
 
@@ -124,7 +113,6 @@ public class productPage extends AppCompatActivity {
                         Log.d("failure", t.getMessage());
                     }
                 });
-
             }
         });
 
@@ -142,7 +130,6 @@ public class productPage extends AppCompatActivity {
         params.put("p_code", p_code);
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
         if(retrofitClient != null){
-
             retrofitAPI = RetrofitClient.getRetrofitAPI();
             retrofitAPI.getProduct(params).enqueue(new Callback<ProductDTO>() {
                 @Override
@@ -227,6 +214,14 @@ public class productPage extends AppCompatActivity {
                             sizeChip = setSizeChip(sizeChip, sizeDTO);
                             size_group.addView(sizeChip);
                         }
+                    }
+
+                    //찜여부
+                    wish_yn = product.getWish_yn();
+                    if(wish_yn.equals("Y")){
+                        product_hart.setImageResource(R.drawable.heart2);
+                    }else{
+                        product_hart.setImageResource(R.drawable.heart1);
                     }
 
                 }

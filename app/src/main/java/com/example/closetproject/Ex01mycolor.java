@@ -42,7 +42,7 @@ public class Ex01mycolor extends Fragment {
         r_color4 = view.findViewById(R.id.r_color4);
 
         switch(GlobalVariate.getInstance().getD_season()){
-            case "WS":
+            case "SW":
                 arrColor = new int[]{R.color.spring_l_red1, R.color.spring_l_red2,
                                      R.color.spring_b_red1, R.color.spring_b_red2};
                 break;
@@ -75,6 +75,7 @@ public class Ex01mycolor extends Fragment {
                     btn_r2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(0,1);
                 }
             }
         });
@@ -87,6 +88,7 @@ public class Ex01mycolor extends Fragment {
                     btn_r2.setBackgroundColor(Color.parseColor("#F34640"));
                     btn_r3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(0,2);
                 }
 
             }
@@ -100,8 +102,8 @@ public class Ex01mycolor extends Fragment {
                     btn_r2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r3.setBackgroundColor(Color.parseColor("#F9687E"));
                     btn_r4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(0,3);
                 }
-
             }
         });
 
@@ -113,6 +115,7 @@ public class Ex01mycolor extends Fragment {
                     btn_r2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_r4.setBackgroundColor(Color.parseColor("#FE6E74"));
+                    GlobalVariate.getInstance().addSelf_cnt(0,4);
                 }
             }
         });
