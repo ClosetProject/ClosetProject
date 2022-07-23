@@ -38,7 +38,7 @@ public class Ex03mycolor extends Fragment {
         g_color4 = view.findViewById(R.id.g_color4);
 
         switch(GlobalVariate.getInstance().getD_season()){
-            case "WS":
+            case "SW":
                 arrColor = new int[]{R.color.spring_l_green1, R.color.spring_l_green2,
                         R.color.spring_b_green1, R.color.spring_b_green2};
                 break;

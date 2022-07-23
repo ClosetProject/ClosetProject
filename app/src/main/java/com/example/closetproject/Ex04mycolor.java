@@ -128,36 +128,6 @@ public class Ex04mycolor extends Fragment {
         return view;
     }
 
-    @SuppressLint("ResourceAsColor")
-    private void setSeasonColor(){
-        switch(GlobalVariate.getInstance().getD_season()){
-            case "WS":
-                b_color1.setBackgroundResource(R.color.spring_l_blue1);
-                b_color2.setBackgroundResource(R.color.spring_l_blue2);
-                b_color3.setBackgroundResource(R.color.spring_b_blue1);
-                b_color4.setBackgroundResource(R.color.spring_b_blue2);
-                break;
-            case "SC":
-                b_color1.setBackgroundResource(R.color.summer_m_blue1);
-                b_color2.setBackgroundResource(R.color.summer_m_blue2);
-                b_color3.setBackgroundResource(R.color.summer_l_blue1);
-                b_color4.setBackgroundResource(R.color.summer_l_blue2);
-                break;
-            case "AW":
-                b_color1.setBackgroundResource(R.color.autumn_m_blue1);
-                b_color2.setBackgroundResource(R.color.autumn_m_blue2);
-                b_color3.setBackgroundResource(R.color.autumn_d_blue1);
-                b_color4.setBackgroundResource(R.color.autumn_d_blue2);
-                break;
-            case "WC":
-                b_color1.setBackgroundResource(R.color.winter_b_blue1);
-                b_color2.setBackgroundResource(R.color.winter_b_blue2);
-                b_color3.setBackgroundResource(R.color.winter_d_blue1);
-                b_color4.setBackgroundResource(R.color.winter_d_blue2);
-                break;
-        }
-    }
-
     private void setpersonal(){
         String m_email = GlobalVariate.getInstance().getM_email();
         String season = GlobalVariate.getInstance().getSelf_cnt();
