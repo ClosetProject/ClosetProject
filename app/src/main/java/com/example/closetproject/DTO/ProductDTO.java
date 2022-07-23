@@ -39,6 +39,10 @@ public class ProductDTO {
     @Expose
     private ArrayList<PSizeDTO> sizeList;
 
+    @SerializedName("WISH_YN")
+    @Expose
+    private String wish_yn;
+
     // 생성자
     public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq) {
         this.p_code = p_code;
@@ -50,7 +54,7 @@ public class ProductDTO {
         this.s_seq = s_seq;
     }
 
-    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList, ArrayList<PSizeDTO> sizeList) {
+    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList, ArrayList<PSizeDTO> sizeList, String wish_yn) {
         this.p_code = p_code;
         this.p_name = p_name;
         this.p_img = p_img;
@@ -60,6 +64,7 @@ public class ProductDTO {
         this.s_seq = s_seq;
         this.colorList = colorList;
         this.sizeList = sizeList;
+        this.wish_yn = wish_yn;
     }
 
     // Getter , Setter
@@ -133,5 +138,13 @@ public class ProductDTO {
 
     public void setSizeList(ArrayList<PSizeDTO> sizeList) {
         this.sizeList = sizeList;
+    }
+
+    public String getWish_yn() {
+        return wish_yn;
+    }
+
+    public void setWish_yn(String wish_yn) {
+        this.wish_yn = wish_yn;
     }
 }
