@@ -31,6 +31,15 @@
         <item>4</item>
     </string-array>
 
+    <string name="order">order</string>
+    <string-array name="order">
+        <item>배송메모를 선택해주세요</item>
+        <item>부재시 경비실에 맡겨주세요</item>
+        <item>집앞에 놔주세요</item>
+        <item>택배함에 놔주세요</item>
+        <item>배송 전에 꼭 연락주세요</item>
+    </string-array>
+
 
     <string name="spring">봄 웜🌸
         - 밝고 생기있고 사랑스러운 동안 인상

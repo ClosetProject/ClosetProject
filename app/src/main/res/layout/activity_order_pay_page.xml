@@ -356,28 +356,20 @@
                     app:srcCompat="@drawable/p_tano"
                     tools:ignore="MissingConstraints,UnknownIdInLayout" />
 
-                <TextView
+                <Spinner
                     android:id="@+id/parcel5"
                     android:layout_width="304dp"
                     android:layout_height="27dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/nemo"
+                    android:entries="@array/order"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:text="배송메모를 선택해주세요"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/line4" />
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="37dp"
-                    android:layout_height="30dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/parcel5"
-                    app:layout_constraintEnd_toEndOf="@+id/parcel5"
-                    app:layout_constraintTop_toTopOf="@+id/parcel5"
-                    app:srcCompat="@drawable/car_ui_icon_down"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    app:layout_constraintTop_toBottomOf="@+id/line4"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/textView38"
@@ -399,6 +391,17 @@
                     android:textColor="#000000"
                     app:layout_constraintBottom_toTopOf="@+id/view8"
                     app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/parcel5"
+                    app:layout_constraintEnd_toEndOf="@+id/parcel5"
+                    app:layout_constraintTop_toTopOf="@+id/parcel5"
+                    app:srcCompat="@drawable/down" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
