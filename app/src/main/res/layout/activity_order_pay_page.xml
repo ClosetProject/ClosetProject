@@ -329,7 +329,7 @@
         app:layout_constraintStart_toEndOf="@+id/p_order_img2"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-    <TextView
+    <EditText
         android:id="@+id/parcel4"
         android:layout_width="229dp"
         android:layout_height="28dp"
@@ -337,12 +337,12 @@
         android:layout_marginTop="160dp"
         android:background="@drawable/nemo"
         android:gravity="center_vertical"
+        android:hint="휴대폰 번호를 입력해주세요"
         android:paddingLeft="10dp"
-        android:text="휴대폰 번호를 입력해주세요"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-    <TextView
+    <EditText
         android:id="@+id/parcel"
         android:layout_width="229dp"
         android:layout_height="28dp"
@@ -350,12 +350,12 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/nemo"
         android:gravity="center_vertical"
+        android:hint="주소지를 입력해주세요"
         android:paddingLeft="10dp"
-        android:text="주소지를 입력해주세요"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-    <TextView
+    <EditText
         android:id="@+id/parcel2"
         android:layout_width="229dp"
         android:layout_height="28dp"
@@ -363,12 +363,12 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/nemo"
         android:gravity="center_vertical"
+        android:hint="예) 집, 회사"
         android:paddingLeft="10dp"
-        android:text="예) 집, 회사"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-    <TextView
+    <EditText
         android:id="@+id/parcel3"
         android:layout_width="229dp"
         android:layout_height="28dp"
@@ -376,8 +376,8 @@
         android:layout_marginTop="120dp"
         android:background="@drawable/nemo"
         android:gravity="center_vertical"
+        android:hint="이름을 입력해주세요"
         android:paddingLeft="10dp"
-        android:text="이름을 입력해주세요"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view6" />
 
