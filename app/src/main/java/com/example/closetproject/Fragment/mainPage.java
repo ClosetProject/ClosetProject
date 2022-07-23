@@ -91,6 +91,7 @@ public class mainPage extends Fragment {
                         Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
                     }
                 });
+
                 dlg.show();
             }
         });
