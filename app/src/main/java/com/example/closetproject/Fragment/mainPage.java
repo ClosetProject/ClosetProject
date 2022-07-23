@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -24,21 +25,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.closetproject.Adapter.mainCA;
+import com.example.closetproject.DTO.MemberDTO;
 import com.example.closetproject.DTO.ProductDTO;
+import com.example.closetproject.GlobalVariate;
 import com.example.closetproject.R;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
 import com.example.closetproject.productPage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class mainPage extends Fragment {
 
     TextView searchView;
     ListView listView;
-    ImageView basket_main, com_i_img, com_o_img, com_r_img,com_t_img, com_y_img, com_w_img ;
+    ImageView basket_main, com_i_img, com_o_img, com_r_img,com_t_img, com_y_img, com_w_img,
+              string_color, summer_color, autumn_color, winter_color;
     GridView main_grid;
     ArrayList<ProductDTO> productList;
     private RetrofitInterface retrofitAPI;
+    private String m_email, d_season;
+    Cursor iCursor;
+    MemberDTO memberDTO;
 
 
     mainCA adapter;
@@ -61,7 +70,125 @@ public class mainPage extends Fragment {
         com_t_img = (ImageView)view.findViewById(R.id.com_t_img);
         com_y_img = (ImageView)view.findViewById(R.id.com_y_img);
         com_w_img = (ImageView)view.findViewById(R.id.com_w_img);
-        //main_grid = view.findViewById(R.id.main_grid);
+        string_color = (ImageView)view.findViewById(R.id.string_color);
+        summer_color = (ImageView)view.findViewById(R.id.summer_color);
+        autumn_color = (ImageView)view.findViewById(R.id.autumn_color);
+        winter_color = (ImageView)view.findViewById(R.id.winter_color);
+        Button btn_pop = view.findViewById(R.id.btn_pop);
+
+
+//        m_email = GlobalVariate.getInstance().getM_email();
+//        d_season = GlobalVariate.getInstance().getD_season();
+//
+//        if (d_season.contains("SW")) {
+//            string_color.setImageResource(R.drawable.spring_w1);
+//            string_color.setImageResource(R.drawable.spring_w2);
+//            string_color.setImageResource(R.drawable.spring_w3);
+//            string_color.setImageResource(R.drawable.spring_w4);
+//
+//            btn_pop.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+//                    dlg.setTitle("봄 웜\uD83C\uDF38"); //제목
+//                    dlg.setMessage("- 밝고 생기있고 사랑스러운 동안 인상\n" +
+//                            "- 투명하고 복숭아 빛의 피부\n" +
+//                            "- 밝은 파스텔톤이나 비비드 컬러가 잘어울리는편\n" +
+//                            "- 대표 연예인 : 수지, 아이유, 윤아, 송혜교 등"); // 메세지
+//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            // 토스트 메세지
+//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//
+//                    dlg.show();
+//                }
+//            });
+//
+//        }else if (d_season.equals("SCL")&&d_season.equals("SCB")){
+//            string_color.setImageResource(R.drawable.spring_w1);
+//            string_color.setImageResource(R.drawable.spring_w2);
+//            string_color.setImageResource(R.drawable.spring_w3);
+//            string_color.setImageResource(R.drawable.spring_w4);
+//
+//            btn_pop.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+//                    dlg.setTitle("여름 쿨\uD83C\uDF49"); //제목
+//                    dlg.setMessage("- 시원하고 깨끗하며 지적이고 우아한 인상\n" +
+//                            "        - 밝고 투명하면서도 붉은 기가 감도는 피부\n" +
+//                            "        - 맑고 가벼운 메이크업이 잘어울리는편\n" +
+//                            "        - 대표 연예인 : 장원영, 이영애, 태연, 김연아 등"); // 메세지
+//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            // 토스트 메세지
+//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//
+//                    dlg.show();
+//                }
+//            });
+//
+//        }else if (d_season.equals("AWM")&&d_season.equals("AWD")){
+//            string_color.setImageResource(R.drawable.spring_w1);
+//            string_color.setImageResource(R.drawable.spring_w2);
+//            string_color.setImageResource(R.drawable.spring_w3);
+//            string_color.setImageResource(R.drawable.spring_w4);
+//
+//            btn_pop.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+//                    dlg.setTitle("가을 웜\uD83C\uDF41"); //제목
+//                    dlg.setMessage("- 성숙하면서 섹시하고 분위기있는 인상\n" +
+//                            "        - 누르스름한 피부톤에 혈색이 있으며 매끈매끈하며 탄력이 있는 피부를 가짐\n" +
+//                            "        - 과한 음영과 그라데이션이 잘어울리는편\n" +
+//                            "        - 대표 연예인 : 제니, 이효리, 신세경, 전지현 등"); // 메세지
+//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            // 토스트 메세지
+//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//
+//                    dlg.show();
+//                }
+//            });
+//
+//        }else {
+//            string_color.setImageResource(R.drawable.spring_w1);
+//            string_color.setImageResource(R.drawable.spring_w2);
+//            string_color.setImageResource(R.drawable.spring_w3);
+//            string_color.setImageResource(R.drawable.spring_w4);
+//
+//            btn_pop.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+//                    dlg.setTitle("겨울 쿨⛄"); //제목
+//                    dlg.setMessage("- 현대적이고 세련되고 도도한 인상\n" +
+//                            "        - 홍조가 없는 새하얀 피부\n" +
+//                            "        - 푸른색과 검은색을 바탕으로 한 차갑고 채도가 높은 컬러가 잘어울리는편\n" +
+//                            "        - 대표 연예인 : 현아, 선미, 김혜수, 이나영 등"); // 메세지
+//                    dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            // 토스트 메세지
+//                            Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//
+//                    dlg.show();
+//                }
+//            });
+//
+//        }
 
         basket_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,30 +199,6 @@ public class mainPage extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-        Button btn_pop = view.findViewById(R.id.btn_pop);
-        btn_pop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-                dlg.setTitle("봄 웜\uD83C\uDF38"); //제목
-                dlg.setMessage("- 밝고 생기있고 사랑스러운 동안 인상\n" +
-                        "- 투명하고 복숭아 빛의 피부\n" +
-                        "- 밝은 파스텔톤이나 비비드 컬러가 잘어울리는편\n" +
-                        "- 대표 연예인 : 수지, 아이유, 윤아, 송혜교 등"); // 메세지
-                dlg.setPositiveButton("X", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        // 토스트 메세지
-                        Toast.makeText(getContext(), "마이페이지에서 재진단 가능",Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                dlg.show();
-            }
-        });
-
 
 
         // 유튜브 링크 적용
@@ -170,44 +273,6 @@ public class mainPage extends Fragment {
         });
 
         return view;
-
     }
 
-
-    // grid 화면 적용
-//    private void setProductAdapter() {
-//
-//        // 데이터 불러오기
-//        String sql = "SELECT A.P_CODE, A.P_NAME, A.P_IMG, A.P_CAT, A.P_PRICE, A.S_SEQ, B.S_NAME FROM TBL_PRODUCT A, TBL_STORE B WHERE B.S_SEQ = A.S_SEQ AND ROWNUM < 7";
-//        String[] header = {"P_CODE", "P_NAME", "P_IMG", "P_CAT", "P_PRICE", "S_SEQ", "S_NAME"};
-//        String[] params = {"null"};
-//
-//        ParamsVO paramsVO = new ParamsVO(sql, header, params);
-//        RetrofitClient retrofitClient = RetrofitClient.getInstance();
-//
-//        if (retrofitClient != null) {
-//
-//            retrofitAPI = RetrofitClient.getRetrofitAPI();
-//            retrofitAPI.getProductAdapter(paramsVO).enqueue(new Callback<ArrayList<ProductDTO>>() {
-//
-//                @Override
-//                public void onResponse(Call<ArrayList<ProductDTO>> call, Response<ArrayList<ProductDTO>> response) {
-//                    if (response.isSuccessful()) {
-//                        productList = response.body();
-//                        adapter = new mainCA(getActivity(), R.layout.fragment_main_list, productList);
-//                        // main_grid.setAdapter(adapter);
-//
-//                    } else {
-//                        Log.d("failure", "불러올 제품이 없습니다");
-//                    }
-//                }
-//
-//                @Override
-//                public void onFailure(Call<ArrayList<ProductDTO>> call, Throwable t) {
-//                    Log.d("failure", t.getMessage());
-//
-//                }
-//            });
-//        }
-//    }
 }
