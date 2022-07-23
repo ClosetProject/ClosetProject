@@ -17,9 +17,7 @@ public class GlobalVariate {
         return baseURL;
     }
 
-    public void setBaseURL(String baseURL) {
-        this.baseURL = baseURL;
-    }
+    public void setBaseURL(String baseURL) {this.baseURL = baseURL;}
 
     public String getD_season() {
         return d_season;

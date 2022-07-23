@@ -6,451 +6,401 @@
     android:layout_height="match_parent"
     tools:context=".orderPayPage">
 
-    <TextView
-        android:id="@+id/parcel5"
-        android:layout_width="304dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/nemo"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="배송메모를 선택해주세요"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/line4" />
-
-    <Button
-        android:id="@+id/btn_pay1"
-        android:layout_width="308dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="4dp"
-        android:text="결제하기"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/line35"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/p_order_img2"
-        android:layout_width="97dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/nemo"
-        app:layout_constraintEnd_toEndOf="@+id/order_date"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:srcCompat="@drawable/p_tano"
-        tools:ignore="MissingConstraints,UnknownIdInLayout" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-
-        android:background="#EEEEEE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        tools:ignore="MissingConstraints" />
-
-    <View
-        android:id="@+id/line2"
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-
-        android:layout_marginTop="40dp"
-        android:background="#786F6F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line"
-        tools:ignore="MissingConstraints" />
-
-    <View
-        android:id="@+id/line4"
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-
-        android:layout_marginTop="340dp"
-        android:background="#786F6F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:text="주문/결제"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
-
     <View
         android:id="@+id/view5"
         android:layout_width="410dp"
         android:layout_height="11dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="536dp"
-        android:background="@drawable/figure"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/view6"
-        android:layout_width="0dp"
-        android:layout_height="11dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
         android:background="@drawable/figure"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p_order_img2" />
-
-    <View
-        android:id="@+id/view7"
-        android:layout_width="0dp"
-        android:layout_height="11dp"
-        android:layout_marginTop="184dp"
-        android:background="@drawable/figure"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parcel" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
-
-        android:id="@+id/textView17"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="결제 금액"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="7dp"
+        android:text="주문/결제"
         android:textColor="#000000"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view7" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="총 결제 금액"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <View
-        android:id="@+id/view8"
-        android:layout_width="0dp"
-        android:layout_height="11dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/figure"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line5" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        android:text="20,000원"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line5" />
+        app:layout_constraintStart_toEndOf="@+id/order_pay_next"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/order_pay_next"
         android:layout_width="41dp"
         android:layout_height="34dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:text="총"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/line"
-        app:layout_constraintTop_toBottomOf="@+id/view5" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
-        android:text="2"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView24"
-        app:layout_constraintStart_toEndOf="@+id/textView24"
-        app:layout_constraintTop_toTopOf="@+id/textView24"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="개의 상품"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView25"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toTopOf="@+id/textView25" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:text="커먼유니크"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
-
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:text="배송지 설정"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="체크 무늬무늬"
-        android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/p_order_img2"
-        app:layout_constraintTop_toBottomOf="@+id/line2" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="5dp"
-        android:text="FREE"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:text="/"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView29"
-        app:layout_constraintStart_toEndOf="@+id/textView29"
-        app:layout_constraintTop_toTopOf="@+id/textView29"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="1"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView31"
-        app:layout_constraintStart_toEndOf="@+id/textView31"
-        app:layout_constraintTop_toTopOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="개"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView32"
-        app:layout_constraintStart_toEndOf="@+id/textView32"
-        app:layout_constraintTop_toTopOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:text="20,000원"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/textView33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView33"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:text="흰색"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/p_order_img2"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <EditText
-        android:id="@+id/parcel4"
-        android:layout_width="229dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/nemo"
-        android:gravity="center_vertical"
-        android:hint="휴대폰 번호를 입력해주세요"
-        android:paddingLeft="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <EditText
-        android:id="@+id/parcel"
-        android:layout_width="229dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/nemo"
-        android:gravity="center_vertical"
-        android:hint="주소지를 입력해주세요"
-        android:paddingLeft="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <EditText
-        android:id="@+id/parcel2"
-        android:layout_width="229dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/nemo"
-        android:gravity="center_vertical"
-        android:hint="예) 집, 회사"
-        android:paddingLeft="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <EditText
-        android:id="@+id/parcel3"
-        android:layout_width="229dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/nemo"
-        android:gravity="center_vertical"
-        android:hint="이름을 입력해주세요"
-        android:paddingLeft="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-    <View
-        android:id="@+id/line5"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="0.5dp"
-
-        android:layout_marginTop="10dp"
-        android:background="#E0E0E0"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/view5">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="주소지"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/parcel"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="배송지명"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/parcel"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="706dp">
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="수령인"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/parcel"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
+                <EditText
+                    android:id="@+id/parcel"
+                    android:layout_width="229dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="83dp"
+                    android:background="@drawable/nemo"
+                    android:gravity="center_vertical"
+                    android:hint="주소지를 입력해주세요"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView23"
+                    app:layout_constraintStart_toEndOf="@+id/textView23"
+                    app:layout_constraintTop_toTopOf="@+id/textView23"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:text="휴대폰"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/parcel"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="5dp"
+                    android:text="FREE"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView30"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="37dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/parcel5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/parcel5"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/car_ui_icon_down" />
+                <TextView
+
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="결제 금액"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView18"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="13dp"
+                    android:text="체크 무늬무늬"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@+id/p_order_img2"
+                    app:layout_constraintTop_toTopOf="@+id/p_order_img2" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="94dp"
+                    android:text="20,000원"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                    app:layout_constraintStart_toEndOf="@+id/textView33"
+                    app:layout_constraintTop_toTopOf="@+id/textView33" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="21dp"
+                    android:text="배송지명"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="0dp"
+                    android:layout_height="11dp"
+                    android:background="@drawable/figure"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_pay1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:text="배송지 설정"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="주소지"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="5dp"
+                    android:text="/"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView29"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <View
+                    android:id="@+id/line4"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+
+                    android:layout_marginTop="12dp"
+                    android:background="#786F6F"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/parcel4"
+                    tools:ignore="MissingConstraints" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+
+                    android:layout_marginBottom="10dp"
+                    android:background="#786F6F"
+                    app:layout_constraintBottom_toTopOf="@+id/textView17"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:text="커먼유니크"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+
+                    android:background="#EEEEEE"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/btn_pay1"
+                    android:layout_width="308dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="결제하기"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="총 결제 금액"
+                    app:layout_constraintBottom_toTopOf="@+id/view8"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="1"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView31"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="0dp"
+                    android:layout_height="11dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/figure"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/parcel5" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="21dp"
+                    android:text="휴대폰"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="11dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/figure"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/p_order_img2" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="개"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView32"
+                    app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+                <EditText
+                    android:id="@+id/parcel2"
+                    android:layout_width="229dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/nemo"
+                    android:gravity="center_vertical"
+                    android:hint="예) 집, 회사"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView44"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView44"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/parcel3"
+                    android:layout_width="229dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/nemo"
+                    android:gravity="center_vertical"
+                    android:hint="이름을 입력해주세요"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView38"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView38"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="흰색"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/p_order_img2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                <EditText
+                    android:id="@+id/parcel4"
+                    android:layout_width="229dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/nemo"
+                    android:gravity="center_vertical"
+                    android:hint="휴대폰 번호를 입력해주세요"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView43"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView43"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/p_order_img2"
+                    android:layout_width="97dp"
+                    android:layout_height="67dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/nemo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27"
+                    app:srcCompat="@drawable/p_tano"
+                    tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+                <TextView
+                    android:id="@+id/parcel5"
+                    android:layout_width="304dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/nemo"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="배송메모를 선택해주세요"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="37dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/parcel5"
+                    app:layout_constraintEnd_toEndOf="@+id/parcel5"
+                    app:layout_constraintTop_toTopOf="@+id/parcel5"
+                    app:srcCompat="@drawable/car_ui_icon_down"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="21dp"
+                    android:text="수령인"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:text="20,000원"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toTopOf="@+id/view8"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
