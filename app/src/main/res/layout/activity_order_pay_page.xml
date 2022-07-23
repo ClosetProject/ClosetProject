@@ -358,8 +358,8 @@
 
                 <Spinner
                     android:id="@+id/parcel5"
-                    android:layout_width="304dp"
-                    android:layout_height="27dp"
+                    android:layout_width="348dp"
+                    android:layout_height="29dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/nemo"
