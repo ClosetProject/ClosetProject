@@ -1124,12 +1124,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView93"
+    <Button
+        android:id="@+id/btn_pop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
+        android:background="#00FFFFFF"
         android:text="봄 웜 🌸?"
         android:textColor="#2196F3"
         android:textSize="16sp"

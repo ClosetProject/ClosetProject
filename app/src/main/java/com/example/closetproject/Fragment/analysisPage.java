@@ -1,5 +1,9 @@
 package com.example.closetproject.Fragment;
 
+import static kr.co.bootpay.Bootpay.finish;
+
+import android.content.ComponentName;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,7 +20,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.closetproject.MainActivity;
 import com.example.closetproject.R;
+import com.example.closetproject.basketPage;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -40,7 +46,7 @@ public class analysisPage extends Fragment {
 
     private HorizontalBarChart bar;
 
-    Button btn_top, btn_b, btn_d;
+    Button btn_top, btn_b, btn_d, btn_skip;
     ImageView best_img1, best_img2, best_img3, best_img4;
     BarData data1;
 
@@ -107,7 +113,10 @@ public class analysisPage extends Fragment {
         });
 
 
+
         return view;
+
+
 
     }
 

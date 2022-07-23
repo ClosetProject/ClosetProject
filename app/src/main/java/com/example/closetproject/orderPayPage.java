@@ -114,25 +114,25 @@ public class orderPayPage extends AppCompatActivity {
             }
         });
 
-        order_pay_next = findViewById(R.id.order_pay_next);
-
-        order_pay_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(orderPayPage.this, basketPage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                finish();
-            }
-        });
-
-        order_pay_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(orderPayPage.this, productPage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        order_pay_next = findViewById(R.id.order_pay_next);
+//
+//        order_pay_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(orderPayPage.this, basketPage.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                finish();
+//            }
+//        });
+//
+//        order_pay_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(orderPayPage.this, productPage.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
     }
 

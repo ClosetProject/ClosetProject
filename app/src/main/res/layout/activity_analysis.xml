@@ -72,4 +72,19 @@
         app:layout_constraintStart_toStartOf="@+id/textView62"
         app:layout_constraintTop_toBottomOf="@+id/textView62" />
 
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="93dp"
+        android:layout_height="45dp"
+        android:background="#00FFFFFF"
+        android:text="skip"
+        android:textColor="#828080"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

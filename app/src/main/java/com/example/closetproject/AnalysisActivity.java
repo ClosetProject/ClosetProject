@@ -1,5 +1,7 @@
 package com.example.closetproject;
 
+import static kr.co.bootpay.Bootpay.finish;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -23,6 +25,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.closetproject.Fragment.analysisPage;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
 
@@ -107,6 +110,18 @@ public class AnalysisActivity extends AppCompatActivity {
                 sendTakePhotoIntent();
             }
         });
+
+
+        // 버튼
+        Button btn_skip = (Button)findViewById(R.id.btn_skip);
+        btn_skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent4 = new Intent(AnalysisActivity.this, MainActivity.class);
+                startActivity(intent4);
+            }
+        });
+
     }
     
     /**
