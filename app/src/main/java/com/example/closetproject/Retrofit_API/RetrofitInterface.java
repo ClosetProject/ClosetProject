@@ -77,11 +77,10 @@ public interface RetrofitInterface {
     @POST("get_wish_list")
     Call<ArrayList<ProductDTO>> getWishlist(@FieldMap HashMap< String, String> parameter);
 
-
-
     // diagnosis
-    @POST("analysis")
-    Call<ArrayList<DiagnosisDTO>> analysisResult(@FieldMap HashMap< String, String> parameter);
+    @FormUrlEncoded
+    @POST("get_analysis")
+    Call<DiagnosisDTO> getAnalysis(@FieldMap HashMap< String, String> parameter);
 
 
 }

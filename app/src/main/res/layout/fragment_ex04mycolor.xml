@@ -16,7 +16,7 @@
         android:backgroundTint="#686565"
         android:text="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
+        app:layout_constraintTop_toBottomOf="@+id/b_color3" />
 
     <Button
         android:id="@+id/btn_b2"
@@ -87,12 +87,12 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout8"
+        android:id="@+id/b_color1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#5067ac"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout9"
+        app:layout_constraintEnd_toStartOf="@+id/b_color2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -101,7 +101,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout9"
+        android:id="@+id/b_color2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#2977be"
@@ -114,7 +114,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout10"
+        android:id="@+id/b_color3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#6c9cc6"
@@ -128,13 +128,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/b_color4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#69a5cd"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout10"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+        app:layout_constraintStart_toEndOf="@+id/b_color3"
+        app:layout_constraintTop_toBottomOf="@+id/b_color2">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
