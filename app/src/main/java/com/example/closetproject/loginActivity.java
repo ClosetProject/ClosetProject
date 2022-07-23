@@ -47,8 +47,10 @@ public class loginActivity extends AppCompatActivity {
         SharedPreferences auto = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
         String mEmail = auto.getString("m_email", null);
         String mPW = auto.getString("m_pw", null);
+        String mSeason = auto.getString("m_season", null);
         if(mEmail != null && mPW != null){
             GlobalVariate.getInstance().setM_email(mEmail);
+            GlobalVariate.getInstance().setD_season(mSeason);
             Intent intent = new Intent(loginActivity.this,MainActivity.class);
             startActivity(intent);
             finish();
@@ -98,6 +100,7 @@ public class loginActivity extends AppCompatActivity {
                                     SharedPreferences.Editor autoLoginEdit = auto.edit();
                                     autoLoginEdit.putString("m_email", memberDTO.getM_email());
                                     autoLoginEdit.putString("m_pw", memberDTO.getM_pw());
+                                    autoLoginEdit.putString("m_season", memberDTO.getD_season());
                                     autoLoginEdit.commit();
                                 }
 
