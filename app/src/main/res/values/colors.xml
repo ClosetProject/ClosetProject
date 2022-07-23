@@ -11,10 +11,10 @@
 
 
     <!-- 버튼 red-->
-    <color name="string_b_red1">#F62B49</color>
-    <color name="string_b_red2">#F34640</color>
-    <color name="string_l_red1">#F9687E</color>
-    <color name="string_l_red2">#FE6E74</color>
+    <color name="spring_b_red1">#F62B49</color>
+    <color name="spring_b_red2">#F34640</color>
+    <color name="spring_l_red1">#F9687E</color>
+    <color name="spring_l_red2">#FE6E74</color>
 
     <color name="summer_m_red1">#A2404C</color>
     <color name="summer_m_red2">#CE5B70</color>
@@ -32,10 +32,10 @@
     <color name="winter_d_red2">#A60D10</color>
 
     <!-- 버튼 green-->
-    <color name="string_b_green1">#088D5D</color>
-    <color name="string_b_green2">#2EA25B</color>
-    <color name="string_l_green1">#82C785</color>
-    <color name="string_l_green2">#97D568</color>
+    <color name="spring_b_green1">#088D5D</color>
+    <color name="spring_b_green2">#2EA25B</color>
+    <color name="spring_l_green1">#82C785</color>
+    <color name="spring_l_green2">#97D568</color>
 
     <color name="summer_m_green1">#436262</color>
     <color name="summer_m_green2">#5A814D</color>
@@ -53,10 +53,10 @@
     <color name="winter_d_green2">#146352</color>
 
     <!-- 버튼 yellow-->
-    <color name="string_b_yellow1">#F6C827</color>
-    <color name="string_b_yellow2">#FEF226</color>
-    <color name="string_l_yellow1">#FDD276</color>
-    <color name="string_l_yellow2">#FCF380</color>
+    <color name="spring_b_yellow1">#F6C827</color>
+    <color name="spring_b_yellow2">#FEF226</color>
+    <color name="spring_l_yellow1">#FDD276</color>
+    <color name="spring_l_yellow2">#FCF380</color>
 
     <color name="summer_m_yellow1">#D7A343</color>
     <color name="summer_m_yellow2">#DBB598</color>
@@ -74,10 +74,10 @@
     <color name="winter_d_yellow2">#A77D02</color>
 
     <!-- 버튼 blue-->
-    <color name="string_b_blue1">#5067AC</color>
-    <color name="string_b_blue2">#2977BE</color>
-    <color name="string_l_blue1">#6C9CC6</color>
-    <color name="string_l_blue2">#69A5CD</color>
+    <color name="spring_b_blue1">#5067AC</color>
+    <color name="spring_b_blue2">#2977BE</color>
+    <color name="spring_l_blue1">#6C9CC6</color>
+    <color name="spring_l_blue2">#69A5CD</color>
 
     <color name="summer_m_blue1">#2E3B7A</color>
     <color name="summer_m_blue2">#5A5F8D</color>
