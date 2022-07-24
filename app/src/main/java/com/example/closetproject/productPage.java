@@ -2,7 +2,9 @@ package com.example.closetproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -164,7 +166,44 @@ public class productPage extends AppCompatActivity {
                                 .error(R.drawable.noimg)
                                 .into(iv_pd_image);
                     }
-                    
+
+                    TextView tv_best = findViewById(R.id.tv_best);
+                    TextView tv_good = findViewById(R.id.tv_good);
+                    TextView tv_worst = findViewById(R.id.tv_worst);
+                    TextView tv_color = findViewById(R.id.tv_color);
+
+                    tv_best.setTextColor(Color.parseColor("#FFd3d3d3"));
+                    tv_good.setTextColor(Color.parseColor("#FFd3d3d3"));
+                    tv_worst.setTextColor(Color.parseColor("#FFd3d3d3"));
+
+                    for(int i = 0; i < colorList.size(); i++){
+                        if(colorList.get(i).getP_grade().equals("BEST")){
+                            ConstraintLayout cst = findViewById(R.id.iv_best);
+                            cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                            tv_best.setTextColor(Color.parseColor("#000000"));
+                            tv_color.setText(colorList.get(i).getColor_name());
+                        }else if(colorList.get(i).getP_grade().equals("GOOD")){
+                            ConstraintLayout cst = findViewById(R.id.iv_good);
+                            cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                            tv_good.setTextColor(Color.parseColor("#000000"));
+                        }else{
+                            ConstraintLayout cst = findViewById(R.id.iv_worst);
+                            cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                            tv_worst.setTextColor(Color.parseColor("#000000"));
+                        }
+                    }
+
+                    // 색상 적합도
+                    if(product.getColorList().size() > 0) {
+                        colorList = product.getColorList();
+                        String[] imgList = new String[colorList.size()];
+                        for (int c = 0; c < colorList.size(); c++) {
+                            String colorName = colorList.get(c).getColor_name();
+                            String imgPath = GlobalVariate.getInstance().getBaseURL() + product.getP_img() + colorName + ".jpg";
+                            imgList[c] = imgPath;
+                        }
+                    }
+
                     // 사이즈 세팅
                     if(product.getSizeList().size() > 0){
                         sizeList = product.getSizeList();
