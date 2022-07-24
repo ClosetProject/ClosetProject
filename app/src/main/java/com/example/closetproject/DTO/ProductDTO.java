@@ -35,9 +35,9 @@ public class ProductDTO {
     @Expose
     private ArrayList<PColorDTO> colorList;
 
-    @SerializedName("SIZE")
+    /*@SerializedName("SIZE")
     @Expose
-    private ArrayList<PSizeDTO> sizeList;
+    private ArrayList<PSizeDTO> sizeList;*/
 
     @SerializedName("WISH_YN")
     @Expose
@@ -52,19 +52,6 @@ public class ProductDTO {
         this.p_price = p_price;
         this.s_name = s_name;
         this.s_seq = s_seq;
-    }
-
-    public ProductDTO(String p_code, String p_name, String p_img, String p_cat, String p_price, String s_name, int s_seq, ArrayList<PColorDTO> colorList, ArrayList<PSizeDTO> sizeList, String wish_yn) {
-        this.p_code = p_code;
-        this.p_name = p_name;
-        this.p_img = p_img;
-        this.p_cat = p_cat;
-        this.p_price = p_price;
-        this.s_name = s_name;
-        this.s_seq = s_seq;
-        this.colorList = colorList;
-        this.sizeList = sizeList;
-        this.wish_yn = wish_yn;
     }
 
     // Getter , Setter
@@ -132,13 +119,13 @@ public class ProductDTO {
         this.colorList = colorList;
     }
 
-    public ArrayList<PSizeDTO> getSizeList() {
+    /*public ArrayList<PSizeDTO> getSizeList() {
         return sizeList;
     }
 
     public void setSizeList(ArrayList<PSizeDTO> sizeList) {
         this.sizeList = sizeList;
-    }
+    }*/
 
     public String getWish_yn() {
         return wish_yn;
