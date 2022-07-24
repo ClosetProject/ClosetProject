@@ -407,6 +407,9 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="카드"
+                    android:textColor="#565555"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.054"
@@ -419,6 +422,9 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="카카오페이"
+                    android:textColor="#565555"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -431,6 +437,9 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="가상화폐"
+                    android:textColor="#565555"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.945"
@@ -448,18 +457,8 @@
                     app:layout_constraintHorizontal_bias="0.494"
                     app:layout_constraintStart_toStartOf="@+id/button"
                     app:layout_constraintTop_toTopOf="@+id/button"
-                    app:layout_constraintVertical_bias="0.246"
+                    app:layout_constraintVertical_bias="0.369"
                     app:srcCompat="@drawable/card" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
-                    android:text="카드"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView13"
-                    app:layout_constraintStart_toStartOf="@+id/imageView13"
-                    tools:layout_editor_absoluteY="509dp" />
 
                 <ImageView
                     android:id="@+id/imageView22"
@@ -468,22 +467,10 @@
                     android:background="#00FFFFFF"
                     app:layout_constraintBottom_toBottomOf="@+id/button2"
                     app:layout_constraintEnd_toEndOf="@+id/button2"
-                    app:layout_constraintHorizontal_bias="0.525"
                     app:layout_constraintStart_toStartOf="@+id/button2"
                     app:layout_constraintTop_toTopOf="@+id/button2"
-                    app:layout_constraintVertical_bias="0.246"
+                    app:layout_constraintVertical_bias="0.369"
                     app:srcCompat="@drawable/cacao" />
-
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
-                    android:text="카카오페이"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView22"
-                    app:layout_constraintHorizontal_bias="0.454"
-                    app:layout_constraintStart_toStartOf="@+id/imageView22"
-                    tools:layout_editor_absoluteY="509dp" />
 
                 <ImageView
                     android:id="@+id/imageView26"
@@ -492,21 +479,10 @@
                     android:background="#00FFFFFF"
                     app:layout_constraintBottom_toBottomOf="@+id/button3"
                     app:layout_constraintEnd_toEndOf="@+id/button3"
-                    app:layout_constraintHorizontal_bias="0.529"
                     app:layout_constraintStart_toStartOf="@+id/button3"
                     app:layout_constraintTop_toTopOf="@+id/button3"
-                    app:layout_constraintVertical_bias="0.261"
+                    app:layout_constraintVertical_bias="0.384"
                     app:srcCompat="@drawable/m" />
-
-                <TextView
-                    android:id="@+id/textView26"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
-                    android:text="가상화폐"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView26"
-                    app:layout_constraintStart_toStartOf="@+id/imageView26"
-                    tools:layout_editor_absoluteY="509dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
