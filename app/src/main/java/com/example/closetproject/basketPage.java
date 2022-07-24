@@ -86,6 +86,12 @@ public class basketPage extends AppCompatActivity {
                     basketList = response.body();
                     adapter = new basketCA(basketPage.this,R.layout.basket_list, basketList);
                     basket_lv.setAdapter(adapter);
+
+                    int payPrice = 0;
+                    for(int i = 0; i < basketList.size(); i++){
+                        payPrice += Integer.parseInt(basketList.get(i).getP_price());
+                    }
+                    basket_next.setText("총 "+ payPrice +"원 주문하기");
                 }
 
                 @Override

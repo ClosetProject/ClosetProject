@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,17 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.closetproject.Adapter.mainCA;
+import com.example.closetproject.Adapter.storeProductCA;
+import com.example.closetproject.DTO.DiagnosisDTO;
 import com.example.closetproject.DTO.MemberDTO;
 import com.example.closetproject.DTO.ProductDTO;
 import com.example.closetproject.GlobalVariate;
+import com.example.closetproject.OneStoreActivity;
 import com.example.closetproject.R;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
@@ -35,6 +40,10 @@ import com.example.closetproject.productPage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class mainPage extends Fragment {
 
@@ -45,6 +54,7 @@ public class mainPage extends Fragment {
     GridView main_grid;
     ArrayList<ProductDTO> productList;
     private RetrofitInterface retrofitAPI;
+    private Button btn_pop;
     private String m_email, d_season;
     Cursor iCursor;
     MemberDTO memberDTO;
@@ -74,12 +84,12 @@ public class mainPage extends Fragment {
         summer_color = (ImageView)view.findViewById(R.id.summer_color);
         autumn_color = (ImageView)view.findViewById(R.id.autumn_color);
         winter_color = (ImageView)view.findViewById(R.id.winter_color);
-        Button btn_pop = view.findViewById(R.id.btn_pop);
+        btn_pop = view.findViewById(R.id.btn_pop);
 
 
-//        m_email = GlobalVariate.getInstance().getM_email();
-//        d_season = GlobalVariate.getInstance().getD_season();
-//
+        m_email = GlobalVariate.getInstance().getM_email();
+        d_season = GlobalVariate.getInstance().getD_season();
+
 //        if (d_season.contains("SW")) {
 //            string_color.setImageResource(R.drawable.spring_w1);
 //            string_color.setImageResource(R.drawable.spring_w2);
@@ -272,7 +282,44 @@ public class mainPage extends Fragment {
             }
         });
 
+        setSeason();
         return view;
     }
 
+    private void setSeason(){
+        HashMap<String, String> param = new HashMap<>();
+        param.put("m_email", m_email);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if(retrofitClient != null){
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getAnalysis(param).enqueue(new Callback<DiagnosisDTO>() {
+                @Override
+                public void onResponse(Call<DiagnosisDTO> call, Response<DiagnosisDTO> response) {
+                    d_season = response.body().getD_result();
+
+                    switch(d_season.substring(0,2)){
+                        case "SW":
+                            btn_pop.setText("봄 웜 \uD83C\uDF38");
+                            break;
+                        case "SC":
+                            btn_pop.setText("여름 쿨 \uD83C\uDF49");
+                            break;
+                        case "AW":
+                            btn_pop.setText("가을 웜 \uD83C\uDF41");
+                            break;
+                        case "WC":
+                            btn_pop.setText("겨울 쿨 ⛄");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<DiagnosisDTO> call, Throwable t) {
+                    Log.d("fail_Log", t.getMessage());
+                }
+            });
+        }
+    }
 }
