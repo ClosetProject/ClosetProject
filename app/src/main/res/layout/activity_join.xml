@@ -58,9 +58,10 @@
 
     <Button
         android:id="@+id/btn_join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#686565"
         android:text="회원가입"
         app:layout_constraintEnd_toEndOf="@+id/edit_joinname"
         app:layout_constraintStart_toStartOf="@+id/edit_joinname"

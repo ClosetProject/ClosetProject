@@ -10,20 +10,20 @@
         android:id="@+id/edit_loginemail"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="237dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="이메일을 입력하세요"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edit_loginpw"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="패스워드를 입력하세요"
         android:inputType="textPersonName"
@@ -49,9 +49,9 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="220dp"
         android:backgroundTint="#686565"
         android:text="로그인"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,10 +63,14 @@
         android:id="@+id/tv_join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
         android:text="회원가입"
+        android:textColor="#576EEC"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
-        app:layout_constraintEnd_toEndOf="@+id/edit_loginpw" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_loginpw"
+        app:layout_constraintVertical_bias="0.302"
+        tools:layout_editor_absoluteX="303dp" />
 
     <CheckBox
         android:id="@+id/chk_autoLogin"
@@ -75,6 +79,6 @@
         android:text="자동로그인"
         app:layout_constraintBottom_toBottomOf="@+id/tv_join"
         app:layout_constraintStart_toStartOf="@+id/edit_loginpw"
-        app:layout_constraintTop_toTopOf="@+id/tv_join"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_loginpw"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
