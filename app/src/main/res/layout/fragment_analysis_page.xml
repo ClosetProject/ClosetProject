@@ -51,7 +51,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/iv_face"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -83,7 +83,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/tv_season"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -214,7 +214,8 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView40"
-                            tools:src="@drawable/sw_best" />
+                            app:srcCompat="@drawable/sw_best"
+                            tools:srcCompat="@drawable/sw_best" />
 
                         <ImageView
                             android:id="@+id/img_good"
@@ -227,7 +228,7 @@
                             app:layout_constraintStart_toEndOf="@+id/img_best"
                             app:layout_constraintTop_toBottomOf="@+id/line8"
                             app:layout_constraintVertical_bias="1.0"
-                            tools:src="@drawable/sw_good" />
+                            app:srcCompat="@drawable/sw_good" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
