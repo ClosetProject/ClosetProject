@@ -144,6 +144,7 @@ public class orderPayPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 btn_card.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_card.setTextColor(getApplication().getResources().getColor(R.color.white));
             }
         });
 
@@ -152,6 +153,7 @@ public class orderPayPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 btn_kakao.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_kakao.setTextColor(getApplication().getResources().getColor(R.color.white));
             }
         });
 
@@ -160,6 +162,7 @@ public class orderPayPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 btn_m.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_m.setTextColor(getApplication().getResources().getColor(R.color.white));
             }
         });
 

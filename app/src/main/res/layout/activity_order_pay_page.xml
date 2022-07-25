@@ -405,7 +405,7 @@
                     app:layout_constraintTop_toTopOf="@+id/parcel5"
                     app:srcCompat="@drawable/down" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_card"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
@@ -420,7 +420,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.747" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_kakao"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
@@ -435,7 +435,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.747" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_m"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
