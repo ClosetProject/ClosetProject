@@ -1,7 +1,9 @@
 package com.example.closetproject.Adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +21,17 @@ import com.example.closetproject.DTO.BasketDTO;
 import com.example.closetproject.GlobalVariate;
 import com.example.closetproject.R;
 import com.example.closetproject.DTO.basketVO;
+import com.example.closetproject.Retrofit_API.RetrofitClient;
+import com.example.closetproject.Retrofit_API.RetrofitInterface;
+import com.example.closetproject.orderPayPage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class basketCA extends BaseAdapter {
 
@@ -28,11 +39,14 @@ public class basketCA extends BaseAdapter {
     private int layout;
     private ArrayList<BasketDTO> data;
     private LayoutInflater inflater;
+    private RetrofitInterface retrofitAPI;
+    String m_email;
 
     public basketCA(Context context, int layout, ArrayList<BasketDTO> data){
         this.context = context;
         this.layout = layout;
         this.data = data;
+        m_email = GlobalVariate.getInstance().getM_email();
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -62,6 +76,32 @@ public class basketCA extends BaseAdapter {
         TextView p_point = view.findViewById(R.id.p_point);
         TextView p_price = view.findViewById(R.id.p_price);
         Spinner p_cnt = view.findViewById(R.id.p_cnt);
+        ImageView iv_close = view.findViewById(R.id.iv_close);
+        iv_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HashMap<String, String> params = new HashMap<>();
+                params.put("m_email", m_email);
+                params.put("p_code", data.get(i).getP_code());
+
+                retrofitAPI = RetrofitClient.getRetrofitAPI();
+                retrofitAPI.delBasket(params).enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Intent intent = ((Activity)context).getIntent();
+                        ((Activity)context).finish(); //현재 액티비티 종료 실시
+                        ((Activity)context).overridePendingTransition(0, 0); //효과 없애기
+                        ((Activity)context).startActivity(intent); //현재 액티비티 재실행 실시
+                        ((Activity)context).overridePendingTransition(0, 0); //효과 없애기
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
 
         //ImageView close = view.findViewById(R.id.close);
 

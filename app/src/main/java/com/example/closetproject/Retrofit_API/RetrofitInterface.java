@@ -94,4 +94,8 @@ public interface RetrofitInterface {
     @FormUrlEncoded
     @POST("set_personal_color")
     Call<String> setPersonal(@FieldMap HashMap< String, String> parameter);
+
+    @FormUrlEncoded
+    @POST("del_basket")
+    Call<String> delBasket(@FieldMap HashMap<String, String> parameter);
 }
