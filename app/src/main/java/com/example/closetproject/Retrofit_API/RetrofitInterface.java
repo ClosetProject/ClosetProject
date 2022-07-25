@@ -61,6 +61,14 @@ public interface RetrofitInterface {
     @POST("get_product")
     Call<ProductDTO> getProduct(@FieldMap HashMap<String, String> parameter);
 
+    @FormUrlEncoded
+    @POST("get_color_list")
+    Call<ArrayList<PColorDTO>> getColorList(@FieldMap HashMap<String, String> parameter);
+
+    @FormUrlEncoded
+    @POST("get_size_list")
+    Call<ArrayList<PSizeDTO>> getSizeList(@FieldMap HashMap<String, String> parameter);
+
     // Basket
     @POST("set_basket")
     Call<String> setBasket(@Body BasketDTO parameter);
@@ -82,5 +90,8 @@ public interface RetrofitInterface {
     @POST("get_analysis")
     Call<DiagnosisDTO> getAnalysis(@FieldMap HashMap< String, String> parameter);
 
-
+    // diagnosis
+    @FormUrlEncoded
+    @POST("set_personal_color")
+    Call<String> setPersonal(@FieldMap HashMap< String, String> parameter);
 }

@@ -134,6 +134,50 @@ public class orderPayPage extends AppCompatActivity {
             }
         });
 
+        // 결제방식 선택 버튼
+        Button btn_card = findViewById(R.id.btn_card);
+        Button btn_kakao = findViewById(R.id.btn_kakao);
+        Button btn_m = findViewById(R.id.btn_m);
+
+        // 카드
+        btn_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_card.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_card.setTextColor(getApplication().getResources().getColor(R.color.white));
+            }
+        });
+
+        // 카카오페이
+        btn_kakao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_kakao.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_kakao.setTextColor(getApplication().getResources().getColor(R.color.white));
+            }
+        });
+
+        // 가상화폐
+        btn_m.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_m.setBackgroundColor(getApplication().getResources().getColor(R.color.gray));
+                btn_m.setTextColor(getApplication().getResources().getColor(R.color.white));
+            }
+        });
+
+
+
+
+
+        // 결제버튼 누르기
+        btn_pay1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6 = new Intent(orderPayPage.this, payment.class);
+                startActivity(intent6);
+            }
+        });
     }
 
 }

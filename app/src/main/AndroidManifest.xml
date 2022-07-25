@@ -21,8 +21,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
         <activity
+            android:name=".payment"
+            android:exported="false" />
+        <activity
             android:name=".myAnalysisPage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".test_Dialog"
             android:exported="false"

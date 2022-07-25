@@ -38,7 +38,7 @@ public class Ex03mycolor extends Fragment {
         g_color4 = view.findViewById(R.id.g_color4);
 
         switch(GlobalVariate.getInstance().getD_season()){
-            case "WS":
+            case "SW":
                 arrColor = new int[]{R.color.spring_l_green1, R.color.spring_l_green2,
                         R.color.spring_b_green1, R.color.spring_b_green2};
                 break;
@@ -69,8 +69,8 @@ public class Ex03mycolor extends Fragment {
                     btn_g2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(2,1);
                 }
-
             }
         });
         btn_g2.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +81,8 @@ public class Ex03mycolor extends Fragment {
                     btn_g2.setBackgroundColor(Color.parseColor("#2EA25B"));
                     btn_g3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(2,2);
                 }
-
             }
         });
         btn_g3.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +93,8 @@ public class Ex03mycolor extends Fragment {
                     btn_g2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g3.setBackgroundColor(Color.parseColor("#82C785"));
                     btn_g4.setBackgroundColor(Color.parseColor("#686565"));
+                    GlobalVariate.getInstance().addSelf_cnt(2,3);
                 }
-
             }
         });
         btn_g4.setOnClickListener(new View.OnClickListener() {
@@ -105,8 +105,8 @@ public class Ex03mycolor extends Fragment {
                     btn_g2.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g3.setBackgroundColor(Color.parseColor("#686565"));
                     btn_g4.setBackgroundColor(Color.parseColor("#97D568"));
+                    GlobalVariate.getInstance().addSelf_cnt(2,4);
                 }
-
             }
         });
         return view;

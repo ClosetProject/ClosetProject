@@ -17,10 +17,15 @@ public class PColorDTO {
     @Expose
     private String c_code;
 
-    public PColorDTO(String color_seq, String color_name, String c_code) {
+    @SerializedName("P_GRADE")
+    @Expose
+    private String p_grade;
+
+    public PColorDTO(String color_seq, String color_name, String c_code, String p_grade) {
         this.color_seq = color_seq;
         this.color_name = color_name;
         this.c_code = c_code;
+        this.p_grade = p_grade;
     }
 
     public String getColor_seq() {
@@ -45,5 +50,13 @@ public class PColorDTO {
 
     public void setC_code(String c_code) {
         this.c_code = c_code;
+    }
+
+    public String getP_grade() {
+        return p_grade;
+    }
+
+    public void setP_grade(String p_grade) {
+        this.p_grade = p_grade;
     }
 }

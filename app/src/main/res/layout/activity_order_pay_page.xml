@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".orderPayPage">
 
+
+
     <View
         android:id="@+id/view5"
         android:layout_width="410dp"
@@ -223,6 +225,7 @@
                     android:layout_height="54dp"
                     android:layout_marginStart="51dp"
                     android:layout_marginEnd="52dp"
+                    android:backgroundTint="#000000"
                     android:text="결제하기"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -358,8 +361,8 @@
 
                 <Spinner
                     android:id="@+id/parcel5"
-                    android:layout_width="304dp"
-                    android:layout_height="27dp"
+                    android:layout_width="348dp"
+                    android:layout_height="29dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/nemo"
@@ -401,6 +404,88 @@
                     app:layout_constraintEnd_toEndOf="@+id/parcel5"
                     app:layout_constraintTop_toTopOf="@+id/parcel5"
                     app:srcCompat="@drawable/down" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_card"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="카드"
+                    android:textColor="#565555"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.054"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.747" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_kakao"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="카카오페이"
+                    android:textColor="#565555"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.747" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_m"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="#00FFFFFF"
+                    android:gravity="bottom|center"
+                    android:text="가상화폐"
+                    android:textColor="#565555"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.945"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.745" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_card"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_card"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintStart_toStartOf="@+id/btn_card"
+                    app:layout_constraintTop_toTopOf="@+id/btn_card"
+                    app:layout_constraintVertical_bias="0.369"
+                    app:srcCompat="@drawable/card" />
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:background="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_kakao"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_kakao"
+                    app:layout_constraintStart_toStartOf="@+id/btn_kakao"
+                    app:layout_constraintTop_toTopOf="@+id/btn_kakao"
+                    app:layout_constraintVertical_bias="0.369"
+                    app:srcCompat="@drawable/cacao" />
+
+                <ImageView
+                    android:id="@+id/imageView26"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_m"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_m"
+                    app:layout_constraintStart_toStartOf="@+id/btn_m"
+                    app:layout_constraintTop_toTopOf="@+id/btn_m"
+                    app:layout_constraintVertical_bias="0.384"
+                    app:srcCompat="@drawable/m" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

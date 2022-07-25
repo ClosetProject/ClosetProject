@@ -297,7 +297,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView67"
+                        android:id="@+id/tv_best"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -315,7 +315,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView68"
+                        android:id="@+id/tv_good"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -395,7 +395,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:paddingLeft="47dp"
-                            app:srcCompat="@drawable/piple" />
+                            app:srcCompat="@drawable/noimg" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -405,9 +405,10 @@
                         android:orientation="vertical">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/iv_best"
                             android:layout_width="44dp"
                             android:layout_height="match_parent"
-                            android:background="#FF0303">
+                            android:background="@color/gray">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
@@ -426,9 +427,10 @@
                         android:paddingStart="20dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/iv_good"
                             android:layout_width="130dp"
                             android:layout_height="match_parent"
-                            android:background="#3F51B5">
+                            android:background="@color/gray">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -440,7 +442,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView69"
+                            android:id="@+id/tv_worst"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center|start"
@@ -477,9 +479,10 @@
                         android:paddingStart="20dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/iv_worst"
                             android:layout_width="130dp"
                             android:layout_height="match_parent"
-                            android:background="#4CAF50">
+                            android:background="@color/gray">
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -491,22 +494,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingLeft="38dp">
+                android:paddingLeft="50dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView73"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="15dp"
-                        android:text="닉네임" />
-                </LinearLayout>
+                    android:orientation="horizontal" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -519,7 +512,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="에게 추천하는 컬러는" />
+                        android:text="추천하는 컬러는  " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -528,12 +521,11 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView70"
+                        android:id="@+id/tv_color"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text=" 빨간색 주황색"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -550,7 +542,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text=" 입니다" />
+                        android:text="  입니다" />
                 </LinearLayout>
             </LinearLayout>
 

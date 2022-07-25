@@ -2,7 +2,9 @@ package com.example.closetproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,6 +33,7 @@ import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,13 +45,11 @@ public class productPage extends AppCompatActivity {
     private ImageView s_basket3, iv_pd_image, product_hart;
     private TextView tv_pd_name, tv_pd_price;
     private Button btn_pay;
-    private int [] arry = {R.drawable.heart1,R.drawable.heart2};
 
     private RetrofitInterface retrofitAPI;
-    private String p_code;
-    private String m_email;
-    private String p_name;
-    ImageView[] imageArray = new ImageView[4];
+    private String p_code, m_email, wish_yn, img_path;
+    private ArrayList<PColorDTO> colorList;
+    private ArrayList<PSizeDTO> sizeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +68,6 @@ public class productPage extends AppCompatActivity {
 
         color_group = findViewById(R.id.color_group);
         size_group = findViewById(R.id.size_group);
-
-//        product_hart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int num = 0;
-//                product_hart.setImageResource(arry[num]);
-//
-//                if(num==2){
-//                    num = 0;
-//
-//                }
 
         btn_pay = findViewById(R.id.btn_pay);
         btn_pay.setOnClickListener(new View.OnClickListener() {
@@ -100,11 +90,8 @@ public class productPage extends AppCompatActivity {
             }
         });
 
-
-
         product_hart = findViewById(R.id.product_hart);
         product_hart.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 HashMap<String, String> params = new HashMap<>();
@@ -115,7 +102,13 @@ public class productPage extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.isSuccessful()){
-                            // 이미지 바꿔주기
+                            if(wish_yn.equals("N")){
+                                wish_yn = "Y";
+                                product_hart.setImageResource(R.drawable.heart2);
+                            }else{
+                                wish_yn = "N";
+                                product_hart.setImageResource(R.drawable.heart1);
+                            }
                         }
                     }
 
@@ -124,11 +117,12 @@ public class productPage extends AppCompatActivity {
                         Log.d("failure", t.getMessage());
                     }
                 });
-
             }
         });
 
         setProduct();
+        setColorList();
+        setSizeList();
     }
 
     /*
@@ -142,27 +136,49 @@ public class productPage extends AppCompatActivity {
         params.put("p_code", p_code);
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
         if(retrofitClient != null){
-
             retrofitAPI = RetrofitClient.getRetrofitAPI();
             retrofitAPI.getProduct(params).enqueue(new Callback<ProductDTO>() {
                 @Override
                 public void onResponse(Call<ProductDTO> call, Response<ProductDTO> response) {
                     ProductDTO product = response.body();
-                    ArrayList<PColorDTO> colorList = null;
-                    ArrayList<PSizeDTO> sizeList = null;
 
+                    img_path = product.getP_img();
                     String pd_name = "[" + product.getS_name() + "] " + product.getP_name();
-
                     tv_pd_name.setText(pd_name);
                     tv_pd_price.setText(product.getP_price() + "원");
 
-                    // 색상 세팅
-                    if(product.getColorList().size() > 0){
-                        colorList = product.getColorList();
+                    //찜여부
+                    wish_yn = product.getWish_yn();
+                    if(wish_yn.equals("Y")){
+                        product_hart.setImageResource(R.drawable.heart2);
+                    }else{
+                        product_hart.setImageResource(R.drawable.heart1);
+                    }
+                }
+                @Override
+                public void onFailure(Call<ProductDTO> call, Throwable t) {
+                    Log.d("failure", t.getMessage());
+                }
+            });
+        }
+    }
+
+    private void setColorList(){
+        HashMap<String, String> params = new HashMap<>();
+        params.put("m_email", m_email);
+        params.put("p_code", p_code);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if(retrofitClient != null) {
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getColorList(params).enqueue(new Callback<ArrayList<PColorDTO>>() {
+                @Override
+                public void onResponse(Call<ArrayList<PColorDTO>> call, Response<ArrayList<PColorDTO>> response) {
+                    if (response.isSuccessful()) {
+                        colorList = response.body();
                         String[] imgList = new String[colorList.size()];
-                        for(int c = 0; c < colorList.size(); c++){
+                        for (int c = 0; c < colorList.size(); c++) {
                             String colorName = colorList.get(c).getColor_name();
-                            String imgPath = GlobalVariate.getInstance().getBaseURL() + product.getP_img() + colorName + ".jpg";
+                            String imgPath = GlobalVariate.getInstance().getBaseURL() + img_path + colorName + ".jpg";
                             imgList[c] = imgPath;
                         }
 
@@ -170,53 +186,87 @@ public class productPage extends AppCompatActivity {
                                 .load(imgList[0])
                                 .error(R.drawable.noimg)
                                 .into(iv_pd_image);
-;
-                    }else{
-                        Glide.with(productPage.this)
-                                .load(R.drawable.noimg)
-                                .error(R.drawable.noimg)
-                                .into(iv_pd_image);
-                    }
-                    
-                    // 사이즈 세팅
-                    if(product.getSizeList().size() > 0){
-                        sizeList = product.getSizeList();
 
-                        // 사이즈 항목
-                        TableLayout tl_size = (TableLayout)findViewById(R.id.tl_size);
-                        TableRow[] tr_size = new TableRow[2];
-                        TextView[] td_size = new TextView[sizeList.size()];
 
-                        tr_size[0] = new TableRow(productPage.this);
-                        for(int s = 0 ; s < td_size.length; s++){
-                            td_size[s] = new TextView(productPage.this);
-                            td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_desc());
-                            tr_size[0].addView(td_size[s]);
+                        // 색상추가
+                        ChipGroup color_group = (ChipGroup) findViewById(R.id.color_group);
+                        for (int i = 0; i < colorList.size(); i++) {
+                            PColorDTO colorDTO = colorList.get(i);
+
+                            Chip colorChip = new Chip(productPage.this);
+                            colorChip = setColorChip(colorChip, colorDTO);
+                            color_group.addView(colorChip);
                         }
-                        tl_size.addView(tr_size[0]);
 
-                        tr_size[1] = new TableRow(productPage.this);
-                        for(int s = 0 ; s < td_size.length; s++){
-                            td_size[s] = new TextView(productPage.this);
-                            td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_part());
-                            if(s == 0){
-                                td_size[s].setText(sizeList.get(s).getSize_name());
+                        TextView tv_best = findViewById(R.id.tv_best);
+                        TextView tv_good = findViewById(R.id.tv_good);
+                        TextView tv_worst = findViewById(R.id.tv_worst);
+                        TextView tv_color = findViewById(R.id.tv_color);
+
+                        tv_best.setTextColor(Color.parseColor("#FFd3d3d3"));
+                        tv_good.setTextColor(Color.parseColor("#FFd3d3d3"));
+                        tv_worst.setTextColor(Color.parseColor("#FFd3d3d3"));
+
+                        for (int i = 0; i < colorList.size(); i++) {
+                            if (colorList.get(i).getP_grade().equals("BEST")) {
+                                ConstraintLayout cst = findViewById(R.id.iv_best);
+                                cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                                tv_best.setTextColor(Color.parseColor("#000000"));
+                                tv_color.setText(colorList.get(i).getColor_name());
+                            } else if (colorList.get(i).getP_grade().equals("GOOD")) {
+                                ConstraintLayout cst = findViewById(R.id.iv_good);
+                                cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                                tv_good.setTextColor(Color.parseColor("#000000"));
+                            } else {
+                                ConstraintLayout cst = findViewById(R.id.iv_worst);
+                                cst.setBackgroundColor(Color.parseColor(colorList.get(i).getC_code()));
+                                tv_worst.setTextColor(Color.parseColor("#000000"));
                             }
-                            tr_size[1].addView(td_size[s]);
                         }
-                        tl_size.addView(tr_size[1]);
                     }
+                }
 
-                    // 색상추가
-                    ChipGroup color_group = (ChipGroup)findViewById(R.id.color_group);
-                    for(int i = 0; i < colorList.size(); i++){
-                        PColorDTO colorDTO = colorList.get(i);
+                @Override
+                public void onFailure(Call<ArrayList<PColorDTO>> call, Throwable t) {
+                    Log.d("fail_Log", t.getMessage());
+                }
+            });
+        }
+    }
 
-                        Chip colorChip = new Chip(productPage.this);
-                        colorChip = setColorChip(colorChip, colorDTO);
-                        color_group.addView(colorChip);
+    private void setSizeList(){
+        HashMap<String, String> params = new HashMap<>();
+        params.put("p_code", p_code);
+        RetrofitClient retrofitClient = RetrofitClient.getInstance();
+        if(retrofitClient != null) {
+            retrofitAPI = RetrofitClient.getRetrofitAPI();
+            retrofitAPI.getSizeList(params).enqueue(new Callback<ArrayList<PSizeDTO>>() {
+                @Override
+                public void onResponse(Call<ArrayList<PSizeDTO>> call, Response<ArrayList<PSizeDTO>> response) {
+                    sizeList = response.body();
+
+                    TableLayout tl_size = (TableLayout)findViewById(R.id.tl_size);
+                    TableRow[] tr_size = new TableRow[2];
+                    TextView[] td_size = new TextView[sizeList.size()];
+
+                    tr_size[0] = new TableRow(productPage.this);
+                    for(int s = 0 ; s < td_size.length; s++){
+                        td_size[s] = new TextView(productPage.this);
+                        td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_desc());
+                        tr_size[0].addView(td_size[s]);
                     }
+                    tl_size.addView(tr_size[0]);
 
+                    tr_size[1] = new TableRow(productPage.this);
+                    for(int s = 0 ; s < td_size.length; s++){
+                        td_size[s] = new TextView(productPage.this);
+                        td_size[s] = setDesign(td_size[s], sizeList.get(s).getSize_part());
+                        if(s == 0){
+                            td_size[s].setText(sizeList.get(s).getSize_name());
+                        }
+                        tr_size[1].addView(td_size[s]);
+                    }
+                    tl_size.addView(tr_size[1]);
 
                     ChipGroup size_group = (ChipGroup)findViewById(R.id.size_group);
                     for(int i = 0;i < sizeList.size(); i++){
@@ -228,15 +278,16 @@ public class productPage extends AppCompatActivity {
                             size_group.addView(sizeChip);
                         }
                     }
-
                 }
+
                 @Override
-                public void onFailure(Call<ProductDTO> call, Throwable t) {
-                    Log.d("failure", t.getMessage());
+                public void onFailure(Call<ArrayList<PSizeDTO>> call, Throwable t) {
+
                 }
             });
         }
     }
+
     private void setBasket(int color, int size, int cnt){
         BasketDTO basketDTO = new BasketDTO(p_code, cnt, m_email, color, size);
         RetrofitClient retrofitClient = RetrofitClient.getInstance();
