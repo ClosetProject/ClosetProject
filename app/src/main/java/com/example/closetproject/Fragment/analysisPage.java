@@ -146,7 +146,7 @@ public class analysisPage extends Fragment {
                         DiagnosisDTO diagnosisDTO = response.body();
                         season = diagnosisDTO.getD_result();
                         String txt_season = "봄웜";
-                        String file_path = diagnosisDTO.getFace_img();
+                        String file_path = GlobalVariate.getInstance().getBaseURL() + diagnosisDTO.getFace_img();
                         Glide.with(getContext())
                                 .load(file_path)
                                 .error(R.drawable.noimg)
