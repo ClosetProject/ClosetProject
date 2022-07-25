@@ -60,7 +60,7 @@ public class myAnalysisPage extends AppCompatActivity {
                     GlobalVariate.getInstance().setD_season(season);
 
                     // 얼굴이미지 세팅
-                    String file_path = diagnosisDTO.getFace_img();
+                    String file_path = GlobalVariate.getInstance().getBaseURL() + diagnosisDTO.getFace_img();
                     Glide.with(myAnalysisPage.this)
                             .load(file_path)
                             .error(R.drawable.noimg)
