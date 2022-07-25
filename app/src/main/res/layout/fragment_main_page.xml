@@ -580,6 +580,7 @@
                             android:paddingTop="5dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cst_KNIT0030"
                                 android:layout_width="match_parent"
                                 android:layout_height="212dp"
                                 android:layout_weight="1">
@@ -598,12 +599,12 @@
                                     app:srcCompat="@drawable/com_i_1" />
 
                                 <ImageView
-                                    android:id="@+id/hart1"
+                                    android:id="@+id/hart_KNIT0030"
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_i_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_i_img"
@@ -684,8 +685,8 @@
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_o_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_o_img"
@@ -749,6 +750,7 @@
                             android:paddingTop="5dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cst_KNIT0209"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -768,12 +770,12 @@
                                     app:srcCompat="@drawable/com_r_1" />
 
                                 <ImageView
-                                    android:id="@+id/hart3"
+                                    android:id="@+id/hart_KNIT0209"
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_r_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_r_img"
@@ -831,6 +833,7 @@
                             android:paddingTop="5dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cst_KNIT0031"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -850,12 +853,12 @@
                                     app:srcCompat="@drawable/com_t_1" />
 
                                 <ImageView
-                                    android:id="@+id/hart4"
+                                    android:id="@+id/hart_KNIT0031"
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_t_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_t_img"
@@ -919,6 +922,7 @@
                             android:paddingTop="5dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cst_OPS0008"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -938,12 +942,12 @@
                                     app:srcCompat="@drawable/com_y_1" />
 
                                 <ImageView
-                                    android:id="@+id/hart5"
+                                    android:id="@+id/hart_OPS0008"
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_y_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_y_img"
@@ -1024,8 +1028,8 @@
                                     android:layout_width="25dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="164dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:layout_weight="1"
                                     app:layout_constraintBottom_toBottomOf="@+id/com_w_img"
                                     app:layout_constraintEnd_toEndOf="@+id/com_w_img"

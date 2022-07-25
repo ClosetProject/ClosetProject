@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.closetproject.R;
 import com.example.closetproject.DTO.orderVO;
 
@@ -56,7 +57,12 @@ public class orderCA extends BaseAdapter {
         p_order_name.setText(data.get(i).getP_name());
         p_order_color.setText(data.get(i).getColor());
         p_order_size.setText(data.get(i).getSize());
-        p_order_img.setImageResource(data.get(i).getImg());
+        //p_order_img.setImageResource(data.get(i).getImg());
+        String img_path = "http://121.147.185.76:8081/static/product_image/OPS/OPS0021/WHITE.jpg";
+        Glide.with(context)
+                .load(img_path)
+                .error(R.drawable.noimg)
+                .into(p_order_img);
 
         return view;
     }

@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="13dp"
-                    android:text="체크 무늬무늬"
+                    android:text="리턴 실키 셔츠 미니 원피스"
                     android:textColor="#000000"
                     app:layout_constraintStart_toEndOf="@+id/p_order_img2"
                     app:layout_constraintTop_toTopOf="@+id/p_order_img2" />
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="94dp"
-                    android:text="20,000원"
+                    android:text="38,000원"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toBottomOf="@+id/textView33"
                     app:layout_constraintStart_toEndOf="@+id/textView33"
@@ -204,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="10dp"
-                    android:text="커먼유니크"
+                    android:text="소녀나라"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/line" />
@@ -328,7 +328,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
-                    android:text="흰색"
+                    android:text="WHITE"
                     android:textSize="12sp"
                     app:layout_constraintStart_toEndOf="@+id/p_order_img2"
                     app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -356,7 +356,7 @@
                     android:background="@drawable/nemo"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView27"
-                    app:srcCompat="@drawable/p_tano"
+                    app:srcCompat="@drawable/p_lrod"
                     tools:ignore="MissingConstraints,UnknownIdInLayout" />
 
                 <Spinner
@@ -390,7 +390,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
-                    android:text="20,000원"
+                    android:text="38,000원"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toTopOf="@+id/view8"
                     app:layout_constraintEnd_toEndOf="parent" />
