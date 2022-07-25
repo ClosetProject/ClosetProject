@@ -142,6 +142,7 @@ public class productPage extends AppCompatActivity {
                 public void onResponse(Call<ProductDTO> call, Response<ProductDTO> response) {
                     ProductDTO product = response.body();
 
+                    img_path = product.getP_img();
                     String pd_name = "[" + product.getS_name() + "] " + product.getP_name();
                     tv_pd_name.setText(pd_name);
                     tv_pd_price.setText(product.getP_price() + "원");
