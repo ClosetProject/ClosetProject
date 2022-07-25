@@ -68,9 +68,11 @@
         android:text="회원가입"
         android:textColor="#576EEC"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/edit_loginpw"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/chk_autoLogin"
         app:layout_constraintTop_toBottomOf="@+id/edit_loginpw"
-        app:layout_constraintVertical_bias="0.302"
-        tools:layout_editor_absoluteX="303dp" />
+        app:layout_constraintVertical_bias="0.312" />
 
     <CheckBox
         android:id="@+id/chk_autoLogin"
