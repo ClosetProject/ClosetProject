@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/btn_runmodel"
-        android:layout_width="140dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="#686565"
         android:text="진단하러 가기"
@@ -36,7 +36,6 @@
         android:layout_marginTop="107dp"
         android:text="참고 사진"
         android:textColor="#000000"
-        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imgViewAnaly"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="주의사항"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imgViewAnaly"
         app:layout_constraintStart_toStartOf="@+id/imgViewAnaly"
         app:layout_constraintTop_toBottomOf="@+id/imgViewAnaly" />
@@ -60,7 +58,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="1. 가능한 단순한 옷, 배경에서 사진을 찍어주세요"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -71,7 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="2. 사진 촬영 시 되도록 가슴 위로 찍어주세요"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView62"
         app:layout_constraintStart_toStartOf="@+id/textView62"
         app:layout_constraintTop_toBottomOf="@+id/textView62" />
