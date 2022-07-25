@@ -11,23 +11,23 @@ public class DiagnosisDTO {
 
     @SerializedName("D_L")
     @Expose
-    private int d_l;
+    private float d_l;
 
     @SerializedName("D_A")
     @Expose
-    private int d_a;
+    private float d_a;
 
     @SerializedName("D_B")
     @Expose
-    private int d_b;
+    private float d_b;
 
     @SerializedName("D_S")
     @Expose
-    private int d_s;
+    private float d_s;
 
     @SerializedName("D_V")
     @Expose
-    private int d_v;
+    private float d_v;
 
     @SerializedName("D_RESULT")
     @Expose
@@ -37,7 +37,7 @@ public class DiagnosisDTO {
     @Expose
     private String m_email;
 
-    public DiagnosisDTO(int d_seq, int d_l, int d_a, int d_b, int d_s, int d_v, String d_result, String m_email) {
+    public DiagnosisDTO(int d_seq, float d_l, float d_a, float d_b, float d_s, float d_v, String d_result, String m_email) {
         this.d_seq = d_seq;
         this.d_l = d_l;
         this.d_a = d_a;
@@ -56,7 +56,7 @@ public class DiagnosisDTO {
         this.d_seq = d_seq;
     }
 
-    public int getD_l() {
+    public float getD_l() {
         return d_l;
     }
 
@@ -64,7 +64,7 @@ public class DiagnosisDTO {
         this.d_l = d_l;
     }
 
-    public int getD_a() {
+    public float getD_a() {
         return d_a;
     }
 
@@ -72,7 +72,7 @@ public class DiagnosisDTO {
         this.d_a = d_a;
     }
 
-    public int getD_b() {
+    public float getD_b() {
         return d_b;
     }
 
@@ -80,7 +80,7 @@ public class DiagnosisDTO {
         this.d_b = d_b;
     }
 
-    public int getD_s() {
+    public float getD_s() {
         return d_s;
     }
 
@@ -88,7 +88,7 @@ public class DiagnosisDTO {
         this.d_s = d_s;
     }
 
-    public int getD_v() {
+    public float getD_v() {
         return d_v;
     }
 
