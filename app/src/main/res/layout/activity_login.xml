@@ -51,13 +51,15 @@
         android:id="@+id/btn_login"
         android:layout_width="140dp"
         android:layout_height="54dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="220dp"
         android:backgroundTint="#686565"
         android:text="로그인"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edit_loginpw"
         app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/edit_loginpw" />
+        app:layout_constraintStart_toStartOf="@+id/edit_loginpw"
+        app:layout_constraintTop_toBottomOf="@+id/edit_loginpw" />
 
     <TextView
         android:id="@+id/tv_join"
@@ -68,9 +70,11 @@
         android:text="회원가입"
         android:textColor="#576EEC"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintStart_toEndOf="@+id/chk_autoLogin"
         app:layout_constraintTop_toBottomOf="@+id/edit_loginpw"
-        app:layout_constraintVertical_bias="0.302"
-        tools:layout_editor_absoluteX="303dp" />
+        app:layout_constraintVertical_bias="0.312" />
 
     <CheckBox
         android:id="@+id/chk_autoLogin"
