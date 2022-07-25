@@ -42,7 +42,7 @@ import retrofit2.Response;
 public class productPage extends AppCompatActivity {
 
     private ChipGroup color_group, size_group;
-    private ImageView s_basket3, iv_pd_image, product_hart;
+    private ImageView s_basket3, iv_pd_image, product_hart, iv_face2;
     private TextView tv_pd_name, tv_pd_price;
     private Button btn_pay;
 
@@ -59,6 +59,13 @@ public class productPage extends AppCompatActivity {
         Intent intent = getIntent();
         p_code = intent.getStringExtra("p_code");
         m_email = GlobalVariate.getInstance().getM_email();
+        iv_face2 = findViewById(R.id.iv_face2);
+        String[] temp = m_email.split("@|\\.");
+        String file_name = temp[0] + "_" + temp[1];
+        Glide.with(productPage.this)
+                .load(GlobalVariate.getInstance().getBaseURL() + "face_image/" + file_name + ".jpg")
+                .error(R.drawable.noimg)
+                .into(iv_face2);
 
         // View 정의
         s_basket3 = findViewById(R.id.s_basket3);
