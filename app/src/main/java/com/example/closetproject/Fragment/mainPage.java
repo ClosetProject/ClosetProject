@@ -47,14 +47,13 @@ import retrofit2.Response;
 
 public class mainPage extends Fragment {
 
-    TextView searchView;
+    TextView searchView, btn_pop;
     ListView listView;
     ImageView basket_main, com_i_img, com_o_img, com_r_img,com_t_img, com_y_img, com_w_img,
               string_color, summer_color, autumn_color, winter_color;
     GridView main_grid;
     ArrayList<ProductDTO> productList;
     private RetrofitInterface retrofitAPI;
-    private Button btn_pop;
     private String m_email, d_season;
     Cursor iCursor;
     MemberDTO memberDTO;

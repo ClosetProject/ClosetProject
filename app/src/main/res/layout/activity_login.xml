@@ -51,12 +51,12 @@
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="212dp"
+        android:backgroundTint="#686565"
         android:text="로그인"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_join"
-        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintEnd_toEndOf="@+id/edit_loginpw"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/edit_loginpw" />
 
     <TextView

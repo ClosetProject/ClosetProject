@@ -20,6 +20,15 @@
         android:theme="@style/Theme.ClosetProject"
         android:usesCleartextTraffic="true"
         tools:targetApi="28">
+        <activity android:name=".introActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".loginActivity"></activity>
         <activity
             android:name=".payment"
             android:exported="false" />
@@ -41,15 +50,10 @@
             android:name="com.google.android.actions"
             android:resource="@xml/file_paths" />
 
-        <activity
-            android:name=".loginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--        <activity-->
+<!--            android:name=".loginActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
         <activity
             android:name=".AnalysisActivity"
             android:exported="true" />
