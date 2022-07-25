@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.closetproject.DTO.DiagnosisDTO;
 import com.example.closetproject.Retrofit_API.RetrofitClient;
 import com.example.closetproject.Retrofit_API.RetrofitInterface;
@@ -33,6 +35,7 @@ public class myAnalysisPage extends AppCompatActivity {
     private ViewPager2 pager;
     private FragmentStateAdapter pagerAdapter;
 
+    private ImageView iv_my_face;
     private String m_email, season;
     private RetrofitInterface retrofitAPI;
 
@@ -40,6 +43,7 @@ public class myAnalysisPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_analysis_page);
+        iv_my_face = findViewById(R.id.iv_my_face);
 
         m_email = GlobalVariate.getInstance().getM_email();
         HashMap<String, String> params = new HashMap<>();
@@ -54,6 +58,14 @@ public class myAnalysisPage extends AppCompatActivity {
                     DiagnosisDTO diagnosisDTO = response.body();
                     season = diagnosisDTO.getD_result();
                     GlobalVariate.getInstance().setD_season(season);
+
+                    // 얼굴이미지 세팅
+                    String file_path = diagnosisDTO.getFace_img();
+                    Glide.with(myAnalysisPage.this)
+                            .load(file_path)
+                            .error(R.drawable.noimg)
+                            .into(iv_my_face);
+
                     pager = findViewById(R.id.pager);
                     pagerAdapter = new ScreeSlidePagerAdapter(myAnalysisPage.this);
                     pager.setAdapter(pagerAdapter);

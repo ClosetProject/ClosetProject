@@ -145,7 +145,7 @@ public class productPage extends AppCompatActivity {
                     img_path = product.getP_img();
                     String pd_name = "[" + product.getS_name() + "] " + product.getP_name();
                     tv_pd_name.setText(pd_name);
-                    tv_pd_price.setText(product.getP_price() + "원");
+                    tv_pd_price.setText(product.getP_price() + " 원");
 
                     //찜여부
                     wish_yn = product.getWish_yn();
